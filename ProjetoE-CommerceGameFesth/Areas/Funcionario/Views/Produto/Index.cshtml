@@ -1,0 +1,46 @@
+﻿@using ProjetoE_CommerceGameFesth.Models
+@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Produto>
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+
+<h1>Produtos</h1>
+<a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.First().Codbarras)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.First().NomeProduto)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.First().Valor)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.First().QuantidadeEstoque)</th>
+                
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Produto produto in Model)
+            {
+                <tr>
+                    <th scope="row">@produto.Codbarras</th>
+                    <td>@produto.NomeProduto</td>
+
+                    <td>@produto.Valor</td>
+                    <td>@produto.QuantidadeEstoque</td>
+                    @* <td>@produto.Valor1</td> *@
+
+
+
+                    <td>
+                        <a class="btn btn-primary" asp-route-id="@produto.Codbarras" asp-area="Funcionario" asp-controller="Produto" asp-action="DetalhesProd">Detalhes</a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

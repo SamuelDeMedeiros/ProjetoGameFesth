@@ -1,0 +1,35 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Cliente
+@{
+    ViewData["Title"] = "VerificaEmail";
+}
+<main role="main">
+    <br />
+    <br />
+    <section class="container">
+        <aside class="col-sm-4">
+            <h3 class="subtitle-doc">
+                Verificação do email
+            </h3>
+            <div id="code_login_1">
+                <div class="card">
+                    <article class="card-body">
+                        @* <a asp-controller="Home" asp-action="VerificarSMS" class="float-right btn btn-outline-primary mt-1">Verificar por SMS</a> *@
+                        @if (TempData["MSG_E"] != null)
+                        {
+                            <p class="alert alert-danger">@Html.Raw(TempData["MSG_E"])</p>
+                        }
+
+                        <h4 class="card-title mb-4 mt-1">Email</h4>
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Coloque seu email para trocar a senha</label>
+                                <input asp-for="Email" class="form-control" placeholder="Email" type="email">
+                                <button type="submit" class="btn btn-primary btn-block"> Verificar </button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>

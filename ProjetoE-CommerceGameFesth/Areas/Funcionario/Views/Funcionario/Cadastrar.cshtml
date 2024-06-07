@@ -1,0 +1,81 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1>Cadastrar</h1>
+
+<h4>Funcionario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Cadastrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="NomeFuncionario" class="control-label"></label>
+                <input asp-for="NomeFuncionario" class="form-control" />
+                <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataAdmissao" class="control-label"></label>
+                <input asp-for="DataAdmissao" class="form-control data" placeholder="00/00/0000" />
+                <span asp-validation-for="DataAdmissao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control tel" placeholder="(00) 0000-0000" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CEP" class="control-label"></label>
+                <input asp-for="CEP" class="form-control cep" placeholder="00000-000" />
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lougradouro" class="control-label"></label>
+                <input asp-for="Lougradouro" class="form-control" />
+                <span asp-validation-for="Lougradouro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeUF" class="control-label"></label>
+                <input asp-for="NomeUF" class="form-control" />
+                <span asp-validation-for="NomeUF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeCidade" class="control-label"></label>
+                <input asp-for="NomeCidade" class="form-control" />
+                <span asp-validation-for="NomeCidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmaSenha" class="control-label"></label>
+                <input asp-for="ConfirmaSenha" class="form-control" />
+                <span asp-validation-for="ConfirmaSenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-info" asp-controller="Funcionario" asp-action="Index">Voltar</a>
+</div>
+

@@ -1,0 +1,122 @@
+﻿@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Produto>
+
+@{
+    ViewData["Title"] = "Carrnho";
+    decimal total = 0;
+}
+
+<div class="container">
+    <section id="order">
+        <br />
+        <br />
+        <h2 class="title-doc">Carrinho de compras</h2>
+        <div class="alert alert-danger" style="display: none;" role="alert">
+        </div>
+
+        <div id="code_cart">
+            <div class="card">
+                <table class="table table-hover shopping-cart-wrap">
+                    <thead class="text-muted">
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col" width="120">Quantidade</th>
+                            <th scope="col" width="120"></th>
+                            <th scope="col" width="200" class="text-right">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            var subTotal = item.Quantidade * Convert.ToDecimal(item.Valor);
+                            total += subTotal;
+                            <tr>
+                                <td>
+                                    <figure class="media">
+                                        <div class="img-wrap">
+
+                                            <img alt="Thumbnail [300x300]" style="width: 40px; height: 40px;" src="@item.ImagemProduto">
+                                        </div>
+                                        <figcaption class="media-body">
+                                            <h6 class="title text-truncate">@item.NomeProduto</h6>
+                                            <dl class="dlist-inline small">
+                                                <dt>Codigo Livro: @item.Codbarras </dt>
+                                                <dd>@* @item.CodBarras *@</dd>
+                                            </dl>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <div class="col-auto">
+                                        <div class="input-group mb-2 control-inline">
+                                            <input type="hidden" class="inputProdutoId" value="@item.Codbarras" />
+                                            <input type="hidden" class="inputQuantidadeEstoque" value="@item.QuantidadeEstoque" />
+                                            <input type="hidden" class="inputValorUnitario" value="R$ 00,00" />
+                                            <input type="text" style="width: 60px; text-align: center" class="form-control inputValorTotalItens" value="@item.valorTotal" />
+                                            <input type="text" style="width: 60px; text-align: center" readonly="readonly"
+                                                   class="form-control inputQuantidadeProdutoCarrinho" value="@item.Quantidade">
+                                            <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+                                                @using (Html.BeginForm("DiminuirItem", "Home", FormMethod.Post))
+                                                {
+                                                    <input type="hidden" name="id" value=@item.Codbarras>
+                                                    <input type="hidden" name="quantidade" value="1">
+                                                    <button type="submit" class="btn btn-default btn-acao-primario">-</button>
+                                                }
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+                                                @if (item.QuantidadeEstoque > item.Quantidade)
+                                                {
+                                                    @using (Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
+                                                    {
+                                                        <input type="hidden" name="id" value=@item.Codbarras>
+                                                        <input type="hidden" name="quantidade" value="1">
+                                                        <button type="submit" class="btn btn-default btn-acao-primario">+</button>
+
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <button type="submit" class="btn btn-default btn-acao-primario">+</button>
+                                                    <p>Itens no limite</p>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                                <td class="text-right">
+                                    <a asp-controller="Home" asp-action="RemoverItem" asp-route-id="@item.Codbarras" class="btn btn-outline-danger"> × Remove</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    @if (total == 0)
+                    {
+                        <p>Carrinho está vazio</p>
+                    }
+                </table>
+            </div>
+        </div>
+    </section>
+    <br />
+    <br />
+</div>
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            Deseja adicionar outro item? <a asp-controller="Home" asp-action="FrontPage">Clique aqui</a> para continuar ...
+        </div>
+        @total
+        <br />
+        <br />
+        <div class="offset-md-4 col-md-4">
+            <a class="btn btn-outline-primary btn-continuar-comprando" asp-action="SalvarCarrinho" asp-controller="Home">
+                Finalizar o compra
+            </a>
+        </div>
+    </div>
+</div>

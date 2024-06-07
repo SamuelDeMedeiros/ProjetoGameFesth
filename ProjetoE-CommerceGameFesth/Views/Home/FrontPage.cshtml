@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Produto>
+@{
+    ViewBag.Title = "FrontPage";
+}
+<div class="">
+    <div class="row center">
+        <div class="col-lg-9">
+            <div class="flex-xxl-row">
+                @foreach (var item in Model)
+                {
+                    @using (Html.BeginForm("Detalhes", "Home", FormMethod.Post))
+                    {
+                        <button type="submit" class="btn btn-default btn-acao-primario">
+                            <input type="hidden" name="Id" value=@item.Codbarras>
+                            <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+                                <div class="">
+
+                                    @if (@item.ImagemProduto != null)
+                                    {
+                                        <img class="card-img-right flex-auto d-none d-md-block w-100" data-src=" " alt="Thumbnail [300x300]"
+                                             style="width: 300px; height: 300px;" src="@item.ImagemProduto" data-holder-rendered="true">
+                                    }
+                                    else
+                                    {
+                                        <img class="card-img-right flex-auto d-none d-md-block" data-src=" " alt="Thumbnail [300x300]"
+                                             style="width: 300px; height: 300px;" src="~/Images/image-not-found.jpg" data-holder-rendered="true">
+                                    }
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href="@item.ImagemProduto">@item.NomeProduto</a>
+                                        </h4>
+                                        <br />
+                                        <spam>Código: @item.Codbarras</spam>
+                                        @*  <spam>Preço: @item.Valor</spam> *@
+                                        <spam>Preço: @string.Format("{0:C}", item.Valor1)</spam>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

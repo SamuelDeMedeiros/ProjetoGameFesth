@@ -1,0 +1,89 @@
+﻿@inject ProjetoE_CommerceGameFesth.Libraries.Login.LoginCliente _loginCliente
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameFesth</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProjetoE_CommerceGameFesth.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <header class="p-3 mb-3 border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                        <img class="bi me-5" width="150" height="50" role="img" aria-label="Logo" src="/Imagens/logoamefesthdeitadafundobranco.png" alt="logo" />
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li class="fonte">
+                            <a class="nav-link px-2 link-body-emphasis" asp-area="" asp-controller="Home" asp-action="FrontPage">Loja</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                      </li>
+                        @* <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="Funcionario" asp-controller="Home" asp-action="Login">LoginFunc</a>
+                        </li> *@
+                        <li class="fonte">
+                            <button class="btn btn-primary rounded-pill px-3" asp-area="" asp-controller="Home" asp-action="Carrinho" type="button">Sobre nós</button>
+                        </li>
+                    </ul>
+
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                        <input type="search" class="form-control" placeholder="Pesquisar..." aria-label="Search">
+                    </form>
+                    @*<div class="dropdown text-end">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6a512458-4250-4c39-bf19-9a1e5ffd3dc0/dgb6e7x-430630c3-bc9d-451d-a048-a5de4abe2b5a.jpg/v1/fill/w_1280,h_1280,q_75,strp/goku_super_saiyan_blue_by_codecraftedart_dgb6e7x-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZhNTEyNDU4LTQyNTAtNGMzOS1iZjE5LTlhMWU1ZmZkM2RjMFwvZGdiNmU3eC00MzA2MzBjMy1iYzlkLTQ1MWQtYTA0OC1hNWRlNGFiZTJiNWEuanBnIiwiaGVpZ2h0IjoiPD0xMjgwIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvNmE1MTI0NTgtNDI1MC00YzM5LWJmMTktOWExZTVmZmQzZGMwXC9jb2RlY3JhZnRlZGFydC00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.U09Z8oeuWR1JarJha4eH-ZqtwpJvMijyErVGyGxZ2-M" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0.5px, 34px, 0px);" data-popper-placement="bottom-end">
+                            <li class="fonte"><a class="dropdown-item" href="#">Pefil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="fonte"><a class="dropdown-item" href="#">Dar o fora</a></li>
+                        </ul>
+                    </div> *@
+
+                    <li class="nav-item dropdown" style="list-style:none">
+                        @if (_loginCliente.GetCliente() != null)
+                        {
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">@_loginCliente.GetCliente().NomeCliente </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/Home/PainelCliente">Meu perfil</a></li>
+                                <li><a class="dropdown-divider"></a></li>
+                                <li><a class="dropdown-item" href="/Home/LogoutCliente">Sair</a></li>
+
+                            </ul>
+                        }
+                        else
+                        {
+                            
+                            <a class="nav-link" href="/Home/Login"><i class="fas fa-user-alt"></i>Login</a>
+                        }
+                    </li>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2024 - GameFesth - <a href="disquetech.netlify.app">Todos os direitos reservado á DISQUETECH</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/mask/jquery.mask.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

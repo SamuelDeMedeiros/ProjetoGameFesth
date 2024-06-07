@@ -1,0 +1,61 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Produto</h4>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Codbarras)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Codbarras)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagemProduto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ImagemProduto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantidadeEstoque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuantidadeEstoque)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+        @using (Html.BeginForm("Deletar", "Produto", FormMethod.Post))
+        {
+            <input type="hidden" name="id" value=@Html.DisplayFor(model => model.Codbarras)>
+            <button type="submit" class="btn btn-danger" new { onclick="return confirm('Deseja realmente deletar?')" }>deletar</button>
+        }
+    </div>
+
+</div>
+
+<div>
+    <a asp-action="Index" value="Voltar" class="btn btn-info">Voltar</a>
+</div>
+
