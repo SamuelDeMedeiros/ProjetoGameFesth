@@ -1,0 +1,58 @@
+﻿@using ProjetoE_CommerceGameFesth.Models
+@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Venda>
+@{
+    ViewData["Title"] = "Vendas";
+    int count = 0;
+}
+
+
+<h1>Vendas</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        @foreach (Venda venda in Model)
+        {
+            count++;
+        }
+        @if (count ==0)
+        {
+            <br />
+            <h2>Sem cadastros</h2>
+        }
+        else
+        {
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().NotaFiscal)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().ValorTotal)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().DataVenda)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().IdCliente)</th>
+
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+        }
+
+        <tbody>
+            @foreach (Venda venda in Model)
+            {
+                <tr>
+                    <th scope="row">@venda.NotaFiscal</th>
+                    <td>@venda.ValorTotal</td>
+
+                    <td>@venda.DataVenda</td>
+                    <td>@venda.IdCliente</td>
+
+
+
+                    <td>
+                        <a class="btn btn-primary" asp-route-id="@venda.NotaFiscal" asp-area="Funcionario" asp-controller="Venda" asp-action="DetalhesVenda">Detalhes</a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

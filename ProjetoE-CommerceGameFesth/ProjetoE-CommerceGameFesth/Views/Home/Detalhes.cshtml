@@ -1,0 +1,148 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+<style>
+
+    button {
+        font-size: 20px;
+        background: #007bff;
+        color: white;
+        padding: 0.7em 1em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+        button span {
+            display: block;
+            margin-left: 0.9em;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button svg {
+            display: block;
+            transform-origin: center center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        button:hover .svg-wrapper {
+            animation: fly-1 0.6s ease-in-out infinite alternate;
+        }
+
+        button:hover svg {
+            transform: translateX(2.9em) rotate(45deg) scale(1.1);
+        }
+
+        button:hover span {
+            transform: translateX(6em);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+
+    .hover-zoom {
+        overflow: hidden;
+        position: relative;
+    }
+
+        .hover-zoom img {
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+
+        .hover-zoom:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+</style>
+
+<h1 class="text-center my-4">@ViewData["Title"]</h1>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row gx-5">
+            <aside class="col-lg-6 d-flex justify-content-center">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0">
+                    <img src="@Model.ImagemProduto" alt="Imagem do Produto" class="img-fluid rounded-4" style="max-width: 100%; height: auto;" />
+                    <div class="hover-overlay">
+                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-lg-6">
+                <div class="ps-lg-3">
+                    <h4 class="title text-dark">
+                        @Html.DisplayFor(model => model.NomeProduto)
+                    </h4>
+                    <span class="text-success ms-2">Em estoque / entrega grátis</span>
+                </div>
+
+                <div class="mb-3 ms-4">
+                    <span class="h5">@Html.DisplayFor(model => model.Valor)</span>
+                    <span class="text-muted">à vista</span>
+                </div>
+
+                <p>
+                    @Html.DisplayFor(model => model.Descricao)
+                </p>
+
+                <div class="row mb-3">
+                    <dt class="col-3">Disponivel:</dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.QuantidadeEstoque) unidades
+                    </dd>
+                    <dt class="col-3">Marca:</dt>
+                    <dd class="col-9">
+                        @Html.DisplayFor(model => model.Marca)
+                    </dd>
+                </div>
+
+                <hr />
+                <div class="mb-4">
+                    @using (Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
+                    {
+                        <input type="hidden" name="id" value="@Model.Codbarras" />
+                        <input type="hidden" name="quantidade" value="1" />
+
+                        <button type="submit" class="btn-acao-primario">
+                            <div class="svg-wrapper-1">
+                                <div class="svg-wrapper">
+                                    <svg width="24"
+                                         height="24"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              clip-rule="evenodd"
+                                              d="M5.79166 2H1V4H4.2184L6.9872 16.6776H7V17H20V16.7519L22.1932 7.09095L22.5308 6H6.6552L6.08485 3.38852L5.79166 2ZM19.9869 8H7.092L8.62081 15H18.3978L19.9869 8Z"
+                                              fill="currentColor" />
+                                        <path d="M10 22C11.1046 22 12 21.1046 12 20C12 18.8954 11.1046 18 10 18C8.89543 18 8 18.8954 8 20C8 21.1046 8.89543 22 10 22Z"
+                                              fill="currentColor" />
+                                        <path d="M19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18C18.1046 18 19 18.8954 19 20Z"
+                                              fill="currentColor" />
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <span>Comprar</span>
+                        </button>
+                    }
+                </div>
+                <div>
+                    <a href="@Url.Action("frontpage", "Home")" class="btn btn-secondary shadow-0">
+                        <i class="me-1 fa fa-arrow-left"></i> Retornar para a loja
+                    </a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</section>

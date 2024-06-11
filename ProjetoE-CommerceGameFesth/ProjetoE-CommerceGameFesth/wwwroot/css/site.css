@@ -1,0 +1,102 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.fonte {
+    font-family: "Poppins", sans-serif;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.bg-dark {
+    background-color: #000 !important; /* Fundo escuro */
+    width: 100vw; /* Cobrir toda a largura da viewport */
+    margin-left: calc(50% - 50vw); /* Centralizar */
+    margin-right: calc(50% - 50vw); /* Centralizar */
+}
+/* Estilização do track da scrollbar */
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f1f1f1; /* Cor de fundo do track */
+}
+
+/* Estilização do thumb da scrollbar */
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #007bff; /* Cor do thumb */
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /* Sombra interna */
+}
+
+/* Largura da scrollbar */
+body::-webkit-scrollbar {
+    width: 12px; /* Largura da scrollbar */
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }

@@ -1,0 +1,101 @@
+﻿@using ProjetoE_CommerceGameFesth.Models
+@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Funcionario>
+@{
+    ViewData["Title"] = "Funcionarios";
+    int cont = 0;
+}
+
+
+<h1>Funcionarios</h1>
+
+<div>
+
+    <a class="btn btn-info" asp-action="DesativadosF">Funcionarios desativados</a><a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+         @foreach (Funcionario funcionario in Model)
+         {
+                @if (@funcionario.Situacao == "A" )
+                {
+                    cont++;
+                }
+         }
+         @if (ViewBag.Funci == "V"|| cont ==0 )
+        {
+            <br />
+            <h2>Sem cadastros</h2>
+        }
+        else
+        {
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().IdFuncionario)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().NomeFuncionario)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().DataAdmissao)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Telefone)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Tipo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Senha)</th>
+
+
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+        }
+        <tbody>
+            @foreach (Funcionario funcionario in Model)
+            {
+                @if (@funcionario.Situacao == "A" && funcionario.IdFuncionario != ViewBag.Funcionario)
+                {
+                    <tr>
+                        <th scope="row">@funcionario.IdFuncionario</th>
+                        <td>@funcionario.NomeFuncionario</td>
+                        <td>@funcionario.DataAdmissao.ToString("yyyy/MM/dd")</td>
+                        <td>@funcionario.Telefone</td>
+
+                        @if (@funcionario.Tipo != "F")
+                        {
+                            @if (@funcionario.IdFuncionario ==1)
+                            {
+                                <td>Gerente</td>
+                            }
+                            else
+                            {
+                                <td>Subgerente</td>
+                            }
+                            
+                        }
+                        else
+                        {
+                            <td>Comum</td>
+                        }
+
+                        <td>@funcionario.Email</td>
+                        <td>@funcionario.Senha</td>
+
+
+
+                        <td>
+                            <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-area="Funcionario" asp-controller="Funcionario" asp-action="DetalhesFunc">Detalhes</a>
+@*                              <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-action="Atualizar">Atualizar</a>
+
+
+                            <a class="btn btn-danger" asp-route-id="@funcionario.IdFuncionario" asp-action="Desativar" new { id=funcionario.IdFuncionario },
+                            new { onclick="return confirm('Deseja realmente desativar?')" }>Deletar</a>  *@   
+                        </td>
+
+                    </tr>
+                }
+                else
+                {
+                
+                }
+                
+            }
+        </tbody>
+    </table>
+</div>
+

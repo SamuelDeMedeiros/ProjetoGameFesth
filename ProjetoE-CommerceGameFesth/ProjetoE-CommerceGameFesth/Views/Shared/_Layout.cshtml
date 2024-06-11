@@ -1,0 +1,398 @@
+﻿@inject ProjetoE_CommerceGameFesth.Libraries.Login.LoginCliente _loginCliente
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameFesth</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="~/ProjetoE_CommerceGameFesth.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/?size=100&id=HdqV5oUrpZoa&format=png&color=000000" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header-custom {
+            background-color: #f8f9fa; /* Cor de fundo clara */
+            padding: 1rem 0; /* Reduzir padding para um layout mais compacto */
+        }
+
+        .nav-link {
+            margin: 0 10px; /* Espaçamento entre os links de navegação */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+        }
+
+            .nav-link:hover {
+                background-color: #007bff; /* Cor de fundo ao passar o mouse */
+                color: white !important; /* Cor do texto ao passar o mouse */
+                border-radius: 5px; /* Bordas arredondadas */
+            }
+
+        .btn-primary {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
+            }
+
+        .dropdown-menu {
+            transition: opacity 0.3s ease; /* Transição suave */
+        }
+
+            .dropdown-menu:hover {
+                opacity: 0.9; /* Leve alteração na opacidade */
+            }
+
+        .logo {
+            max-width: 100px; /* Limitar o tamanho da logo */
+            height: auto;
+            transition: transform 0.3s ease; /* Transição suave */
+        }
+
+            .logo:hover {
+                transform: scale(1.1); /* Aumentar o tamanho ao passar o mouse */
+            }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .back-to-top-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(20, 20, 20);
+            border: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+            cursor: pointer;
+            transition-duration: 0.3s;
+            overflow: hidden;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .svgIcon {
+            width: 12px;
+            transition-duration: 0.3s;
+        }
+
+            .svgIcon path {
+                fill: white;
+            }
+
+        .back-to-top-button:hover {
+            width: 140px;
+            border-radius: 50px;
+            transition-duration: 0.3s;
+            background-color: #007bff;
+            align-items: center;
+        }
+
+            .back-to-top-button:hover .svgIcon {
+                transition-duration: 0.3s;
+                transform: translateY(-200%);
+            }
+
+        .back-to-top-button::before {
+            position: absolute;
+            bottom: -20px;
+            content: "Voltar ao topo";
+            color: white;
+            font-size: 0px;
+        }
+
+        .back-to-top-button:hover::before {
+            font-size: 13px;
+            opacity: 1;
+            bottom: unset;
+            transition-duration: 0.3s;
+        }
+
+        #form5Example2 {
+            color: black;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        header {
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+            .footer a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+
+            .footer h5 {
+                font-weight: 600;
+            }
+
+            .footer .social-icons a {
+                margin: 0 10px;
+                color: #fff;
+                font-size: 24px;
+            }
+
+                .footer .social-icons a:hover {
+                    color: #007bff;
+                }
+
+            .footer .payment-icons a {
+                margin: 0 15px;
+                color: #fff;
+                font-size: 24px;
+            }
+
+                .footer .payment-icons a:hover {
+                    color: #007bff;
+                }
+
+            .footer .thank-you {
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+            .footer .copyright {
+                margin-top: 20px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .position-absolute {
+            position: absolute;
+        }
+
+        .top-0 {
+            top: 0;
+        }
+
+        .start-100 {
+            left: 100%;
+        }
+
+        .translate-middle {
+            transform: translate(-50%, -50%);
+        }
+
+        .badge {
+            padding: 0.5em 0.75em;
+            font-size: 0.75em;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.75rem;
+        }
+
+        .bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        .fa-shopping-cart {
+            font-size: 1.5em;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-custom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <!-- Logo -->
+                <a asp-area="" asp-controller="Home" asp-action="frontpage" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+                    <img src="/Imagens/logoamefesthdeitadafundobranco.png" alt="Logo" class="logo me-3">
+                </a>
+
+                <!-- Navegação -->
+                <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FrontPage">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Home" asp-action="sobre">
+                            <button class="btn btn-primary rounded-pill px-3" type="button">Sobre nós</button>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Menu de Carrinho e Usuário -->
+                <div class="d-flex align-items-center">
+                    <!-- Ícone do Carrinho -->
+                    <a asp-area="" asp-controller="Home" asp-action="Carrinho" class="position-relative">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
+
+                    <!-- Menu de Usuário -->
+                    <div class="dropdown ms-3">
+                        @if (_loginCliente.GetCliente() != null)
+                        {
+                            <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @_loginCliente.GetCliente().NomeCliente
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="/Home/PainelCliente">Meu perfil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/Home/LogoutCliente">Sair</a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="/Home/Login"><i class="fas fa-user-alt"></i> Login</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center thank-you">
+                    <p>Obrigado por visitar nossa loja!<br></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Informação</h5>
+                    <ul class="list-unstyled">
+                        <a asp-area="" asp-controller="Home" asp-action="sobre">
+                        <li>Sobre nós</li></a>
+                        <a asp-area="" asp-controller="Home" asp-action="FrontPage">
+                        <li>Loja</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Peças de PC</h5>
+                    <ul class="list-unstyled">
+                        <li>PROCESSADORES</li>
+                        <li>Placa de vídeo</li>
+                        <li>Placa mãe</li>
+                        <li>Teclado</li>
+                        <li>Mouse</li>
+                        <li>SSD/HD</li>
+                        <li>Ram</li>
+                        <li>Headsets</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Endereço</h5>
+                    <address>
+                        R. Guajupiá, 678 - Vila Leopoldina, São Paulo - SP, 05089-000<br>
+                        Telefone: <a href="tel:+551138344111">(11) 3834-4111</a><br>
+                        Estamos abertos de Segunda à Sábado: 7:00h - 20:30h<br>
+                        E-mail: <a href="mailto:shop@email.com">shop@email.com</a>
+                    </address>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center payment-icons">
+                    <a title="Visa"><i class="fab fa-cc-visa"></i></a>
+                    <a title="Mastercard"><i class="fab fa-cc-mastercard"></i></a>
+                    <a title="PayPal"><i class="fab fa-cc-paypal"></i></a>
+                    <a title="American Express"><i class="fab fa-cc-amex"></i></a>
+                    <a title="Boleto"><i class="fas fa-barcode"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center copyright">
+                    Copyright © 2024 <a href="https://disquetech.netlify.app">Disquetech.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão "Voltar ao topo" -->
+    <button class="back-to-top-button" id="popupButton" onclick="scrollToTop()">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+        </svg>
+    </button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Mostrar o botão Pop-up quando o usuário rolar a página
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) { // Mostrar o botão apenas após o usuário rolar 100 pixels
+                $('#popupButton').fadeIn();
+                $('#popupButton').css('opacity', '1').css('visibility', 'visible');
+            } else {
+                $('#popupButton').fadeOut();
+                $('#popupButton').css('opacity', '0').css('visibility', 'hidden');
+            }
+        });
+
+        // Função para rolar para o topo da página
+        function scrollToTop() {
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+        }
+        $(document).ready(function () {
+            updateCartCount();
+
+            function updateCartCount() {
+                $.ajax({
+                    url: '/Home/GetCartItemCount',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#cart-count').text(data.count);
+                    }
+                });
+            }
+        });
+
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/mask/jquery.mask.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

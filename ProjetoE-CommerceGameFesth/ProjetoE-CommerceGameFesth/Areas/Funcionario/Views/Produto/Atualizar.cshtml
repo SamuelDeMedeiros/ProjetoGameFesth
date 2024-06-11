@@ -1,0 +1,63 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+
+@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<h1>Atualizar</h1>
+
+<h4>Produto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Atualizar" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Codbarras" class="control-label"></label>
+                <input asp-for="Codbarras" class="form-control" />
+                <span asp-validation-for="Codbarras" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NomeProduto" class="control-label"></label>
+                <input asp-for="NomeProduto" class="form-control" />
+                <span asp-validation-for="NomeProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label"></label>
+                <input asp-for="Marca" class="form-control" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagemProduto" class="control-label"></label>
+                <input asp-for="ImagemProduto" class="form-control" type="file" name="file" id="file" />
+                <span asp-validation-for="ImagemProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
+                @* @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { placeholder = "Informe o valor", @class = "form-control", @id = "PrecoUni" } })
+                @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" }) *@
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeEstoque" class="control-label"></label>
+                <input asp-for="QuantidadeEstoque" class="form-control" />
+                <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-info " asp-action="Index">Voltar</a>
+</div>
+

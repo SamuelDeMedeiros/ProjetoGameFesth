@@ -1,0 +1,86 @@
+﻿@using ProjetoE_CommerceGameFesth.Models
+@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Desativados";
+    int cont = 0;
+}
+
+<h1>Clientes Desativados</h1>
+<div>
+
+    <a class="btn btn-info" asp-action="Index">Clientes ativados</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        @foreach (Cliente cliente in Model)
+        {
+            @if (@cliente.Situacao == "D")
+            {
+                cont++;
+            }
+        }
+        @if (ViewBag.Cliente == "V"|| cont == 0 )
+        {
+            <br/>
+            <h2>Sem cadastros</h2>
+        }
+        else
+        {
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().IdCliente)</th>
+
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().NomeCliente)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Nascimento)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Sexo)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Telefone)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Senha)</th>
+                    @* <th scope="col">@Html.DisplayNameFor(model => model.First().Situacao)</th> *@
+
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+        }
+        <tbody>
+            @foreach (Cliente cliente in Model)
+            {
+                @if (@cliente.Situacao == "D")
+                {
+                    <tr>
+                        <th scope="row">@cliente.IdCliente</th>
+                        <td>@cliente.NomeCliente</td>
+                        <td>@cliente.Nascimento.ToString("yyyy/MM/dd")</td>
+                        <td>@cliente.Sexo</td>
+                        <td>@cliente.Telefone</td>
+                        <td>@cliente.Email</td>
+                        <td>@cliente.Senha</td>
+
+
+                        <td>
+                            <a class="btn btn-primary" asp-route-id="@cliente.IdCliente" asp-area="Funcionario" asp-controller="Cliente" asp-action="DetalhesCliDesativado">Detalhes</a>
+                        </td>
+                        @*                     <td>
+                @if (cliente.Situacao == "A")
+                {
+                <a class="btn btn-danger" asp-route-id="@cliente.IdCliente" asp-action="Desativar" new { id=cliente.Id },
+                new { onclick="return confirm('Deseja realmente desativar?')" }>Desativar</a>
+
+                }
+                else if (cliente.Situacao == "D")
+                {
+                <a class="btn btn-primary" asp-route-id="@cliente.IdCliente" asp-action="Ativar" new { id=cliente.Id },
+                new { onclick="return confirm('Deseja realmente ativar?')" }>Ativar</a>
+
+                }
+                </td> *@
+
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</div>
