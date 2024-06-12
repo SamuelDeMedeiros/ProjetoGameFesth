@@ -46,7 +46,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         }
         public IActionResult FrontPage()
         {
-            return View(_produtoRepository.ObterTodosProdutos());
+            return View(_produtoRepository.ObterTodosProdutos("Por Maior", "Valor"));
         }
         public IActionResult AdicionarItem(Int64 id)
         {

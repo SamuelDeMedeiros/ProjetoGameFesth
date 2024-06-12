@@ -12,17 +12,20 @@ namespace ProjetoE_CommerceGameFesth.Repository
         {
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
         }
-        public IEnumerable<Produto> ObterTodosProdutos()
+        public IEnumerable<Produto> ObterTodosProdutos(string por, string campo)
         {
             List<Produto> Produtolist = new List<Produto>();
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
-                    conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto('');", conexao);
-                    MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto2(@por,@campo);", conexao);
+                cmd.Parameters.Add("@por", MySqlDbType.VarChar).Value = por;
+                cmd.Parameters.Add("@campo", MySqlDbType.VarChar).Value = campo;
+                
+                MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
 
-                    sd.Fill(dt);
+                sd.Fill(dt);
                     conexao.Close();
 
                     foreach (DataRow dr in dt.Rows)
@@ -101,6 +104,38 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     produto.QuantidadeEstoque = Convert.ToInt32(dr["QtdEst"]);
                 }
                 return produto;
+            }
+        }
+       
+        public IEnumerable<Produto> PesquisaProdutos(string Nome)
+        {
+            List<Produto> Produtolist = new List<Produto>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from tb_produto where Nome Like @Nome;", conexao);
+                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = Nome;
+
+                MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                sd.Fill(dt);
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Produtolist.Add(
+                        new Produto
+                        {
+                            Codbarras = Convert.ToInt64(dr["CodBarras"]),
+                            NomeProduto = (string)dr["Nome"],
+                            Valor = Convert.ToString(dr["Valor"]),
+                            QuantidadeEstoque = Convert.ToInt32(dr["QtdEst"]),
+                            ImagemProduto = (string)dr["ImagemProduto"],
+                            Marca = (string)dr["Marca"],
+                        });
+                }
+                return Produtolist;
             }
         }
         public void Apagar(long Id)

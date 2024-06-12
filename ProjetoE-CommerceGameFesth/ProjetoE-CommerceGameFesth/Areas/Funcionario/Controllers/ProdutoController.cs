@@ -18,12 +18,27 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
             _funcionarioRepository = funcionarioRepository;
             _produtoRepository = produtorepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string por, string campo, string nome)
         {
+            if(por != null && campo != null )
+            {
 
-            return View(_produtoRepository.ObterTodosProdutos());
+                return View(_produtoRepository.ObterTodosProdutos(por, campo));
+                
+            }
+            else if (nome != null)
+            {
+                nome = nome + "%";
+                return View(_produtoRepository.PesquisaProdutos(nome));
+            }
+            else
+            {
+                return View(_produtoRepository.ObterTodosProdutos("Por Maior", "CodBarras"));
+            }
+            
+
         }
-
+  
         public IActionResult DetalhesProd(Int64 Id)
         {
             
