@@ -22,5 +22,6 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         Cliente ObterSituacaoCliente(int id);
         Venda ObterVendaCliente(int id);
         public IEnumerable<Venda> ObterVendaList(int id);
+        public Endereco ObterEndereco(string cep);
     }
 }

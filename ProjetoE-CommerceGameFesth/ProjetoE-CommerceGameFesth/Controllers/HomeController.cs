@@ -272,9 +272,10 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco)
+        public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco, string cep)
         {
-            cadastraEndereco.cliente.Situacao = SituacaoConstant.Ativo;
+            cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
+
             var CPFexit = _clienteRepository.ObterCpfCliente(cadastraEndereco.cliente.CPF).CPF;
             var EMAILexit = _clienteRepository.ObterEmailCliente(cadastraEndereco.cliente.Email).Email;
             if(!string.IsNullOrEmpty(CPFexit))
@@ -294,7 +295,6 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 TempData["MSG_S"] = "Registro salvo com sucesso!";
                 return RedirectToAction(nameof(Cadastrar));
             }
-            return View();
         }
         public IActionResult sobre()
         {

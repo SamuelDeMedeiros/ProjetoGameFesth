@@ -1,6 +1,6 @@
-﻿
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+﻿using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using NuGet.Protocol.Plugins;
 using ProjetoE_CommerceGameFesth.Models;
 using ProjetoE_CommerceGameFesth.Models.Constants;
@@ -410,6 +410,24 @@ namespace ProjetoE_CommerceGameFesth.Repository
                         });
                 }
                 return vendaList;
+            }
+        }
+        public Endereco ObterEndereco(string cep)
+        {
+            using(HttpClient client = new HttpClient())
+            {
+                string strURL = string.Format("https://viacep.com.br/ws/{0}/json/", cep);
+
+                Endereco endereco = new Endereco();
+                
+                var resposta = client.GetAsync(strURL).Result;
+                if(resposta.IsSuccessStatusCode)
+                {
+                    var result = resposta.Content.ReadAsStringAsync().Result;
+                    
+                    endereco = JsonConvert.DeserializeObject<Endereco>(result);
+                }
+                return endereco;
             }
         }
     }

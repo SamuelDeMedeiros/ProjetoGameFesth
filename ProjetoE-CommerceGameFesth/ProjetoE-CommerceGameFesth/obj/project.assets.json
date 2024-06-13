@@ -7666,23 +7666,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\3ds\\.nuget\\packages\\": {},
+    "C:\\Users\\Samuel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\3ds\\Desktop\\tcc GF atual\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
+      "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
       "projectName": "ProjetoE-CommerceGameFesth",
-      "projectPath": "C:\\Users\\3ds\\Desktop\\tcc GF atual\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
-      "packagesPath": "C:\\Users\\3ds\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\3ds\\Desktop\\tcc GF atual\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\obj\\",
+      "projectPath": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
+      "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\3ds\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7704,6 +7704,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7750,7 +7755,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
