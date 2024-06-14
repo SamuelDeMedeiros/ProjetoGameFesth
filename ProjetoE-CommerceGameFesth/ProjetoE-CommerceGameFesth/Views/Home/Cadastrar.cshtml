@@ -187,28 +187,31 @@
             <div class="form-group">
                 <label asp-for="endereco.CEP">CEP</label>
                 <input id="cep" type="text" asp-for="endereco.CEP" class="form-control">
-                <span asp-validation-for="endereco.CEP"></span>
+                <p>@ViewData["MSG_CPF"]</p>
             </div>
-            <div class="form-group">
-                <label asp-for="endereco.Lougradouro">Logradouro</label>
-                <input type="text" asp-for="endereco.Lougradouro" class="form-control">
-                <span asp-validation-for="endereco.Lougradouro"></span>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="endereco.Lougradouro">Logradouro</label>
+                    <input type="text" value="@ViewBag.Lougradouro" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label asp-for="endereco.Bairro">Bairro</label>
+                    <input type="text" value="@ViewBag.Bairro" class="form-control" readonly>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro">Número</label>
-                <input type="text" asp-for="endereco.NumLougradouro" class="form-control">
+                <input type="text" value="@ViewBag.NumLougradouro" class="form-control">
                 <span asp-validation-for="endereco.NumLougradouro"></span>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label asp-for="endereco.NomeUF">Estado</label>
-                    <input type="text" asp-for="endereco.NomeUF" class="form-control">
-                    <span asp-validation-for="endereco.NomeUF"></span>
+                    <input type="text" value="@ViewBag.NomeUF" class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <label asp-for="endereco.NomeCidade">Cidade</label>
-                    <input type="text" asp-for="endereco.NomeCidade" class="form-control">
-                    <span asp-validation-for="endereco.NomeCidade"></span>
+                    <input type="text" value="@ViewBag.NomeCidade" class="form-control" readonly>
                 </div>
             </div>
 

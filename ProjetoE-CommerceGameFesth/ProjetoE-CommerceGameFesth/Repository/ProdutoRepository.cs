@@ -18,9 +18,8 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto2(@por,@campo);", conexao);
+                MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto(@por);", conexao);
                 cmd.Parameters.Add("@por", MySqlDbType.VarChar).Value = por;
-                cmd.Parameters.Add("@campo", MySqlDbType.VarChar).Value = campo;
                 
                 MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

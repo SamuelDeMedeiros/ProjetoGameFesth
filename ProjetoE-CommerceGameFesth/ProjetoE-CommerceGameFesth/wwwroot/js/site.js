@@ -1,5 +1,4 @@
-﻿
-// responsavel por exibir a mascara
+﻿// responsavel por exibir a mascara
 $(document).ready(function () {
 
     $('#dinheiro').mask('000.000.000.000.000,00', { reverse: true });

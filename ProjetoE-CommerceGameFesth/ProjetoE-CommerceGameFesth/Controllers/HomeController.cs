@@ -275,7 +275,17 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco, string cep)
         {
             cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
-
+            if(cadastraEndereco.endereco.Lougradouro != null)
+            {
+                ViewBag.Lougradouro = cadastraEndereco.endereco.Lougradouro.ToString();
+                ViewBag.NomeCidade = cadastraEndereco.endereco.NomeCidade.ToString();
+                ViewBag.NomeUF = cadastraEndereco.endereco.NomeUF.ToString();
+                ViewBag.Bairro = cadastraEndereco.endereco.Bairro.ToString();
+            }
+            else
+            {
+                ViewData["MSG_CPF"] = "CEP inesistente, por favor verifique o cep digitado";
+            }
             var CPFexit = _clienteRepository.ObterCpfCliente(cadastraEndereco.cliente.CPF).CPF;
             var EMAILexit = _clienteRepository.ObterEmailCliente(cadastraEndereco.cliente.Email).Email;
             if(!string.IsNullOrEmpty(CPFexit))
@@ -288,13 +298,13 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 ViewData["MSG_Email"] = "Email já cadastrado, por favor verifique o email digitado";
                 return View();
             }
-            else
+            else if(ModelState.IsValid)
             {
-
                 _clienteRepository.Cadastrar(cadastraEndereco);
                 TempData["MSG_S"] = "Registro salvo com sucesso!";
                 return RedirectToAction(nameof(Cadastrar));
             }
+            return View();
         }
         public IActionResult sobre()
         {
