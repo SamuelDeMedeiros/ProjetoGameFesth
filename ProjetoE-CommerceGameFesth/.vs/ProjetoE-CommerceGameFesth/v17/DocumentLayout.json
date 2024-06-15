@@ -9,6 +9,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\home\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\samuel\\desktop\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +38,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Endereco.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Endereco.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Models\\Endereco.cs",
+              "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Endereco.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Models\\Endereco.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T17:28:50.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAiwB8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T17:17:12.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEwAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-06-15T16:45:36.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAHYBAAAAAAAAAAAAAIsBAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-15T16:45:51.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cadastrar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "ViewState": "AQIAAL8AAAAAAAAAAAAAAMoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-15T16:36:34.61Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +113,7 @@
               "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA8BAAAAAAAAAAAQwBgBAAAuAAAA",
+              "ViewState": "AQIAAAwBAAAAAAAAAAAzwBQBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-12T23:17:00.151Z",
               "EditorCaption": ""
@@ -41,7 +126,7 @@
               "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
               "ToolTip": "C:\\Users\\Samuel\\Desktop\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
               "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAowFgAAAAIAAAA",
+              "ViewState": "AQIAAD8BAAAAAAAAAAA3wK8BAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-12T22:23:21.236Z",
               "EditorCaption": ""

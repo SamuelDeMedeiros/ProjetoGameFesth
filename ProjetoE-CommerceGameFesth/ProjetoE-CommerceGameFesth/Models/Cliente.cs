@@ -21,39 +21,39 @@ namespace ProjetoE_CommerceGameFesth.Models
         [DisplayName("Data de nascimento")]
         public DateTime Nascimento { get; set; }
 
-        //[StringLength(1)]
-        //[Required(ErrorMessage = "O Sexo é obrigatório")]
-        //[DisplayName("Sexo")]
+        [StringLength(1)]
+        [Required(ErrorMessage = "O Sexo é obrigatório")]
+        [DisplayName("Sexo")]
         public string Sexo { get; set; }
 
-        //[Phone]
-        //[StringLength(11)]
-        //[Required(ErrorMessage = "O número de telefone é obrigatório")]
-        //[DisplayName("Número de telefone")]
+        [Phone]
+        [StringLength(11)]
+        [Required(ErrorMessage = "O número de telefone é obrigatório")]
+        [DisplayName("Número de telefone")]
         public string Telefone { get; set; }
 
-        //[Required(ErrorMessage = "O CNPJ é obrigatório")]
-        //[DisplayName("CNPJ")]
+        [Required(ErrorMessage = "O CNPJ é obrigatório")]
+        [DisplayName("CNPJ")]
         public string CNPJ { get; set; }
 
-        //[StringLength(200)]
-        //[Required(ErrorMessage = "A inscrição estadual é obrigatória")]
-        //[DisplayName("IE")]
+        [StringLength(200)]
+        [Required(ErrorMessage = "A inscrição estadual é obrigatória")]
+        [DisplayName("IE")]
         public string IE { get; set; }
 
-        //[StringLength(200)]
-        //[DisplayName("Nome fantasia")]
+        [StringLength(200)]
+        [DisplayName("Nome fantasia")]
         public string NomeFantasia { get; set; }
-        //[StringLength(200)]
-        //[DisplayName("Razão social")]
+        [StringLength(200)]
+        [DisplayName("Razão social")]
         public string Razaosocial { get; set; }
 
-        //[Required(ErrorMessage = "O RG é obrigatório")]
-        //[DisplayName("RG")]
+        [Required(ErrorMessage = "O RG é obrigatório")]
+        [DisplayName("RG")]
         public string RG { get; set; }
 
-        //[Required(ErrorMessage = "O CPF é obrigatório")]
-        //[DisplayName("CPF")]
+        [Required(ErrorMessage = "O CPF é obrigatório")]
+        [DisplayName("CPF")]
         public string CPF { get; set; }
 
         [StringLength(50)]

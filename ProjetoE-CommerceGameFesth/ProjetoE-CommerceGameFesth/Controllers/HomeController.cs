@@ -272,20 +272,10 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco, string cep)
+        public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco)
         {
             cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
-            if(cadastraEndereco.endereco.Lougradouro != null)
-            {
-                ViewBag.Lougradouro = cadastraEndereco.endereco.Lougradouro.ToString();
-                ViewBag.NomeCidade = cadastraEndereco.endereco.NomeCidade.ToString();
-                ViewBag.NomeUF = cadastraEndereco.endereco.NomeUF.ToString();
-                ViewBag.Bairro = cadastraEndereco.endereco.Bairro.ToString();
-            }
-            else
-            {
-                ViewData["MSG_CPF"] = "CEP inesistente, por favor verifique o cep digitado";
-            }
+
             var CPFexit = _clienteRepository.ObterCpfCliente(cadastraEndereco.cliente.CPF).CPF;
             var EMAILexit = _clienteRepository.ObterEmailCliente(cadastraEndereco.cliente.Email).Email;
             if(!string.IsNullOrEmpty(CPFexit))
