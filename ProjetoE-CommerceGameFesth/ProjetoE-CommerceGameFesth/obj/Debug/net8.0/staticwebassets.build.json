@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oaFt2toIjQII4yST8a96WzSyHoAwNxEgbXY0KP4bmaE=",
+  "Hash": "RBQiIVKsDHxIonmsqfMDobTCsIUEIA/5pJZz/cIpsog=",
   "Source": "ProjetoE-CommerceGameFesth",
   "BasePath": "_content/ProjetoE-CommerceGameFesth",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagens\\adataxpgspectrixd60g.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\Imagens\\Adventure_chica.jpg",
+      "SourceId": "ProjetoE-CommerceGameFesth",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\",
+      "BasePath": "_content/ProjetoE-CommerceGameFesth",
+      "RelativePath": "Imagens/Adventure_chica.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagens\\Adventure_chica.jpg"
     },
     {
       "Identity": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\Imagens\\alloyfpspro.jpg",

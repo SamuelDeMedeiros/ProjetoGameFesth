@@ -177,29 +177,31 @@
             @using (Html.BeginForm("FrontPage", "Home", FormMethod.Get, new { id = "searchForm" }))
             {
                 <div>
-                    <input type="text" id="pesquisa" name="pesquisa"><span>Pesquisa</span>
+                    <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"><span>Pesquisa</span>
                 </div>
 
-                <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+                <input class="form-check-label" type="radio" name="por" value="Por Maior" checked @(ViewBag.Por == "Por Maior" ? "checked" : "")>
                 <span class="form-check-label">Cres</span>
-                <input class="form-check-label" type="radio" name="por" value="Por Menor">
+                <input class="form-check-label" type="radio" name="por" value="Por Menor" @(ViewBag.Por == "Por Menor" ? "checked" : "")>
                 <span class="form-check-label">Descr</span>
                 <select name="campo">
-                    <option value="Nome">Nome</option>
-                    <option value="Valor">Valor</option>
+                    <option value="Nome" >Nome</option>
+                    <option value="Valor" >Valor</option>
                 </select>
 
                 <button type="submit" class="btn btn-primary">Pesquisar</button>
+
+                <script>
+                    // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
+                    $(document).ready(function () {
+                        $('#pesquisa').on('input', function () {
+                            $('#searchForm').submit(); // Envio automático do formulário quando o texto muda
+                        });
+                    });
+                </script>
             }
 
-            <script>
-                // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
-                $(document).ready(function () {
-                    $('#pesquisa').on('input', function () {
-                        $('#searchForm').submit(); // Envio automático do formulário quando o texto muda
-                    });
-                });
-            </script>
+
         </div>
         <div class="row">
             <div class="col-lg-9">

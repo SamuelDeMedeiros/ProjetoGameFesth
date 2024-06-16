@@ -27,16 +27,15 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DataVenda)
-        </dd>
+        </dd>    
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IdCliente)
+           Email
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IdCliente)
-        </dd>
+            @ViewBag.Email
     </dl>
 </div>
 <div>
 
-    <a class="btn btn-info" asp-action="Index">Voltar</a>
+    <a class="btn btn-info" asp-action="FrontPage">Voltar</a>
 </div>

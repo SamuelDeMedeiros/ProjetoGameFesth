@@ -50,6 +50,10 @@ namespace ProjetoE_CommerceGameFesth.Controllers
             {
                 if (pesquisa != null)
                 {
+                    ViewBag.Pesquisa = pesquisa;
+                    ViewBag.Por = por;
+                    ViewBag.Campo = campo;
+
 
                     return View(_produtoRepository.ObterTodosProdutos(por, campo, pesquisa));
 
@@ -150,13 +154,16 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 }
 
                 _cookieCarrinhoCompra.RemoverTodos();
-                return RedirectToAction("confVenda");
+                return RedirectToAction("confVenda", new { id = mdE.NotaFiscal });
             }
             return RedirectToAction("Login");
         }
         public IActionResult confVenda(int id)
         {
-            return View(_clienteRepository.ObterVendaCliente(id));
+            Venda clienteV = _clienteRepository.ObterVendaCliente(id);
+            CadastraEndereco cliente = _clienteRepository.ObterCliente(clienteV.IdCliente);
+            ViewBag.Email = cliente.cliente.Email ;
+            return View(clienteV);
         }
         public IActionResult Detalhes(Int64 Id) 
         {
@@ -253,22 +260,6 @@ namespace ProjetoE_CommerceGameFesth.Controllers
 
         }
 
-        //public IActionResult Login([FromForm] Models.Funcionario funcionario)
-        //{
-        //    Models.Funcionario funcionarioDB = _funcionarioRepository.Login(funcionario.Email, funcionario.Senha);
-
-        //    if (funcionarioDB.Email != null && funcionarioDB.Senha != null)
-        //    {
-        //        _loginfuncionario.Login(funcionarioDB);
-        //        return new RedirectResult(Url.Action(nameof(Painel)));
-        //    }
-        //    else
-        //    {
-        //        ViewData["MSG_E"] = "Funcionario não encontrado, verifique os dados inseridos!";
-        //        return View();
-        //    }
-        //}
-
         public IActionResult PainelCliente()
         {
             ViewBag.IdCliente = _loginCliente.GetCliente().IdCliente;
@@ -314,6 +305,24 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 _clienteRepository.Cadastrar(cadastraEndereco);
                 TempData["MSG_S"] = "Registro salvo com sucesso!";
                 return RedirectToAction(nameof(Cadastrar));
+            }
+            return View();
+        }
+        public IActionResult AtualizarP(string email)
+        {
+            return View(_clienteRepository.ObterClientePorEmail(email));
+        }
+
+        [HttpPost]
+        public IActionResult AtualizarP([FromForm] Cliente cliente)
+        {
+
+            if (ModelState.IsValid)
+            {
+                _clienteRepository.AtualizarP(cliente);
+                _loginCliente.Atualizar(cliente);
+                TempData["MSG_S"] = "Registro atualizado com sucesso!";
+                return RedirectToAction(nameof(PainelCliente));
             }
             return View();
         }

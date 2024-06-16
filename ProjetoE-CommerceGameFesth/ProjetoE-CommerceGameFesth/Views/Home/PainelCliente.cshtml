@@ -108,6 +108,11 @@
                         <button type="submit" class="btn btn-default btn-acao-primario">Meus pedidos</button>
                         <input type="hidden" name="Id" value="@ViewBag.IdCliente"/>
                     }
+                    @using (Html.BeginForm("AtualizarP", "Home", FormMethod.Get))
+                    {
+                        <button type="submit" class="btn btn-default btn-acao-primario">atualizar meu perfil</button>
+                        <input type="hidden" name="email" value="@ViewBag.Email" />
+                    }
                     @*<a href class="animate__animated animate__fadeInLeft">Lista de desejos</a> *@
 
                 </div>

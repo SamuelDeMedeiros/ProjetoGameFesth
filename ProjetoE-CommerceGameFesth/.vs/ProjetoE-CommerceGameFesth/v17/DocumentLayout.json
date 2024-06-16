@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\controllers\\clientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhescli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhescli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\desativadosf.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\desativadosf.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\atualizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\atualizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\controllers\\funcionariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\home\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc 1506\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,21 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Funcionario.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Models\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Funcionario.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Models\\Funcionario.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T01:49:42.514Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -67,80 +54,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProdutoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\ProdutoRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Repository\\ProdutoRepository.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\ProdutoRepository.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Repository\\ProdutoRepository.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAowBcAAABVAAAA",
+              "DocumentIndex": 0,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ClienteController.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T23:00:21.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAjwBoAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T22:56:34.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrontPage.cshtml",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
-              "ViewState": "AQIAAKoAAAAAAAAAAAAwwL4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T22:56:29.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProdutoController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ProdutoController.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ProdutoController.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ProdutoController.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\ProdutoController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBwAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:55:40.332Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAACMBAAAAAAAAAAAswCkBAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T22:54:20.792Z",
+              "WhenOpened": "2024-06-16T18:40:22.825Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAwBMAAABaAAAA",
+              "Title": "DetalhesCli.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T18:40:10.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DesativadosF.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T18:32:09.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Atualizar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T18:31:13.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cadastrar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-16T18:25:09.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FuncionarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\FuncionarioController.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\FuncionarioController.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\FuncionarioController.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Controllers\\FuncionarioController.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAAwLIAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T17:17:12.759Z",
+              "WhenOpened": "2024-06-16T14:31:23.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAACYBAAAAAAAAAAAqwD8BAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T22:54:20.792Z",
               "EditorCaption": ""
             }
           ]

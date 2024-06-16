@@ -371,7 +371,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Tb_vendas where Id_cli=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where NotaFiscal=@id", conexao);
                 cmd.Parameters.AddWithValue("@id", id);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
@@ -379,9 +379,9 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    venda.NotaFiscal = (int)(dr["Nf"]);
-                    venda.ValorTotal = (decimal)(dr["ValorTotal"]);
-                    venda.DataVenda = (DateTime)(dr["Data_"]);
+                    venda.NotaFiscal = (int)(dr["NotaFiscal"]);
+                    venda.ValorTotal = (decimal)(dr["Total"]);
+                    venda.DataVenda = (DateTime)(dr["datacao"]);
 
                 }
                 return venda;
@@ -393,7 +393,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tb_vendas where Id_cli = @id", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where ClienteiD = @id", conexao);
                 cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -405,8 +405,8 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     vendaList.Add(
                         new Venda
                         {
-                            DataVenda = Convert.ToDateTime(dr["Data_"]),
-                            ValorTotal = Convert.ToDecimal(dr["ValorTotal"])
+                            DataVenda = Convert.ToDateTime(dr["datacao"]),
+                            ValorTotal = Convert.ToDecimal(dr["Total"])
                         });
                 }
                 return vendaList;

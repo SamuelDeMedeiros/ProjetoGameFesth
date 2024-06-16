@@ -34,6 +34,11 @@
                 <span asp-validation-for="endereco.CEP" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="endereco.Bairro" class="control-label"></label>
+                <input id="cep" asp-for="endereco.Bairro" class="form-control cep" placeholder="00000-000" />
+                <span asp-validation-for="endereco.Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="endereco.Lougradouro" class="control-label"></label>
                 <input asp-for="endereco.Lougradouro" class="form-control" />
                 <span asp-validation-for="endereco.Lougradouro" class="text-danger"></span>

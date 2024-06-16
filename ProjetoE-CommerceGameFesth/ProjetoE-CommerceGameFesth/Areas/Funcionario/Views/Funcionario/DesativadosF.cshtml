@@ -34,10 +34,6 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.First().DataAdmissao)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Telefone)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Tipo)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Senha)</th>
-
-
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -69,11 +65,6 @@
                         {
                             <td>Comum</td>
                         }
-
-                        <td>@funcionario.Email</td>
-                        <td>@funcionario.Senha</td>
-
-
 
                         <td>
                             <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-area="Funcionario" asp-controller="Funcionario" asp-action="DetalhesFuncDesativado">Detalhes</a>
