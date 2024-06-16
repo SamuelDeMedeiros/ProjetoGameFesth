@@ -317,13 +317,15 @@ namespace ProjetoE_CommerceGameFesth.Repository
             }
         }
 
-        public IEnumerable<Cliente> ObterClienteList()
+        public IEnumerable<Cliente> ObterClienteList(string por, string campo)
         {
             List<Cliente> cliList = new List<Cliente>();
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from vw_ClienteEnd ", conexao);
+                MySqlCommand cmd = new MySqlCommand("call sp_ordenaCliente(@por,@campo); ", conexao);
+                cmd.Parameters.Add("@por", MySqlDbType.VarChar).Value = por;
+                cmd.Parameters.Add("@campo", MySqlDbType.VarChar).Value = campo;
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 
@@ -339,8 +341,6 @@ namespace ProjetoE_CommerceGameFesth.Repository
                             Nascimento = Convert.ToDateTime(dr["Nascimento"]),
                             Sexo = Convert.ToString(dr["Sexo"]),
                             Telefone = (string)(dr["Telefone"]),
-                            Email = Convert.ToString(dr["Email"]),
-                            Senha = Convert.ToString(dr["Senha"]),
                             Situacao = Convert.ToString(dr["Situacao"])
                         });
                 }

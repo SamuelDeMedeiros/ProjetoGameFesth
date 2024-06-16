@@ -12,18 +12,44 @@
 
     <a class="btn btn-info" asp-action="DesativadosF">Funcionarios desativados</a><a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
 </div>
+<div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+    @using (Html.BeginForm("Index", "Funcionario", FormMethod.Get))
+    {
 
+        @*         <div>
+    <input type="text" name="nome"><button type="submit" class="btn btn-primary">Pesquisar</button>
+    </div> *@
+
+    }
+</div>
+
+<div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+    @using (Html.BeginForm("Index", "Funcionario", FormMethod.Get))
+    {
+        <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+        <span class="form-check-label">Cres</span>
+        <input class="form-check-label" type="radio" name="por" value="Por Menor">
+        <span class="form-check-label">Descr</span>
+        <select name="campo">
+            <option value="Id">Id</option>
+            <option value="Nome">Nome</option>
+            <option value="Dataadmissao">Data de admissão</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+    }
+</div>
 
 <div class="table-responsive">
     <table class="table table-bordered">
-         @foreach (Funcionario funcionario in Model)
-         {
-                @if (@funcionario.Situacao == "A" )
-                {
-                    cont++;
-                }
-         }
-         @if (ViewBag.Funci == "V"|| cont ==0 )
+        @foreach (Funcionario funcionario in Model)
+        {
+            @if (@funcionario.Situacao == "A")
+            {
+                cont++;
+            }
+        }
+        @if (ViewBag.Funci == "V" || cont == 0)
         {
             <br />
             <h2>Sem cadastros</h2>
@@ -37,8 +63,7 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.First().DataAdmissao)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Telefone)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Tipo)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Senha)</th>
+
 
 
                     <th scope="col">Ações</th>
@@ -58,7 +83,7 @@
 
                         @if (@funcionario.Tipo != "F")
                         {
-                            @if (@funcionario.IdFuncionario ==1)
+                            @if (@funcionario.IdFuncionario == 1)
                             {
                                 <td>Gerente</td>
                             }
@@ -66,34 +91,29 @@
                             {
                                 <td>Subgerente</td>
                             }
-                            
+
                         }
                         else
                         {
                             <td>Comum</td>
                         }
 
-                        <td>@funcionario.Email</td>
-                        <td>@funcionario.Senha</td>
-
-
-
                         <td>
                             <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-area="Funcionario" asp-controller="Funcionario" asp-action="DetalhesFunc">Detalhes</a>
-@*                              <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-action="Atualizar">Atualizar</a>
+                            @*                              <a class="btn btn-primary" asp-route-id="@funcionario.IdFuncionario" asp-action="Atualizar">Atualizar</a>
 
 
-                            <a class="btn btn-danger" asp-route-id="@funcionario.IdFuncionario" asp-action="Desativar" new { id=funcionario.IdFuncionario },
-                            new { onclick="return confirm('Deseja realmente desativar?')" }>Deletar</a>  *@   
+                    <a class="btn btn-danger" asp-route-id="@funcionario.IdFuncionario" asp-action="Desativar" new { id=funcionario.IdFuncionario },
+                    new { onclick="return confirm('Deseja realmente desativar?')" }>Deletar</a>  *@
                         </td>
 
                     </tr>
                 }
                 else
                 {
-                
+
                 }
-                
+
             }
         </tbody>
     </table>

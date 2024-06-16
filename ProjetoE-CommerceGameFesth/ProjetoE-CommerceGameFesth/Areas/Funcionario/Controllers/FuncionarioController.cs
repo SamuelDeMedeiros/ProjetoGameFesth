@@ -20,28 +20,40 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
             _funcionarioRepository = funcionarioRepository;
             _loginfuncionario = loginfuncionario;
         }
-        public IActionResult Index()
+        public IActionResult Index(string por, string campo, string nome)
         {
-            IEnumerable<Models.Funcionario> funci = _funcionarioRepository.ObterFuncionarioList();
-            if (funci.Any())
-            {
-                ViewBag.Func = "v";
-            }
+
             Models.Funcionario func = _loginfuncionario.GetFuncionario();
             ViewBag.Funcionario = func.IdFuncionario;
-            return View(_funcionarioRepository.ObterFuncionarioList());
+            if (por != null && campo != null)
+            {
+
+                return View(_funcionarioRepository.ObterFuncionarioList(por, campo));
+
+            }
+            else if (nome != null)
+            {
+                nome = nome + "%";
+                return View(_funcionarioRepository.ObterFuncionarioList(por, campo));
+            }
+            else
+            {
+                return View(_funcionarioRepository.ObterFuncionarioList("Por Maior", "Id"));
+            }
+
         }
         public IActionResult DesativadosF()
         {
-            IEnumerable<Models.Funcionario> funci = _funcionarioRepository.ObterFuncionarioList();
+            IEnumerable<Models.Funcionario> funci = _funcionarioRepository.ObterFuncionarioList("Por Maior", "Id");
             if (funci.Any())
             {
                 ViewBag.Func = "v";
             }
             Models.Funcionario func = _loginfuncionario.GetFuncionario();
             ViewBag.Funcionario = func.IdFuncionario;
-            return View(_funcionarioRepository.ObterFuncionarioList());
+            return View(_funcionarioRepository.ObterFuncionarioList("Por Maior", "Id"));
         }
+        
         [HttpGet]
         public IActionResult Cadastrar()
         {

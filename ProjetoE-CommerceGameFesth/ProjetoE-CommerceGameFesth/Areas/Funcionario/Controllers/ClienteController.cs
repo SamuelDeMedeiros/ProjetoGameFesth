@@ -14,29 +14,33 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
         {
             _clienteRepository = clienteRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string por, string campo, string nome)
         {
-            IEnumerable<Cliente> cli = _clienteRepository.ObterClienteList();
-            if (cli.Any())
+            if (por != null && campo != null)
             {
-                ViewBag.Cliente = "v";
+
+                return View(_clienteRepository.ObterClienteList(por, campo));
+
             }
-            return View(_clienteRepository.ObterClienteList());
-        }
-        public IActionResult DetalhesCli(int id)
-        {
-            Cliente cad = _clienteRepository.ObterSituacaoCliente(_clienteRepository.ObterCliente(id).cliente.IdLog);
-            ViewBag.sit = cad.Situacao;
-            return View(_clienteRepository.ObterCliente(id));
+            else if (nome != null)
+            {
+                nome = nome + "%";
+                return View(_clienteRepository.ObterClienteList("Por Maior", "Id"));
+            }
+            else
+            {
+                return View(_clienteRepository.ObterClienteList("Por Maior", "Id"));
+            }
+
         }
         public IActionResult Desativados()
         {
-            IEnumerable<Cliente> cli = _clienteRepository.ObterClienteList();
+            IEnumerable<Cliente> cli = _clienteRepository.ObterClienteList("Por Maior", "Id");
             if (cli.Any())
             {
                 ViewBag.Cliente = "v";
             }
-            return View(_clienteRepository.ObterClienteList());
+            return View(_clienteRepository.ObterClienteList("Por Maior", "Id"));
         }
         public IActionResult DetalhesCliDesativado(int id)
         {

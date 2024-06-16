@@ -44,9 +44,30 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IActionResult FrontPage()
+        public IActionResult FrontPage(string por, string campo, string pesquisa)
         {
-            return View(_produtoRepository.ObterTodosProdutos("Por Maior", "Valor"));
+            if (por != null && campo != null)
+            {
+                if (pesquisa != null)
+                {
+
+                    return View(_produtoRepository.ObterTodosProdutos(por, campo, pesquisa));
+
+                }
+                else
+                {
+                    return View(_produtoRepository.ObterTodosProdutos(por, campo, ""));
+                }
+                
+
+            }
+            
+            else
+            {
+                return View(_produtoRepository.ObterTodosProdutos("Por Maior", "CodBarras", ""));
+            }
+
+
         }
         public IActionResult AdicionarItem(Int64 id)
         {
@@ -264,7 +285,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         public IActionResult LogoutCliente()
         {
             _loginCliente.Logout();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(FrontPage));
         }
         public IActionResult Cadastrar()
         {

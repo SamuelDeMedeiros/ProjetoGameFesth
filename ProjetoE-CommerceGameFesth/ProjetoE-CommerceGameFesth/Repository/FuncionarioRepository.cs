@@ -221,13 +221,15 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 return funcionario;
             }
         }
-        public IEnumerable<Funcionario> ObterFuncionarioList()
+        public IEnumerable<Funcionario> ObterFuncionarioList(string por, string campo)
         {
             List<Funcionario> funcList = new List<Funcionario>();
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from vw_FuncEnd order by Id_func ", conexao);
+                MySqlCommand cmd = new MySqlCommand("call sp_ordenaFuncionario(@por,@campo); ", conexao);
+                cmd.Parameters.Add("@por", MySqlDbType.VarChar).Value = por;
+                cmd.Parameters.Add("@campo", MySqlDbType.VarChar).Value = campo;
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 
@@ -240,15 +242,13 @@ namespace ProjetoE_CommerceGameFesth.Repository
                         {
                             IdFuncionario = Convert.ToInt32(dr["Id_func"]),
                             NomeFuncionario = (string)(dr["Nome_Func"]),
-                            Email = (string)(dr["Email"]),
-                            Senha = (string)(dr["Senha"]),
                             DataAdmissao = (DateTime)(dr["DataAdmissao"]),
                             Telefone = Convert.ToString(dr["Tel"]),
                             Tipo = (string)(dr["Tipo"]),
                             Situacao = (string)(dr["Situacao"])
 
                         });
-                    
+
                 }
                 return funcList;
             }

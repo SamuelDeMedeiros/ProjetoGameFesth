@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Produtos";
     int count = 0;
-    string[] campos = ["", ""];
+
 }
 
 
@@ -11,31 +11,40 @@
 <a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
 <div>
 
-    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
-        @using (Html.BeginForm("Index", "Produto", FormMethod.Get))
-        {
-
-            <input type="text" name="nome" )><button type="submit" class="btn btn-primary">Pesquisar</button>
-            
-        }
-    </div>
 
     <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
-        @using (Html.BeginForm("Index", "Produto", FormMethod.Get))
-        {
-            <input type="hidden" name="por" value="Por Maior")>
-            <input type="hidden" name="campo" value="Nome")>
-            <button type="submit" class="btn btn-primary">Por nome</button>
-        }
+
+        @using (Html.BeginForm("Index", "produto", FormMethod.Get, new { id = "pesquisar" }))
+{
+    <div>
+        <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"><span>Pesquisa</span>
     </div>
-    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
-        @using (Html.BeginForm("Index", "Produto", FormMethod.Get))
-        {
-            <input type="hidden" name="por" value="Por Maior")>
-            <input type="hidden" name="campo" value="Valor")>
-            <button type="submit" class="btn btn-primary">Por valor</button>
-        }
+
+    <input class="form-check-label" type="radio" name="por" value="Por Maior" @(ViewBag.Por == "Por Maior" ? "checked" : "")>
+    <span class="form-check-label">Cres</span>
+    <input class="form-check-label" type="radio" name="por" value="Por Menor" @(ViewBag.Por == "Por Menor" ? "checked" : "")>
+    <span class="form-check-label">Descr</span>
+            <select name="campo">
+    <option value="Nome" >Nome</option>
+    <option value="Valor" >Valor</option>
+    <option value="CodBarras">Codigo de Barras</option>
+</select>
+
+
+
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+}
+
+        <script>
+            // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
+            $(document).ready(function () {
+                $('#pesquisa').on('input', function () {
+                    $('#pesquisar').submit(); // Envio automático do formulário quando o texto muda
+                });
+            });
+        </script>
     </div>
+
 </div>
 <div class="table-responsive">
     <table class="table table-bordered">

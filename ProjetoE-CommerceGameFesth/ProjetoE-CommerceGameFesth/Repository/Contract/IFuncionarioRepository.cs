@@ -14,7 +14,7 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         CadastraEndereco ObterFuncionario(int Id);
         List<Funcionario> ObterFuncionarioPorEmail(string email);
         Funcionario ObterEmailFuncionario(string email);
-        IEnumerable<Funcionario> ObterFuncionarioList();
+        IEnumerable<Funcionario> ObterFuncionarioList(string por, string campo);
         Funcionario ObterSituacaoFuncionario(int id);
         void Ativar(int id);
         void Desativar(int id);

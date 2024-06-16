@@ -12,35 +12,37 @@ namespace ProjetoE_CommerceGameFesth.Repository
         {
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
         }
-        public IEnumerable<Produto> ObterTodosProdutos(string por, string campo)
+        public IEnumerable<Produto> ObterTodosProdutos(string por, string campo, string pesquisa)
         {
             List<Produto> Produtolist = new List<Produto>();
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto(@por);", conexao);
+                MySqlCommand cmd = new MySqlCommand("call sp_ordenaProduto(@por,@campo,@pesquisa);", conexao);
                 cmd.Parameters.Add("@por", MySqlDbType.VarChar).Value = por;
-                
+                cmd.Parameters.Add("@campo", MySqlDbType.VarChar).Value = campo;
+                cmd.Parameters.Add("@pesquisa", MySqlDbType.VarChar).Value = pesquisa;
+
                 MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 
                 sd.Fill(dt);
-                    conexao.Close();
+                conexao.Close();
 
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        Produtolist.Add(
-                            new Produto
-                            {
-                                Codbarras = Convert.ToInt64(dr["CodBarras"]),
-                                NomeProduto = (string)dr["Nome"],
-                                Valor = Convert.ToString(dr["Valor"]),
-                                QuantidadeEstoque = Convert.ToInt32(dr["QtdEst"]),
-                                ImagemProduto = (string)dr["ImagemProduto"],
-                                Marca = (string)dr["Marca"],
-                            });
-                    }
-                    return Produtolist;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    Produtolist.Add(
+                        new Produto
+                        {
+                            Codbarras = Convert.ToInt64(dr["CodBarras"]),
+                            NomeProduto = (string)dr["Nome"],
+                            Valor = Convert.ToString(dr["Valor"]),
+                            QuantidadeEstoque = Convert.ToInt32(dr["QtdEst"]),
+                            ImagemProduto = (string)dr["ImagemProduto"],
+                            Marca = (string)dr["Marca"],
+                        });
+                }
+                return Produtolist;
             }
         }
         public void Adicionar(Produto produto)

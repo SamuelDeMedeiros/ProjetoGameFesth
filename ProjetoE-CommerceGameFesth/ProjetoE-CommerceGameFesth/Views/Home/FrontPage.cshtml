@@ -172,7 +172,35 @@
         <header id="moreContent" class="mb-4">
             <h3>Novos produtos</h3>
         </header>
+        <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
 
+            @using (Html.BeginForm("FrontPage", "Home", FormMethod.Get, new { id = "searchForm" }))
+            {
+                <div>
+                    <input type="text" id="pesquisa" name="pesquisa"><span>Pesquisa</span>
+                </div>
+
+                <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+                <span class="form-check-label">Cres</span>
+                <input class="form-check-label" type="radio" name="por" value="Por Menor">
+                <span class="form-check-label">Descr</span>
+                <select name="campo">
+                    <option value="Nome">Nome</option>
+                    <option value="Valor">Valor</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            }
+
+            <script>
+                // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
+                $(document).ready(function () {
+                    $('#pesquisa').on('input', function () {
+                        $('#searchForm').submit(); // Envio automático do formulário quando o texto muda
+                    });
+                });
+            </script>
+        </div>
         <div class="row">
             <div class="col-lg-9">
                 <div class="row justify-content-center mb-3">

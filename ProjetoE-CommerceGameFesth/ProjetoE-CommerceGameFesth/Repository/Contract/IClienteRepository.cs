@@ -18,7 +18,7 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         Cliente ObterClientePorEmail(string email);
         Cliente ObterCpfCliente(string CPF);
         Cliente ObterEmailCliente(string email);
-        IEnumerable<Cliente> ObterClienteList();
+        IEnumerable<Cliente> ObterClienteList(string por, string campo);
         Cliente ObterSituacaoCliente(int id);
         Venda ObterVendaCliente(int id);
         public IEnumerable<Venda> ObterVendaList(int id);
