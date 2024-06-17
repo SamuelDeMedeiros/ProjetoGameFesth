@@ -17,167 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoE_CommerceGameFesth
 build_property.RootNamespace = ProjetoE_CommerceGameFesth
-build_property.ProjectDir = C:\Users\Administrador\Desktop\tcc 1506\ProjetoGameFesth\ProjetoE-CommerceGameFesth\ProjetoE-CommerceGameFesth\
+build_property.ProjectDir = C:\Users\Samuel\Desktop\ProjetoE-CommerceGameFesth - Copia\ProjetoE-CommerceGameFesth\ProjetoE-CommerceGameFesth\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Administrador\Desktop\tcc 1506\ProjetoGameFesth\ProjetoE-CommerceGameFesth\ProjetoE-CommerceGameFesth
+build_property.MSBuildProjectDirectory = C:\Users\Samuel\Desktop\ProjetoE-CommerceGameFesth - Copia\ProjetoE-CommerceGameFesth\ProjetoE-CommerceGameFesth
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Cadastrar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcQ2xpZW50ZVxDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Desativados.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Desativados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcQ2xpZW50ZVxEZXNhdGl2YWRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/DetalhesCli.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/DetalhesCli.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcQ2xpZW50ZVxEZXRhbGhlc0NsaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/DetalhesCliDesativado.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/DetalhesCliDesativado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcQ2xpZW50ZVxEZXRhbGhlc0NsaURlc2F0aXZhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Index.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Atualizar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Atualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cQXR1YWxpemFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Cadastrar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cQ2FkYXN0cmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DesativadosF.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DesativadosF.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cRGVzYXRpdmFkb3NGLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DetalhesFunc.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DetalhesFunc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cRGV0YWxoZXNGdW5jLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DetalhesFuncDesativado.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/DetalhesFuncDesativado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cRGV0YWxoZXNGdW5jRGVzYXRpdmFkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Index.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Funcionario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcRnVuY2lvbmFyaW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/AtualizarP.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/AtualizarP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcSG9tZVxBdHVhbGl6YXJQLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/Index.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/Painel.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Home/Painel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcSG9tZVxQYWluZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Atualizar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Atualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcUHJvZHV0b1xBdHVhbGl6YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Cadastrar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcUHJvZHV0b1xDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/DetalhesProd.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/DetalhesProd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcUHJvZHV0b1xEZXRhbGhlc1Byb2QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Index.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Produto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Shared/_Layout.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Venda/DetalhesVenda.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Venda/DetalhesVenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcVmVuZGFcRGV0YWxoZXNWZW5kYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Venda/Index.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/Venda/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcVmVuZGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/_ViewImports.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/_ViewStart.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Areas/Funcionario/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRnVuY2lvbmFyaW9cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/AtualizarP.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/AtualizarP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdHVhbGl6YXJQLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Cadastrar.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Cadastrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWRhc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Carrinho.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Carrinho.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJyaW5oby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/confVenda.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/confVenda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb25mVmVuZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Detalhes.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Detalhes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhbGhlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/DetalhesVendas.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/DetalhesVendas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhbGhlc1ZlbmRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/FrontPage.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/FrontPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGcm9udFBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Login.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/PainelCliente.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/PainelCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWluZWxDbGllbnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/sobre.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/sobre.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzb2JyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/VerificaEmail.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Home/VerificaEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZmljYUVtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/Error.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/_ViewImports.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/_ViewStart.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrador/Desktop/tcc 1506/ProjetoGameFesth/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/_Layout.cshtml]
+[C:/Users/Samuel/Desktop/ProjetoE-CommerceGameFesth - Copia/ProjetoE-CommerceGameFesth/ProjetoE-CommerceGameFesth/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vlqcq30k15

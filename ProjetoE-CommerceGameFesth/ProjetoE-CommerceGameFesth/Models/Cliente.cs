@@ -27,7 +27,6 @@ namespace ProjetoE_CommerceGameFesth.Models
         public string Sexo { get; set; }
 
         [Phone]
-        [StringLength(11)]
         [Required(ErrorMessage = "O número de telefone é obrigatório")]
         [DisplayName("Número de telefone")]
         public string Telefone { get; set; }
@@ -62,14 +61,12 @@ namespace ProjetoE_CommerceGameFesth.Models
         [DisplayName("Email")]
         public string Email { get; set; }
 
-        [StringLength(8, MinimumLength = 8, ErrorMessage = "A senha deve ter 8 caracteres")]
+        [StringLength(20, MinimumLength = 4, ErrorMessage = "A senha deve ter de 4 a 20 caracteres")]
         [Required(ErrorMessage = "A senha é obrigatória")]
         [DataType(DataType.Password)]
         [DisplayName("Senha")]
         public string Senha { get; set; }
 
-        [StringLength(8, MinimumLength = 8, ErrorMessage = "A senha deve ter 8 caracteres")]
-        [DataType(DataType.Password)]
         [Required(ErrorMessage = "A confirmação da senha é obrigatória")]
         [Compare("Senha", ErrorMessage = "As senhas tem que ser iguais")]
         [DisplayName("Confirmar a senha")]
@@ -79,6 +76,7 @@ namespace ProjetoE_CommerceGameFesth.Models
         //[DisplayName("Situação")]
         public string? Situacao { get; set; }
         public string? tipo_login { get; set; }
+        public string? TipoPessoa { get; set; }
         public string Codigo {  get; set; }
 
     }

@@ -286,39 +286,91 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         [HttpPost]
         public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco)
         {
-            if(cadastraEndereco.endereco.CEP != null) 
+            bool isValid = false;
+            if (cadastraEndereco.endereco.CEP != null)
             {
                 cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
             }
-            
+            else
+            {
+                ViewBag.CEP = "CEP invalido, por favor verifique o CEP digitado";
+                isValid = true;
+            }
 
             var CPFexit = _clienteRepository.ObterCpfCliente(cadastraEndereco.cliente.CPF).CPF;
+            var CNPJexist = _clienteRepository.ObterCNPJCliente(cadastraEndereco.cliente.CNPJ).CNPJ;
             var EMAILexit = _clienteRepository.ObterEmailCliente(cadastraEndereco.cliente.Email).Email;
             int Ano = cadastraEndereco.cliente.Nascimento.Year;
             int Anohj = DateTime.Now.Year;
             int AnoLimite = 1920;
+            if (cadastraEndereco.cliente.TipoPessoa == "PF")
+            {
+                if (!string.IsNullOrEmpty(CPFexit))
+                {
+                    ViewBag.CPF = "CPF já cadastrado, por favor verifique o CPF digitado";
+                    isValid = true;
+                }
+                if (string.IsNullOrEmpty(cadastraEndereco.cliente.CPF) || cadastraEndereco.cliente.CPF.ToString().Length != 14)
+                {
+                    ViewBag.CPF = "CPF invalido, por favor verifique o CPF digitado";
+                    isValid = true;
+                }
+                if (string.IsNullOrEmpty(cadastraEndereco.cliente.RG) || cadastraEndereco.cliente.RG.ToString().Length != 12)
+                {
+                    ViewBag.RG = "RG invalido, por favor verifique o RG digitado";
+                    isValid = true;
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(CNPJexist))
+                {
+                    ViewBag.CNPJ = "CNPJ já cadastrado, por favor verifique o CNPJ digitado";
+                    isValid = true;
+                }
+                if (string.IsNullOrEmpty(cadastraEndereco.cliente.CNPJ) || cadastraEndereco.cliente.CNPJ.ToString().Length != 18)
+                {
+                    ViewBag.CNPJ = "CNPJ invalido, por favor verifique o CNPJ digitado";
+                    isValid = true;
+                }
+            }
+            if (!string.IsNullOrEmpty(EMAILexit))
+            {
+                ViewBag.Email = "Email já cadastrado, por favor verifique o email digitado";
+                isValid = true;
+            }
+
+            if (string.IsNullOrEmpty(cadastraEndereco.cliente.Email))
+            {
+                ViewBag.Email = "Email invalido, por favor verifique o email digitado";
+                isValid = true;
+            }
+            if (string.IsNullOrEmpty(cadastraEndereco.cliente.Telefone) || cadastraEndereco.cliente.Telefone.ToString().Length != 15)
+            {
+                ViewBag.Telefone = "Telefone invalido, por favor verifique o telefone digitado";
+                isValid = true;
+            }
+            if (string.IsNullOrEmpty(cadastraEndereco.endereco.NumLougradouro))
+            {
+                ViewBag.Num = "Número invalido, por favor verifique o número digitado";
+                isValid = true;
+            }
             if (Ano < AnoLimite || Ano > Anohj)
             {
                 ViewData["MSG_Data"] = "Data invalida";
-                return View();
+                isValid = true;
             }
-            if(!string.IsNullOrEmpty(CPFexit))
+
+            if (isValid)
             {
-                ViewData["MSG_CPF"] = "CPF já cadastrado, por favor verifique o cpf digitado";
                 return View();
             }
-            else if (!string.IsNullOrEmpty(EMAILexit))
-            {
-                ViewData["MSG_Email"] = "Email já cadastrado, por favor verifique o email digitado";
-                return View();
-            }
-            else if(ModelState.IsValid)
+            else
             {
                 _clienteRepository.Cadastrar(cadastraEndereco);
                 TempData["MSG_S"] = "Registro salvo com sucesso!";
                 return RedirectToAction(nameof(Cadastrar));
             }
-            return View();
         }
         public IActionResult AtualizarP(string email)
         {

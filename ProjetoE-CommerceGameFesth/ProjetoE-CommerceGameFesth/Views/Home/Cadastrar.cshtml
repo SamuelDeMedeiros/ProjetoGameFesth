@@ -105,11 +105,11 @@
             }
             <div class="form-group">
                 <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipoPessoa" value="PF" id="radioPF" checked>
+                    <input class="form-check-input" type="radio" asp-for="cliente.TipoPessoa" id="radioPF" value="PF" checked>
                     <span class="form-check-label">Pessoa Física</span>
                 </label>
                 <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="tipoPessoa" value="PJ" id="radioPJ">
+                    <input class="form-check-input" type="radio" asp-for="cliente.TipoPessoa" id="radioPJ" value="PJ">
                     <span class="form-check-label">Pessoa Jurídica</span>
                 </label>
             </div>
@@ -206,8 +206,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro">Número</label>
-                <input type="text" value="@ViewBag.NumLougradouro" class="form-control">
-                <span asp-validation-for="endereco.NumLougradouro"></span>
+                <input type="" asp-for="endereco.NumLougradouro" class="form-control">
+                @if (ViewBag.Num != null)
+                {
+                    <span class="alert">@ViewBag.Num</span>
+                }
             </div>
             <div class="form-row">
                 <div class="form-group">

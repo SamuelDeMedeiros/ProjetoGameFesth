@@ -181,7 +181,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 conexao.Open();
                 if (cadastraEndereco.cliente.CNPJ == null)
                 {
-                    cmd = new MySqlCommand("CALL InserirPF(@Nome, @Nascimento, @Sexo, @Telefone, @Rg, @CPF, @CEP, @Logradouro, @Num, " +
+                    cmd = new MySqlCommand("CALL InserirPF(@Nome, @Nascimento, @Sexo, @Telefone, @Rg, @CPF, @CEP, @Logradouro, @Bairro, @Num, " +
                     "@NomeCid, @NomeUF, @Email, @Senha);", conexao);
 
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.NomeCliente;
@@ -192,6 +192,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.CPF.Replace(".", "").Replace("-", "");
                     cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.CEP.Replace("-", "");
                     cmd.Parameters.Add("@Logradouro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Lougradouro;
+                    cmd.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Bairro;
                     cmd.Parameters.Add("@Num", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NumLougradouro;
                     cmd.Parameters.Add("@NomeCid", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeCidade;
                     cmd.Parameters.Add("@NomeUF", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeUF;
@@ -201,7 +202,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 else
                 {
                     cmd = new MySqlCommand("CALL InserirPJ(@Nome, @Nascimento, @Sexo, @Telefone, @Cnpj, @IE, @NomeFantasia, @RazaoSocial, @CEP," +
-                        " @Logradouro, @Num, @NomeCid, @NomeUF, @Email, @Senha);", conexao);
+                        " @Logradouro, @Bairro, @Num, @NomeCid, @NomeUF, @Email, @Senha);", conexao);
 
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.NomeCliente;
                     cmd.Parameters.Add("@Nascimento", MySqlDbType.DateTime).Value = cadastraEndereco.cliente.Nascimento.ToString("yyyy/MM/dd");
@@ -213,6 +214,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cmd.Parameters.Add("@RazaoSocial", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Razaosocial;
                     cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.CEP.Replace("-", "");
                     cmd.Parameters.Add("@Logradouro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Lougradouro;
+                    cmd.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Bairro;
                     cmd.Parameters.Add("@Num", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NumLougradouro;
                     cmd.Parameters.Add("@NomeCid", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeCidade;
                     cmd.Parameters.Add("@NomeUF", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeUF;
@@ -304,7 +306,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cadastraEndereco.cliente.Nascimento = (DateTime)(dr["Nascimento"]);
                     cadastraEndereco.cliente.Sexo = (string)(dr["Sexo"]);
                     cadastraEndereco.cliente.Telefone = (string)(dr["Telefone"]);
-                    cadastraEndereco.endereco.NumLougradouro = (int)(dr["Num"]);
+                    cadastraEndereco.endereco.NumLougradouro = (string)(dr["Num"]);
                     cadastraEndereco.endereco.CEP = Convert.ToString(dr["CEP"]);
                     cadastraEndereco.endereco.Lougradouro = (string)(dr["Logradouro"]);
                     cadastraEndereco.endereco.NomeUF = (string)(dr["NomeUf"]);

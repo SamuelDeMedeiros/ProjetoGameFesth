@@ -218,7 +218,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cadastraEndereco.funcionario.DataAdmissao = (DateTime)(dr["DataAdmissao"]);
                     cadastraEndereco.funcionario.Telefone = Convert.ToString(dr["Tel"]);
                     cadastraEndereco.funcionario.Tipo = (string)(dr["Tipo"]);
-                    cadastraEndereco.endereco.NumLougradouro = Convert.ToInt32(dr["num"]);
+                    cadastraEndereco.endereco.NumLougradouro = Convert.ToString(dr["num"]);
                     cadastraEndereco.endereco.CEP = Convert.ToString(dr["Cep_Func"]);
                     cadastraEndereco.endereco.Lougradouro = (string)dr["Logradouro"];
                     cadastraEndereco.endereco.NomeUF = (string)dr["NomeUf"];
