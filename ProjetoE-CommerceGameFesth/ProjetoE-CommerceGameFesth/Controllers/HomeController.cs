@@ -286,10 +286,22 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         [HttpPost]
         public IActionResult Cadastrar([FromForm] CadastraEndereco cadastraEndereco)
         {
-            cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
+            if(cadastraEndereco.endereco.CEP != null) 
+            {
+                cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
+            }
+            
 
             var CPFexit = _clienteRepository.ObterCpfCliente(cadastraEndereco.cliente.CPF).CPF;
             var EMAILexit = _clienteRepository.ObterEmailCliente(cadastraEndereco.cliente.Email).Email;
+            int Ano = cadastraEndereco.cliente.Nascimento.Year;
+            int Anohj = DateTime.Now.Year;
+            int AnoLimite = 1920;
+            if (Ano < AnoLimite || Ano > Anohj)
+            {
+                ViewData["MSG_Data"] = "Data invalida";
+                return View();
+            }
             if(!string.IsNullOrEmpty(CPFexit))
             {
                 ViewData["MSG_CPF"] = "CPF já cadastrado, por favor verifique o cpf digitado";

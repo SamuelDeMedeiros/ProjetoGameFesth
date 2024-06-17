@@ -103,6 +103,33 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 conexao.Close();
             }
         }
+        public void Promover(int id)
+        {
+            string Tipo = FuncionarioTipoConstant.Gerente;
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("update TB_FUNCIONARIO set Tipo=@tipo where Id_func=@id", conexao);
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+                cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
+
+        public void Rebaixar(int id)
+        {
+            string Tipo = FuncionarioTipoConstant.Comum;
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("update TB_FUNCIONARIO set Tipo=@tipo where Id_func=@id", conexao);
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+                cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
+                cmd.ExecuteNonQuery();
+                conexao.Close();
+            }
+        }
         public void Cadastrar(CadastraEndereco cadastra)
         {
             string Tipo = FuncionarioTipoConstant.Comum;

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RBQiIVKsDHxIonmsqfMDobTCsIUEIA/5pJZz/cIpsog=",
+  "Hash": "jDdt4Lkjfvke4vHgyu/Jd4eAK84h92NrvrnecBnhpYU=",
   "Source": "ProjetoE-CommerceGameFesth",
   "BasePath": "_content/ProjetoE-CommerceGameFesth",
   "Mode": "Default",
@@ -186,6 +186,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagens\\adataxpgspectrixd60g.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\Imagens\\Adventure_bonnie_full_body_request_by_joltgametravel-d9hib8u.jpg",
+      "SourceId": "ProjetoE-CommerceGameFesth",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\",
+      "BasePath": "_content/ProjetoE-CommerceGameFesth",
+      "RelativePath": "Imagens/Adventure_bonnie_full_body_request_by_joltgametravel-d9hib8u.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagens\\Adventure_bonnie_full_body_request_by_joltgametravel-d9hib8u.jpg"
     },
     {
       "Identity": "C:\\Users\\Administrador\\Desktop\\tcc 1506\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\Imagens\\Adventure_chica.jpg",

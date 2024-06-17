@@ -91,6 +91,18 @@
             {
                 <p class="alert alert-success">@TempData["MSG_S"]</p>
             }
+            @if (ViewData["MSG_Data"] != null)
+            {
+                <p class="alert alert-danger">@ViewData["MSG_Data"]</p>
+            }            
+            @if (ViewData["MSG_Email"] != null)
+            {
+                <p class="alert alert-danger">@ViewData["MSG_Email"]</p>
+            }            
+            @if (TempData["MSG_CEP"] != null)
+            {
+                <p class="alert alert-danger">@TempData["MSG_CEP"]</p>
+            }
             <div class="form-group">
                 <label class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="tipoPessoa" value="PF" id="radioPF" checked>
@@ -107,6 +119,9 @@
                     <input type="text" asp-for="cliente.NomeCliente" class="form-control">
                     <span asp-validation-for="cliente.NomeCliente"></span>
                 </div>
+
+                    
+
                 <div class="form-group">
                     <label asp-for="cliente.Nascimento">Data de nascimento</label>
                     <input id="data" type="text" asp-for="cliente.Nascimento" class="form-control">
@@ -187,10 +202,7 @@
             <div class="form-group">
                 <label asp-for="endereco.CEP">CEP</label>
                 <input id="cep" type="text" asp-for="endereco.CEP" class="form-control">
-                @if (TempData["MSG_CEP"] != null)
-                {
-                    <p class="alert alert-success">@TempData["MSG_CEP"]</p>
-                }
+
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro">Número</label>

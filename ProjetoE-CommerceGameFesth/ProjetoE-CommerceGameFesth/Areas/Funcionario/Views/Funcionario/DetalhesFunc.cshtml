@@ -88,25 +88,52 @@
             {
                 @using (Html.BeginForm("Desativar", "Funcionario", FormMethod.Post))
                 {
+                    <div>
                     <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.IdFuncionario)>
                     <button type="submit" class="btn btn-danger" new { onclick="return confirm('Deseja realmente desativar?')" }>desativar</button>
+                    </div>
                 }
             }
             else
             {
                 @using (Html.BeginForm("Ativar", "Funcionario", FormMethod.Post))
                 {
-
+                <div>
                     <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.IdFuncionario)>
                     <button type="submit" class="btn btn-primary" new { onclick="return confirm('Deseja realmente ativar?')" }>ativar</button>
+                    </div>
                 }
             }
-
+            @if(ViewBag.Id == 1)
+            {
+                @if (ViewBag.cargo1 == "Subgerente")
+                {
+                    @using (Html.BeginForm("Rebaixar", "Funcionario", FormMethod.Post))
+                    {
+                        <div>
+                        <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.IdFuncionario)>
+                        <button type="submit" class="btn btn-danger" new { onclick="return confirm('Deseja realmente rebaixar?')" }>rebaixar</button>
+                        </div>
+                    }
+                }
+                else
+                {
+                    @using (Html.BeginForm("Promover", "Funcionario", FormMethod.Post))
+                    {
+                        <div>
+                        <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.IdFuncionario)>
+                        <button type="submit" class="btn btn-primary" new { onclick="return confirm('Deseja realmente promover?')" }>Promover</button>
+                        </div>
+                    }
+                }
+            }
+            
             @using (Html.BeginForm("Atualizar", "Funcionario", FormMethod.Get))
             {
-
+                <div>
                 <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.id_Login)>
                 <button type="submit" class="btn btn-info">Atualizar</button>
+                </div>
             }
         }
         

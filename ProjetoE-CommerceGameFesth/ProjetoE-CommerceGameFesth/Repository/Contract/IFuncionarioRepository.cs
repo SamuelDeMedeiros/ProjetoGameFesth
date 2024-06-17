@@ -18,5 +18,7 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         Funcionario ObterSituacaoFuncionario(int id);
         void Ativar(int id);
         void Desativar(int id);
+        void Promover(int id);
+        void Rebaixar(int id);
     }
 }

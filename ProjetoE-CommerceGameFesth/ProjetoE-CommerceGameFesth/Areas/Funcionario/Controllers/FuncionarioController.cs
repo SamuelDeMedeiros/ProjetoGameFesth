@@ -68,6 +68,8 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
 
             Models.CadastraEndereco cadastra = _funcionarioRepository.ObterFuncionario(id);
             Models.Funcionario funcionario = _loginfuncionario.GetFuncionario();
+            ViewBag.Id = funcionario.IdFuncionario;
+            
             if (funcionario.IdFuncionario == 1)
             {
                 ViewBag.Cargo = "Gerente";
@@ -105,6 +107,18 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
         public IActionResult Desativar(int id)
         {
             _funcionarioRepository.Desativar(id);
+            return RedirectToAction(nameof(Index));
+
+        }
+        public IActionResult Promover(int id)
+        {
+            _funcionarioRepository.Promover(id);
+            return RedirectToAction(nameof(Index));
+        }
+        [ValidateHttpRefer]
+        public IActionResult Rebaixar(int id)
+        {
+            _funcionarioRepository.Rebaixar(id);
             return RedirectToAction(nameof(Index));
 
         }
