@@ -24,7 +24,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("CALL updFuncEnd(@nome,@id, @cep,@log, @num, @nc,  @nuf, @email, @senha, @tel,@tipo);", conexao);
+                MySqlCommand cmd = new MySqlCommand("CALL updFuncEnd(@id,@nome, @cep,@log, @num, @nc,  @nuf, @email, @senha, @tel,@tipo);", conexao);
 
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cadastra.funcionario.NomeFuncionario;
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cadastra.funcionario.IdFuncionario;

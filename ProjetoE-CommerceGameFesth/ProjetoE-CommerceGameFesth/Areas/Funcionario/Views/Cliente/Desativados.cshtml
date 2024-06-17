@@ -36,8 +36,6 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Nascimento)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Sexo)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Telefone)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.First().Senha)</th>
                     @* <th scope="col">@Html.DisplayNameFor(model => model.First().Situacao)</th> *@
 
                     <th scope="col">Ações</th>
@@ -55,10 +53,6 @@
                         <td>@cliente.Nascimento.ToString("yyyy/MM/dd")</td>
                         <td>@cliente.Sexo</td>
                         <td>@cliente.Telefone</td>
-                        <td>@cliente.Email</td>
-                        <td>@cliente.Senha</td>
-
-
                         <td>
                             <a class="btn btn-primary" asp-route-id="@cliente.IdCliente" asp-area="Funcionario" asp-controller="Cliente" asp-action="DetalhesCliDesativado">Detalhes</a>
                         </td>

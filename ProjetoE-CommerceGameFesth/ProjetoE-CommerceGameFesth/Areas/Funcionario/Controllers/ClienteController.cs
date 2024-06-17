@@ -33,6 +33,12 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
             }
 
         }
+        public IActionResult DetalhesCli(int id)
+        {
+            Cliente cad = _clienteRepository.ObterSituacaoCliente(_clienteRepository.ObterCliente(id).cliente.IdLog);
+            ViewBag.sit = cad.Situacao;
+            return View(_clienteRepository.ObterCliente(id));
+        }
         public IActionResult Desativados()
         {
             IEnumerable<Cliente> cli = _clienteRepository.ObterClienteList("Por Maior", "Id");
