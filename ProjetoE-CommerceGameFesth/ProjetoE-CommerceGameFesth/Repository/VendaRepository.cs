@@ -39,7 +39,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Tb_Vendas", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from tb_vendas", conexao);
                 MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 
@@ -53,35 +53,44 @@ namespace ProjetoE_CommerceGameFesth.Repository
                         {
                             NotaFiscal = (int)(dr["Nf"]),
                             ValorTotal = (decimal)(dr["ValorTotal"]),
-                            DataVenda = (DateTime)(dr["Data_"]),
-                            IdCliente = Convert.ToInt32(dr["Id_cli"])
+                            DataVenda = (DateTime)(dr["data_"]),
+                            IdCliente = Convert.ToInt32(dr["id_cli"])
                         });
                 }
                 return Vendalist;
             }
         }
-        public Venda ObterVenda(int Id)
+        public DescricaoVenda ObterVenda(int Id)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Tb_Vendas where Nf=@NotaFiscal", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where NotaFiscal=@NotaFiscal", conexao);
                 cmd.Parameters.Add("@NotaFiscal", MySqlDbType.Int64).Value = Id;
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
 
-                Venda venda = new Venda();
+                DescricaoVenda desc = new DescricaoVenda();
+                desc.venda = new Venda();
+                desc.produto = new Produto();
+                desc.item = new Item();
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 while (dr.Read())
                 {
-                    venda.NotaFiscal = (int)(dr["Nf"]);
-                    venda.ValorTotal = (decimal)(dr["ValorTotal"]);
-                    venda.DataVenda = (DateTime)(dr["Data_"]);
-                    venda.IdCliente = Convert.ToInt32(dr["Id_cli"]);
+                    desc.venda.NotaFiscal = (int)(dr["NotaFiscal"]);
+                    desc.venda.ValorTotal = (decimal)(dr["Total"]);
+                    desc.venda.DataVenda = (DateTime)(dr["datacao"]);
+                    desc.venda.IdCliente = Convert.ToInt32(dr["ClienteiD"]);
+                    desc.produto.NomeProduto = Convert.ToString(dr["Produto"]);
+                    desc.produto.Marca = Convert.ToString(dr["Marca"]);
+                    desc.produto.Descricao = Convert.ToString(dr["Descricao"]);
+                    desc.produto.ImagemProduto = Convert.ToString(dr["ImagemProduto"]);
+                    desc.produto.Valor = Convert.ToString(dr["Valor"]);
+                    desc.produto.QuantidadeEstoque = Convert.ToUInt16(dr["QtdEst"]);
 
                 }
-                return venda;
+                return desc;
             }
         }
         public Int64 ObtemNF()
@@ -90,7 +99,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
             {
                 Int64 NF = 0;
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Nf from Tb_Vendas ORDER BY Nf DESC LIMIT 1", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT NotaFiscal from vw_detaVenda ORDER BY NotaFiscal DESC LIMIT 1", conexao);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
@@ -99,7 +108,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 
                 while (dr.Read())
                 {
-                    NF = Convert.ToInt64(dr["Nf"]);
+                    NF = Convert.ToInt64(dr["NotaFiscal"]);
                 }
                 NF++;
                 return NF;

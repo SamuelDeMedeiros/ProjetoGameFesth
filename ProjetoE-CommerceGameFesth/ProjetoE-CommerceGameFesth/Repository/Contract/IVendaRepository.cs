@@ -7,7 +7,7 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         void buscaIdVenda(Venda venda);
         void Cadastrar(Venda venda, Item item);
         IEnumerable<Venda> ObterTodasCompras();
-        Venda ObterVenda(int Id);
+        DescricaoVenda ObterVenda(int Id);
         public Int64 ObtemNF();
     }
 }

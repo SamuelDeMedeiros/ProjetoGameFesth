@@ -116,7 +116,8 @@ CREATE TABLE Tb_Cidade(
 
 CREATE TABLE Tb_Endereco( 
 	CEP numeric(8) primary key not null, 
-    Logradouro varchar(50) not null, 
+    Logradouro varchar(50) not null,
+    Bairro varchar(50) not null,
     IdUf int, 
     IdCid int, 
     foreign key (IdUf) references Tb_Estado(IdUf), 
@@ -197,6 +198,7 @@ LEFT JOIN
     Tb_PJ tpj ON tc.Id_cliente = tpj.Id_Cli;
   
   -- detalhes da venda
+  drop VIEW vw_detaVenda;
     CREATE OR REPLACE VIEW vw_detaVenda AS
 SELECT 
     tv.NF AS NotaFiscal,
@@ -208,6 +210,7 @@ SELECT
     tp.Descricao AS Descricao,
     tp.ImagemProduto AS ImagemProduto,
     tp.Valor AS Valor,
+    tp.CodBarras AS CodBarras,
     tp.QtdEst AS QtdEst
 		FROM 
     tb_vendas tv
@@ -215,7 +218,8 @@ SELECT
     tb_itemvenda tiv ON tiv.NF = tv.NF
 	JOIN 
     tb_produto tp ON tiv.CodBarras = tp.CodBarras;
-  select * from vw_detaVenda where ClienteiD = 3;
+  select * from vw_detaVenda;
+  select * from tb_vendas;
   
 -- Insere produto
 DELIMITER $$
@@ -336,6 +340,7 @@ CREATE PROCEDURE InserirFuncionarios(
  IN vTipo char(1),
  IN vCep char(8),
  IN vLogradouro VARCHAR(50), 
+ IN vBairro VARCHAR(50), 
  IN vNum INT,
  IN vNomeCid VARCHAR(200),
  IN vNomeUf CHAR(2),
@@ -366,8 +371,8 @@ BEGIN
 				insert into tb_Cidade(NomeCid) value(vNomeCid);
                 SET vCidadeId = (SELECT idCid from tb_Cidade where NomeCid = vNomeCid);
 			END IF;
-		insert into tb_Endereco(Cep, logradouro, IdUf, idCid)
-						values(vCep, vLogradouro, vEstadoId, vCidadeId);
+		insert into tb_Endereco(Cep, logradouro, IdUf, idCid, Bairro)
+						values(vCep, vLogradouro, vEstadoId, vCidadeId, vBairro);
 		END IF;
 	INSERT INTO Tb_Funcionario (Nome_Func, DataAdmissao, Tel, Tipo, Situacao, num, id_log, Cep_Func) 
 		values(vNome, CURRENT_Date(), vTel, vTipo,vSituacao, vNum, vId_log, vCep);
@@ -377,19 +382,19 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL InserirFuncionarios('Betin', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus', 18, 'Osasco', 'SP', 'joao@email.com', '123123');
-CALL InserirFuncionarios('Lulu', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus', 18, 'Osasco', 'SP', 'luisidebel@gmail.com', 'qwe123');
-CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua Exemplo1', 123, 'Cidade Exemplo', 'SP', 'joaoe@email.com', '123123');
-CALL InserirFuncionarios('Silveira', 987654321, 'F', '87654888', 'Rua Teste', 456, 'Cidade Teste', 'RJ', 'silveira@email.com', '456456');
-CALL InserirFuncionarios('Santos', 987654321, 'G', '12345698', 'Rua Exemplo2', 789, 'Cidade asd', 'SP', 'santos@email.com', '789789');
-CALL InserirFuncionarios('Pereira', 123456789, 'F', '12345678', 'Rua Teste', 321, 'Cidade as', 'RJ', 'pereira@email.com', '321321');
-CALL InserirFuncionarios('Costa', 987654321, 'G', '87654321', 'Rua Exemplo3', 654, 'Cidade sdf', 'SP', 'costa@email.com', '654654');
-CALL InserirFuncionarios('Ferreira', 123456789, 'F', '12345678', 'Rua Teste', 987, 'Cidade fdgh', 'RJ', 'ferreira@email.com', '987987');
-CALL InserirFuncionarios('Almeida', 987654321, 'G', '87654321', 'Rua Exemplo4', 147, 'Cidade ghjk', 'SP', 'almeida@email.com', '147147');
-CALL InserirFuncionarios('Souza', 123456789, 'F', '12345678', 'Rua Teste', 258, 'fghj Teste', 'RJ', 'souza@email.com', '258258');
-CALL InserirFuncionarios('Gomes', 987654321, 'G', '87654321', 'Rua Exemplo5', 369, 'ghjf Exemplo', 'SP', 'gomes@email.com', '369369');
-CALL InserirFuncionarios('Carvalho', 123456789, 'F', '12345678', 'Rua Teste', 159, 'gfhj Teste', 'RJ', 'carvalho@email.com', '159159');
-CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua A', 123, 'Cidade Alpha', 'SP', 'Cavalotatuado6262@gmail.com', '123123');
+CALL InserirFuncionarios('Betin', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus','Pirituba', 18, 'Osasco', 'SP', 'joao@email.com', '123123');
+CALL InserirFuncionarios('Lulu', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus','Pirituba', 18, 'Osasco', 'SP', 'luisidebel@gmail.com', 'qwe123');
+CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua Exemplo1','Pirituba', 123, 'Cidade Exemplo', 'SP', 'joaoe@email.com', '123123');
+CALL InserirFuncionarios('Silveira', 987654321, 'F', '87654888', 'Rua Teste','Pirituba', 456, 'Cidade Teste', 'RJ', 'silveira@email.com', '456456');
+CALL InserirFuncionarios('Santos', 987654321, 'G', '12345698', 'Rua Exemplo2','Pirituba', 789, 'Cidade asd', 'SP', 'santos@email.com', '789789');
+CALL InserirFuncionarios('Pereira', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 321, 'Cidade as', 'RJ', 'pereira@email.com', '321321');
+CALL InserirFuncionarios('Costa', 987654321, 'G', '87654321', 'Rua Exemplo3','Pirituba', 654, 'Cidade sdf', 'SP', 'costa@email.com', '654654');
+CALL InserirFuncionarios('Ferreira', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 987, 'Cidade fdgh', 'RJ', 'ferreira@email.com', '987987');
+CALL InserirFuncionarios('Almeida', 987654321, 'G', '87654321', 'Rua Exemplo4','Pirituba', 147, 'Cidade ghjk', 'SP', 'almeida@email.com', '147147');
+CALL InserirFuncionarios('Souza', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 258, 'fghj Teste', 'RJ', 'souza@email.com', '258258');
+CALL InserirFuncionarios('Gomes', 987654321, 'G', '87654321', 'Rua Exemplo5','Pirituba', 369, 'ghjf Exemplo', 'SP', 'gomes@email.com', '369369');
+CALL InserirFuncionarios('Carvalho', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 159, 'gfhj Teste', 'RJ', 'carvalho@email.com', '159159');
+CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua A','Pirituba', 123, 'Cidade Alpha', 'SP', 'Cavalotatuado6262@gmail.com', '123123');
 
 DELIMITER $$
 
@@ -398,11 +403,11 @@ CREATE PROCEDURE InserirPF(
  IN vNascimento date,
  IN vSexo char(1),
  IN vTelefone varchar(14),
- IN vSituacao char(1),
  IN vRg int,
  In vCpf bigint,
  IN vCep char(8),
  IN vLogradouro VARCHAR(50), 
+ IN vBairro VARCHAR(50), 
  IN vNum INT,
  IN vNomeCid VARCHAR(200),
  IN vNomeUf CHAR(2),
@@ -410,19 +415,20 @@ CREATE PROCEDURE InserirPF(
  IN vSenha varchar(200))
 BEGIN
     DECLARE vId_estado, vId_Cidade, vId_log, vId_Cliente INT;
-     DECLARE vTIPO_LOGIN CHAR(1);
-    
+     DECLARE vTIPO_LOGIN, vSituacao CHAR(1);
+     
 
     -- Recupera Id_estado e Id_Cidade com base nos nomes de estado e cidade fornecidos
     SET vId_estado = (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF);
     SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
-	SET vId_Cliente = (SELECT Id_cliente from tb_cliente where id_log = vId_log);
 	SET vId_log = (SELECT id_login from tb_login where email = vEmail);
+	SET vId_Cliente = (SELECT Id_cliente from tb_cliente where id_log = vId_log);
     SET vTIPO_LOGIN = 'C';
+    SET vSituacao = 'A';
 
 	
     -- Verifica se o cliente e o endereço já existem
-    IF EXISTS (SELECT Id_Cliente FROM Tb_Cliente WHERE Id_Cliente = vId_Cliente) AND EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) THEN
+    IF EXISTS (SELECT Id_Cliente FROM Tb_Cliente WHERE Id_Cliente = vId_Cliente) AND EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) AND EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep And IdCli = vId_Cliente) THEN
         SELECT 'Cadastro já existe!!';
 	 ELSE
 		IF NOT EXISTS(SELECT id_login from tb_login where Email = vEmail) THEN
@@ -445,35 +451,35 @@ BEGIN
 		END IF;
 			-- Insere um novo endereço se ele não existir
 		IF NOT EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) THEN
-				IF NOT EXISTS (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF) THEN
+			IF NOT EXISTS (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF) THEN
 					INSERT INTO Tb_Estado(NomeUf)
 					VALUES (vNomeUF);
 					SET vId_estado = (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF);
-				 END IF;
-					IF NOT EXISTS (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid) THEN
-							INSERT INTO Tb_Cidade(NomeCid)
-							VALUES (vNomeCid);
-							SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
-				END IF;
-				INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid)
-				VALUES (vCep, vLogradouro, vId_estado, vId_Cidade);
-				SELECT 'Endereço cadastrado!!';
 			END IF;
+			IF NOT EXISTS (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid) THEN
+				INSERT INTO Tb_Cidade(NomeCid)
+				VALUES (vNomeCid);
+				SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
+			END IF;
+				INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid, Bairro)
+				VALUES (vCep, vLogradouro, vId_estado, vId_Cidade, vBairro);
+				SELECT 'Endereço cadastrado!!';
+		END IF;
 			-- Vincula o cliente ao endereço
-		IF NOT EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep And IdCli = vId_Cliente) THEN
-			INSERT INTO Tb_EndCliente(Cep, IdCli, num)
-			VALUES (vCep, vId_Cliente, vNum);
-			SELECT 'Endereço cadastrado na Tb_EndCliente!!';
+            IF NOT EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep And IdCli = vId_Cliente) THEN
+				INSERT INTO Tb_EndCliente(Cep, IdCli, num)
+				VALUES (vCep, vId_Cliente, vNum);
+				SELECT 'Endereço cadastrado na Tb_EndCliente!!';
 			END IF;
     END IF;
 END $$
 
 DELIMITER ;
 
-CALL InserirPF('sasa', '1993-04-02', 'M', '1234543899','A', 123359, 12345678909, '12344319', 'Rua ABC', 128, 'Cidade do rk', 'RJ', 's11a@example.com', 'sen2ha');
-CALL InserirPF('susu', '1992-01-03', 'F', '1234543898','A', 123358, 12345678908,'12344318', 'Rua bcd', 1322, 'Ouro gtoso', 'MG', 's411a@example.com', 'sen2ha');
-CALL InserirPF('Roberto', '1992-01-03', 'M', '1234543898','A', 123358, 12345678908,'12344318', 'Rua bcd', 1322, 'Ouro gtoso', 'MG', 'Rbpeixotojr@gmail.com', 'senha123');
+CALL InserirPF('Samuel', '2000-10-02', 'M', '1234543899', 123359, 12345678909, '05317020', 'Av.Manuel bandeira', 'Villa Leopoldina', 211, 'São Paulo', 'SP', 'Samuel@gmail.com', '123123');
+
 -- drop procedure InserirPJ;
+ 
 DELIMITER $$
 
 CREATE PROCEDURE InserirPJ(
@@ -486,7 +492,8 @@ CREATE PROCEDURE InserirPJ(
  IN vNomeFantasia varchar (200),
  IN vRazaoSocial varchar (200),
  IN vCep char(8),
- IN vLogradouro VARCHAR(50), 
+ IN vLogradouro VARCHAR(50),
+ IN vBairro VARCHAR(50),
  IN vNum INT,
  IN vNomeCid VARCHAR(200),
  IN vNomeUf CHAR(2),
@@ -499,65 +506,64 @@ BEGIN
     -- Recupera Id_estado e Id_Cidade com base nos nomes de estado e cidade fornecidos
     SET vId_estado = (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF);
     SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
+    SET vId_log = (SELECT id_login from tb_login where email = vEmail);
 	SET vId_Cliente = (SELECT Id_cliente from tb_cliente where id_log = vId_log);
-	SET vId_log = (SELECT id_login from tb_login where email = vEmail);
+	
     SET vTIPO_LOGIN = 'C';
     SET vSituacao = 'A';
 
 	
     -- Verifica se o cliente e o endereço já existem
-    IF EXISTS (SELECT Id_Cliente FROM Tb_Cliente WHERE Id_Cliente = vId_Cliente) AND EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) THEN
-        SELECT 'Cadastro já existe!!';
-	 ELSE
-		IF NOT EXISTS(SELECT id_login from tb_login where Email = vEmail) THEN
+    IF EXISTS (SELECT Id_Cliente FROM Tb_Cliente WHERE Id_Cliente = vId_Cliente) AND EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) AND  EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep AND IdCli = vId_Cliente) THEN
+		SELECT 'Cadastro já existe!!';
+    ELSE    
+		IF NOT EXISTS(SELECT id_login FROM tb_login WHERE Email = vEmail) THEN
 			INSERT INTO tb_login (email, senha, tipo_login) VALUES (vEmail, vSenha, vTipo_login);
-			 SET vId_log = (SELECT id_login from tb_login where email = vEmail);
-		else 
-			SELECT "email já existe!!";
+			SET vId_log = (SELECT id_login FROM tb_login WHERE email = vEmail);
+        END IF;
+        
+        IF NOT EXISTS(SELECT id_log FROM tb_cliente WHERE id_log = vId_log) THEN    
+			INSERT INTO tb_cliente(Nome, Situacao, Nascimento, Sexo, Telefone, id_log) 
+			VALUES (vNome, vSituacao, vNascimento, vSexo, vTelefone, vId_log);
+        SET vId_Cliente = LAST_INSERT_ID();
+        END IF;
+        
+        IF NOT EXISTS(SELECT Cnpj FROM Tb_PJ WHERE Cnpj = vCnpj) THEN    
+			INSERT INTO Tb_PJ(Cnpj, IE, NomeFantasia, RazaoSocial, Id_Cli)
+			VALUES (vCnpj, vIE, vNomeFantasia, vRazaoSocial, vId_Cliente);
 		END IF;
-			-- Insere um novo cliente se ele não existir
-		IF NOT EXISTS (SELECT Id_Cliente FROM Tb_Cliente WHERE id_log = vId_log) THEN
-			INSERT INTO tb_cliente(Nome,Situacao, Nascimento, Sexo, Telefone, id_log) 
-			values(vNome, vSituacao,vNascimento, vSexo, vTelefone, vId_log);  -- Supondo valores padrão para campos ausentes
-				SET vId_Cliente = LAST_INSERT_ID();
-				-- Insere na Tb_PJ se o CNPJ não existir
-				IF NOT EXISTS (SELECT Cnpj FROM Tb_PJ WHERE Cnpj = vCnpj) THEN
-					INSERT INTO Tb_PJ(Cnpj, IE, NomeFantasia, RazaoSocial ,Id_Cli)
-					VALUES (vCnpj, vIE, vNomeFantasia, vRazaoSocial,vId_Cliente);
-				END IF;
-				SELECT 'Cliente cadastrado!!';
-		END IF;
-			-- Insere um novo endereço se ele não existir
-		IF NOT EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) THEN
-				IF NOT EXISTS (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF) THEN
-					INSERT INTO Tb_Estado(NomeUf)
-					VALUES (vNomeUF);
-					SET vId_estado = (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF);
-				 END IF;
-				IF NOT EXISTS (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid) THEN
-							INSERT INTO Tb_Cidade(NomeCid)
-							VALUES (vNomeCid);
-							SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
-				END IF;
-				INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid)
-				VALUES (vCep, vLogradouro, vId_estado, vId_Cidade);
-				SELECT 'Endereço cadastrado!!';
+        IF NOT EXISTS (SELECT Cep FROM Tb_Endereco WHERE Cep = vCep) THEN
+			IF NOT EXISTS (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF) THEN
+				INSERT INTO Tb_Estado(NomeUf)
+				VALUES (vNomeUF);
+				
+				SET vId_estado = (SELECT IdUf FROM Tb_Estado WHERE NomeUf = vNomeUF);
 			END IF;
-			-- Vincula o cliente ao endereço
-		IF NOT EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep And IdCli = vId_Cliente) THEN
+			
+			IF NOT EXISTS (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid) THEN
+				INSERT INTO Tb_Cidade(NomeCid)
+				VALUES (vNomeCid);
+				
+				SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
+			END IF;
+			
+			INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid, Bairro)
+			VALUES (vCep, vLogradouro, vId_estado, vId_Cidade, vBairro);
+			
+            -- Vincula o cliente ao endereço
+		END IF;
+        IF NOT EXISTS (SELECT cep FROM Tb_EndCliente WHERE Cep = vCep AND IdCli = vId_Cliente) THEN
 			INSERT INTO Tb_EndCliente(Cep, IdCli, num)
 			VALUES (vCep, vId_Cliente, vNum);
+			
 			SELECT 'Endereço cadastrado na Tb_EndCliente!!';
-			END IF;
-    END IF;
+		END IF;
+    
+	END IF;
 END $$
-
 DELIMITER ;
 
-CALL InserirPJ('Nome', '1990-01-01', 'M', '1234567890', 12345678901234, '123456', 'Nome Fantasia', 'Razao Social', '12345678', 'Rua Exemplo', 123, 'Cidade Exemplo', 'UF', 'exemplo@email.com', 'senha');
-
 -- procedimentos vendas e trigger
-
 
 DELIMITER //
 
@@ -649,13 +655,8 @@ END //
     
 DELIMITER ;
 -- drop procedure RegistrarVenda;
-select * from tb_produto;
-call RegistrarVenda (10011,'s411a@example.com', 1, 111232333448);
-call RegistrarVenda (10011,'s411a@example.com', 2, 111232333446);
-call RegistrarVenda (10012,'exemplo@email.com', 1, 111232333501);
+
 -- Filtros
-
-
 
 DELIMITER //
 
@@ -907,7 +908,7 @@ SELECT ID_FUNC FROM tb_funcionario WHERE ID_FUNC = 2;
  SELECT * FROM TB_FUNCIONARIO;
 
 CALL updFuncEnd(
-    1,                        -- ID do funcionário
+    3,                        -- ID do funcionário
 	'lo',   				  -- Nome do funcionário
     22446687,                  -- CEP do endereço do funcionário
     'Rua d emerda',           -- Logradouro do endereço do funcionário
