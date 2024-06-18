@@ -60,13 +60,14 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 return Vendalist;
             }
         }
-        public DescricaoVenda ObterVenda(int Id)
+        public DescricaoVenda ObterVenda(int nf, Int64 cod)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where NotaFiscal=@NotaFiscal", conexao);
-                cmd.Parameters.Add("@NotaFiscal", MySqlDbType.Int64).Value = Id;
+                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where NotaFiscal=@NotaFiscal and CodBarras = @CodBarras", conexao);
+                cmd.Parameters.Add("@NotaFiscal", MySqlDbType.Int64).Value = nf;
+                cmd.Parameters.Add("@CodBarras", MySqlDbType.Int64).Value = cod;
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
@@ -112,6 +113,56 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 }
                 NF++;
                 return NF;
+            }
+        }
+        public int ObterCodCli(int nf)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                int cod = 0;
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT Id_cli from tb_vendas where nf = @nf", conexao);
+                cmd.Parameters.Add("@nf", MySqlDbType.Int64).Value = nf;
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dr.Read())
+                {
+                    cod = Convert.ToInt32(dr["Id_cli"]);
+                }
+                
+                return cod;
+            }
+        }
+        public IEnumerable<Produto> ObterCodBarras(int nf)
+        {
+            List<Produto> produto = new List<Produto>();
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from vw_detaVenda where NotaFiscal = @nf", conexao);
+                cmd.Parameters.Add("@nf", MySqlDbType.Int64).Value = nf;
+                MySqlDataAdapter sd = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                    sd.Fill(dt);
+                    conexao.Close();
+
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                    produto.Add(
+                            new Produto
+                            {
+                                Codbarras = Convert.ToInt64(dr["CodBarras"]),
+                                NomeProduto = (string)(dr["Produto"])
+                                
+                            });
+                    }
+                    return produto;
+               
             }
         }
     }

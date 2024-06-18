@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoE_CommerceGameFesth.Models;
 using ProjetoE_CommerceGameFesth.Repository.Contract;
+using System.Collections.Generic;
 
 namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
 {
@@ -24,10 +25,24 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
         }
         public IActionResult DetalhesVenda(int id)
         {
-            DescricaoVenda desc = _vendaRepository.ObterVenda(id);
+            ViewBag.NotaFiscal = id;
+            int idC = 0;
+            idC = _vendaRepository.ObterCodCli(id);
+            CadastraEndereco cadastra = _clienteRepository.ObterCliente(idC);
+            ViewBag.Email = cadastra.cliente.Email;
+            ViewBag.Nome = cadastra.cliente.NomeCliente;
+            IEnumerable<Produto> listCod = _vendaRepository.ObterCodBarras(id);
+
+            return View(listCod);
+        }
+        public IActionResult DetalhesProduto(Int64 id, int nf)
+        {
+            
+            DescricaoVenda desc = _vendaRepository.ObterVenda(nf, id);
             CadastraEndereco cadastra = _clienteRepository.ObterCliente(desc.venda.IdCliente);
             ViewBag.Email = cadastra.cliente.Email;
             ViewBag.Nome = cadastra.cliente.NomeCliente;
+            
 
             return View(desc);
         }

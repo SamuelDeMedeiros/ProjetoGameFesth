@@ -198,7 +198,7 @@ LEFT JOIN
     Tb_PJ tpj ON tc.Id_cliente = tpj.Id_Cli;
   
   -- detalhes da venda
-  drop VIEW vw_detaVenda;
+  -- drop VIEW vw_detaVenda;
     CREATE OR REPLACE VIEW vw_detaVenda AS
 SELECT 
     tv.NF AS NotaFiscal,
@@ -907,19 +907,7 @@ DELIMITER ;
 SELECT ID_FUNC FROM tb_funcionario WHERE ID_FUNC = 2;
  SELECT * FROM TB_FUNCIONARIO;
 
-CALL updFuncEnd(
-    3,                        -- ID do funcionário
-	'lo',   				  -- Nome do funcionário
-    22446687,                  -- CEP do endereço do funcionário
-    'Rua d emerda',           -- Logradouro do endereço do funcionário
-    123,                      -- Número do endereço do funcionário
-    ' taro',          -- Nome da cidade do endereço do funcionário
-    'SP',                       -- UF (Unidade Federativa) do endereço do funcionário
-    'luisidebel@gmail.com',        -- Email do funcionário
-    'senha123',                 -- Senha do funcionário
-    119796012340,                 -- Telefone do funcionário
-    'G'                         -- Tipo do funcionário (por exemplo, 'A' para Administrativo)
-);
+
 
 desc tb_estado;
 select * from Tb_Endereco;
@@ -959,6 +947,7 @@ DELIMITER ;*/
 select * from vw_cliCad;
 select * from vw_ClienteEnd;
 select * from vw_FuncEnd order by Id_func;
+  select * from vw_detaVenda;
 
 desc tb_login;
 desc tb_cliente;
