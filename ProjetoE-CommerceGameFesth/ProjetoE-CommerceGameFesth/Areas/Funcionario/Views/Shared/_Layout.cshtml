@@ -30,7 +30,7 @@
             display: flex;
             flex-direction: column;
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f0f2f5;
             color: #333;
         }
 
@@ -77,10 +77,12 @@
 
         .btn-primary {
             transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+
         }
 
         .btn-primary:hover {
             background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
         }
 
@@ -165,7 +167,8 @@
             flex: 1;
             padding: 20px;
             margin-left: 240px; /* 220px (sidebar width) + 20px (padding) */
-            margin-right: 20px; 
+            margin-right: 20px;
+            margin-top: 20px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -175,14 +178,17 @@
             .main-content h1 {
                 font-size: 2rem;
                 margin-bottom: 20px;
+
             }
 
             .main-content .card {
                 margin-bottom: 20px;
                 margin-right:20px;
+
                 border: none;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                
                 
             }
 
@@ -262,7 +268,7 @@
                 @if (_funcionario.GetFuncionario() != null && _funcionario.GetFuncionario().Tipo == FuncionarioTipoConstant.Gerente)
                 {
                     <li class="nav-item">
-                        <a class="btn btn-default btn-acao-primario" asp-controller="Funcionario" asp-action="Index">
+                        <a class="btn btn-acao-primario" asp-controller="Funcionario" asp-action="Index">
                             <span data-feather="users"></span>
                             Funcionarios
                         </a>

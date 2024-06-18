@@ -17,7 +17,7 @@
         @using (Html.BeginForm("Index", "produto", FormMethod.Get, new { id = "pesquisar" }))
         {
             <div>
-                <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"><span>Pesquisa</span>
+                <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"  ><span>Pesquisa</span>
             </div>
 
             <input class="form-check-label" type="radio" name="por" value="Por Maior" checked @(ViewBag.Por == "Por Maior" ? "checked" : "")>

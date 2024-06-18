@@ -94,11 +94,11 @@
             @if (ViewData["MSG_Data"] != null)
             {
                 <p class="alert alert-danger">@ViewData["MSG_Data"]</p>
-            }            
+            }
             @if (ViewData["MSG_Email"] != null)
             {
                 <p class="alert alert-danger">@ViewData["MSG_Email"]</p>
-            }            
+            }
             @if (TempData["MSG_CEP"] != null)
             {
                 <p class="alert alert-danger">@TempData["MSG_CEP"]</p>
@@ -120,7 +120,7 @@
                     <span asp-validation-for="cliente.NomeCliente"></span>
                 </div>
 
-                    
+
 
                 <div class="form-group">
                     <label asp-for="cliente.Nascimento">Data de nascimento</label>
@@ -169,7 +169,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="cliente.IE">IE</label>
-                    <input type="text" asp-for="cliente.IE" class="form-control">
+                    <input id="ie" type="text" asp-for="cliente.IE" class="form-control">
                     <span asp-validation-for="cliente.IE"></span>
                 </div>
                 <div class="form-group">
@@ -206,7 +206,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro">Número</label>
-                <input type="" asp-for="endereco.NumLougradouro" class="form-control">
+                <input type="number" asp-for="endereco.NumLougradouro" class="form-control">
                 @if (ViewBag.Num != null)
                 {
                     <span class="alert">@ViewBag.Num</span>
@@ -255,8 +255,8 @@
             document.getElementById('radioPF').dispatchEvent(new Event('change'));
         </script>
     }
-    
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script> 
+            crossorigin="anonymous"></script>
 </body>
 </html>

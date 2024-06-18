@@ -17,17 +17,20 @@
             width: 100%;
         }
 
-        .container {
+        .containeri {
             height: 100%;
             width: 100%;
-            align-items:center;
+            display: flex;
+            justify-content: center; /* centraliza horizontalmente */
+            align-items: center; /* centraliza verticalmente */
         }
 
+
         .card {
-            width: 90%;
+            width: calc(100% - 80px); /* ou a largura desejada */
             max-width: 500px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(240, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -59,7 +62,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="containeri">
         <div class="card" id="welcomeCard">
             <img src="/Imagens/logoamefesthdeitadafundobranco.png" alt="Logo da Empresa">
             <h1>BEM VINDO(A)</h1>

@@ -44,7 +44,7 @@ CREATE TABLE Tb_Cliente(
 
 CREATE TABLE Tb_Vendas( 
     Nf int not null primary key, 
-    ValorTotal decimal (6,2) not null, 
+    ValorTotal decimal (8,2) not null, 
     Data_ DateTime not null, 
     Id_cli int not null, 
     foreign key (Id_cli) references Tb_Cliente(Id_cliente) 
@@ -211,7 +211,8 @@ SELECT
     tp.ImagemProduto AS ImagemProduto,
     tp.Valor AS Valor,
     tp.CodBarras AS CodBarras,
-    tp.QtdEst AS QtdEst
+    tp.QtdEst AS QtdEst,
+    tiv.Qtd AS Qtd
 		FROM 
     tb_vendas tv
     JOIN 

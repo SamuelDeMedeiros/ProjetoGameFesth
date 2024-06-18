@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<ProjetoE_CommerceGameFesth.Models.Venda>
+
+@{
     ViewData["Title"] = "PainelCliente";
 }
 
@@ -66,7 +68,8 @@
                     border-radius: 2px;
                 }
 
-            .content .info {
+            .content .info,
+            .content .pedidos {
                 margin-bottom: 20px;
                 background-color: #fff;
                 padding: 20px;
@@ -93,6 +96,20 @@
         .alert {
             border-radius: 50px;
         }
+
+        .pedidos {
+            display: none;
+        }
+
+        .pedido-item {
+            display: block;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+            .pedido-item dt {
+                font-weight: 600;
+            }
     </style>
 </head>
 <body>
@@ -102,31 +119,39 @@
             <div class="row">
                 <div class="col-md-3 sidebar">
                     <h3>Minha conta</h3>
-                    <a href class="active animate__animated animate__fadeInLeft">Informação da conta</a>
-                    @using (Html.BeginForm("DetalhesVendas", "Home", FormMethod.Post))
-                    {
-                        <button type="submit" class="btn btn-default btn-acao-primario">Meus pedidos</button>
-                        <input type="hidden" name="Id" value="@ViewBag.IdCliente"/>
-                    }
-                    @using (Html.BeginForm("AtualizarP", "Home", FormMethod.Get))
-                    {
-                        <button type="submit" class="btn btn-default btn-acao-primario">atualizar meu perfil</button>
-                        <input type="hidden" name="email" value="@ViewBag.Email" />
-                    }
-                    @*<a href class="animate__animated animate__fadeInLeft">Lista de desejos</a> *@
-
+                    <a href="#" class="active animate__animated animate__fadeInLeft" id="infoContaLink">Informação da conta</a>
+                    <a href="#" class="animate__animated animate__fadeInLeft" id="meusPedidosLink">Meus pedidos</a>
                 </div>
                 <div class="col-md-9 content">
-                    <h2 class="animate__animated animate__fadeInRight">Informações da conta</h2>
-                    <div class="info animate__animated animate__fadeInRight animate__delay-1s">
+                    <div class="info animate__animated animate__fadeInRight">
+                        <h2>Informações da conta</h2>
                         <p>Seja bem-vindo(a), <span>@ViewBag.Nome</span></p>
                         <p>E-mail: @ViewBag.Email</p>
                         <p>Nascimento: @ViewBag.Nascimento</p>
                         <p>Sexo: @ViewBag.Sexo</p>
                         <p>Telefone: @ViewBag.Telefone</p>
-                        <a href>editar</a> | <a href>mudar senha</a>
+                        <a href="#">editar</a> | <a href="#">mudar senha</a>
                     </div>
 
+                    <div class="pedidos animate__animated animate__fadeInRight">
+                        <h2>Meus pedidos</h2>
+                        @if (Model != null && Model.Any())
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <dl class="pedido-item">
+                                    <dt>@Html.DisplayNameFor(model => model.ValorTotal)</dt>
+                                    <dd>@Html.DisplayFor(modelItem => item.ValorTotal)</dd>
+                                    <dt>@Html.DisplayNameFor(model => model.DataVenda)</dt>
+                                    <dd>@Html.DisplayFor(modelItem => item.DataVenda)</dd>
+                                </dl>
+                            }
+                        }
+                        else
+                        {
+                            <p>Você não tem pedidos.</p>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,5 +159,24 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#infoContaLink').click(function (e) {
+                e.preventDefault();
+                $('.info').show();
+                $('.pedidos').hide();
+                $('#infoContaLink').addClass('active');
+                $('#meusPedidosLink').removeClass('active');
+            });
+
+            $('#meusPedidosLink').click(function (e) {
+                e.preventDefault();
+                $('.info').hide();
+                $('.pedidos').show();
+                $('#meusPedidosLink').addClass('active');
+                $('#infoContaLink').removeClass('active');
+            });
+        });
+    </script>
 </body>
 </html>

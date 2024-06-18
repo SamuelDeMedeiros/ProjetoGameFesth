@@ -74,18 +74,78 @@
             border: 1px solid #146c54;
         }
 
+
+
+    .button1 {
+        position: relative;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid #708090;
+        background-color: #708090;
+        overflow: hidden;
+    }
+
+    .button1, .button__icon, .button__text {
+        transition: all 0.3s;
+    }
+
+        .button1 .button__text {
+            transform: translateX(22px);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .button1 .button__icon {
+            position: absolute;
+            transform: translateX(109px);
+            height: 100%;
+            width: 39px;
+            background-color: #708090;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button1 .svg {
+            width: 20px;
+            fill: #fff;
+        }
+
+        .button1:hover {
+            background: #708090;
+        }
+
+            .button1:hover .button__text {
+                color: transparent;
+            }
+
+            .button1:hover .button__icon {
+                width: 148px;
+                transform: translateX(0);
+            }
+
+        .button1:active .button__icon {
+            background-color: #708090;
+        }
+
+        .button1:active {
+            border: 1px solid #708090;
+        }
+
     /* Estilos para zoom nas imagens */
     .hover-zoom img {
         transition: transform 0.3s ease, filter 0.3s ease;
+        max-width: 100%;
+        height: auto;
     }
 
     .hover-zoom:hover img {
         transform: scale(1.1);
         filter: brightness(1.2);
     }
-
-
-
 
     .slider {
         background: white;
@@ -154,12 +214,81 @@
         margin-left: calc(50% - 50vw); /* Centralizar */
         margin-right: calc(50% - 50vw); /* Centralizar */
     }
+
+    /* Estilos de pesquisa */
+    .search-form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .search-form input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .search-form select, .search-form input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .search-form button {
+            background-color: #209978;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .search-form button:hover {
+                background-color: #17795E;
+                color: white;
+            }
+
+
+    /* Estilos para a imagem do produto */
+    .product-card img {
+        width: 100%;
+        height: 200px; /* Definindo uma altura fixa para as imagens */
+        object-fit: cover; /* Para garantir que a imagem cubra a área definida sem distorção */
+    }
+
+    /* Estilos para a mensagem de produto não encontrado */
+    .no-products {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+        .no-products h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .no-products p {
+            font-size: 18px;
+            color: #666;
+        }
 </style>
+
 <!-- Jumbotron -->
 <header class="fundo d-flex align-items-center">
     <div class="container text-center text-white overlay d-flex align-items-center justify-content-center">
         <div>
-            <h1>Os melhores produtos  <br />das melhores marcas</h1>
+            <h1>Os melhores produtos <br />das melhores marcas</h1>
             <p>Deixe os deuses com inveja!</p>
             <div>
                 <button type="button" class="btn btn-outline-light me-2" onclick="scrollToDiv()">Veja mais</button>
@@ -167,96 +296,127 @@
         </div>
     </div>
 </header>
+
 <section>
     <div class="container my-5">
         <header id="moreContent" class="mb-4">
-            <h3>Novos produtos</h3>
+            <h3>Os Melhores produtos</h3>
         </header>
-        <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
 
-            @using (Html.BeginForm("FrontPage", "Home", FormMethod.Get, new { id = "searchForm" }))
+        <!-- Search Form -->
+        <div class="mb-4">
+            @using (Html.BeginForm("FrontPage", "Home", FormMethod.Get, new { id = "pesquisar" }))
             {
-                <div>
-                    <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"><span>Pesquisa</span>
+                <div class="search-form">
+                    <input type="text" id="pesquisa" name="pesquisa" placeholder="Pesquisar produtos...">
+                    <span>Ordenar por:</span>
+                    <label>
+                        <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+                        Crescente
+                    </label>
+                    <label>
+                        <input class="form-check-label" type="radio" name="por" value="Por Menor">
+                        Decrescente
+                    </label>
+                    <select name="campo">
+                        <option value="Nome">Nome</option>
+                        <option value="Valor">Valor</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+
+                    <script>
+                        // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
+                        $(document).ready(function () {
+                            $('#pesquisa').on('input', function () {
+                                $('#pesquisar').submit(); // Envio automático do formulário quando o texto muda
+                            });
+                        });
+                    </script>
+
                 </div>
-
-                <input class="form-check-label" type="radio" name="por" value="Por Maior" checked @(ViewBag.Por == "Por Maior" ? "checked" : "")>
-                <span class="form-check-label">Cres</span>
-                <input class="form-check-label" type="radio" name="por" value="Por Menor" @(ViewBag.Por == "Por Menor" ? "checked" : "")>
-                <span class="form-check-label">Descr</span>
-                <select name="campo">
-                    <option value="Nome" >Nome</option>
-                    <option value="Valor" >Valor</option>
-                </select>
-
-                <button type="submit" class="btn btn-primary">Pesquisar</button>
-
             }
-
-
         </div>
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-md-12">
-                        @foreach (var item in Model)
+
+        <!-- Products Section -->
+        <div id="products-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        @if (!Model.Any())
                         {
-                            <div class="card shadow-0 border rounded-3 mb-4">
-                                <div class="card-body">
-                                    <div class="row g-0">
-                                        <div class="col-xl-3 col-md-4 d-flex justify-content-center">
-                                            <div class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0">
+                            <div class="no-products">
+                                <h3>Nenhum produto encontrado</h3>
+                                <p>Tente buscar com outro termo ou verificar a ortografia.</p>
+                            </div>
+                        }
+                        else
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                    <div class="card product-card shadow-0 border rounded-3">
+                                        <div class="card-body">
+                                            <div class="hover-zoom">
                                                 @if (item.ImagemProduto != null)
                                                 {
-                                                    <img src="@item.ImagemProduto" class="w-100" />
+                                                    <img src="@item.ImagemProduto" class="product-image img-fluid rounded-4" alt="Imagem do Produto" />
                                                 }
                                                 else
                                                 {
-                                                    <img src="/Imagens/imagenotfound.png" alt="Imagem do Produto" class="img-fluid rounded-4" style="max-width: 100%; height: auto;" />
+                                                    <img src="/Imagens/imagenotfound.jpg" class="product-image img-fluid rounded-4" alt="Imagem Padrão" />
                                                 }
-                                                <a href="#!">
-                                                    <div class="hover-overlay">
-                                                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
-                                                    </div>
-                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-6 col-md-5 col-sm-7">
-                                            <h5>@item.NomeProduto</h5>
-                                            <div class="d-flex flex-row">
-                                                <span class="text-muted">@item.Marca</span>
-                                                <br />
-                                            </div>
-                                            <p class="text mb-4 mb-md-0">@item.Descricao</p>
-                                        </div>
-                                        <div class="col-xl-3 col-md-3 col-sm-5">
-                                            <div class="d-flex flex-row align-items-center mb-1">
-                                                <h4 class="mb-1 me-1">@string.Format("{0:C}", item.Valor)</h4>
-                                            </div>
-                                            <h6 class="text-success">Entrega gratuita</h6>
-                                            <h6 class="text-success">
-                                                Quantidade em estoque: @item.QuantidadeEstoque
-                                            </h6>
-                                            <div class="mt-4">
-                                                @using (Html.BeginForm("Detalhes", "Home", FormMethod.Post))
-                                                {
-                                                    <input type="hidden" name="Id" value="@item.Codbarras" />
-                                                    <button class="button" type="submit">
-                                                        <span class="button__text">Detalhes</span>
-                                                        <span class="button__icon">
-                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M11 10.9794C11 10.4271 11.4477 9.97937 12 9.97937C12.5523 9.97937 13 10.4271 13 10.9794V16.9794C13 17.5317 12.5523 17.9794 12 17.9794C11.4477 17.9794 11 17.5317 11 16.9794V10.9794Z" fill="currentColor" />
-                                                                <path d="M12 6.05115C11.4477 6.05115 11 6.49886 11 7.05115C11 7.60343 11.4477 8.05115 12 8.05115C12.5523 8.05115 13 7.60343 13 7.05115C13 6.49886 12.5523 6.05115 12 6.05115Z" fill="currentColor" />
-                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z" fill="currentColor" />
-                                                            </svg>
-                                                        </span>
-                                                    </button>
-                                                }
+                                            <div class="pt-3">
+                                                <h5 class="product-name">@item.NomeProduto</h5>
+                                                <h6>@item.Marca</h6>
+                                                <p class="product-description small text-muted">@item.Descricao</p>
+                                                <p class="product-price  text-success">R$@item.Valor</p>
+                                                <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
+
+                                                    @using (Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
+                                                    {
+                                                        <input type="hidden" name="id" value="@item.Codbarras" />
+                                                        <input type="hidden" name="quantidade" value="1" />
+
+                                                        <button type="submit" class="button">
+                                                            <span class="button__text">Comprar</span>
+                                                            <div class="button__icon">
+                                                                <svg width="18"
+                                                                     height="18"
+                                                                     viewBox="0 0 24 24"
+                                                                     fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd"
+                                                                          clip-rule="evenodd"
+                                                                          d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z"
+                                                                          fill="currentColor" />
+                                                                </svg>
+                                                            </div>
+                                                        </button>
+
+
+
+                                                    }
+                                                    @using (Html.BeginForm("Detalhes", "Home", FormMethod.Post))
+                                                    {
+                                                        <input type="hidden" name="Id" value="@item.Codbarras" />
+                                                        <button class="button1" type="submit">
+                                                            <span class="button__text">Detalhes</span>
+                                                            <span class="button__icon">
+                                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path d="M11 10.9794C11 10.4271 11.4477 9.97937 12 9.97937C12.5523 9.97937 13 10.4271 13 10.9794V16.9794C13 17.5317 12.5523 17.9794 12 17.9794C11.4477 17.9794 11 17.5317 11 16.9794V10.9794Z" fill="currentColor" />
+                                                                    <path d="M12 6.05115C11.4477 6.05115 11 6.49886 11 7.05115C11 7.60343 11.4477 8.05115 12 8.05115C12.5523 8.05115 13 7.60343 13 7.05115C13 6.49886 12.5523 6.05115 12 6.05115Z" fill="currentColor" />
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12Z" fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                        </button>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         }
                     </div>
                 </div>
@@ -265,80 +425,51 @@
     </div>
 </section>
 
-
-<!-- Feature -->
-<section class="mt-5 estica" style="background-color: #f5f5f5;">
-    <div class="container text-dark pt-3">
-        <header class="pt-4 pb-3">
-            <h3 class="text-center">Marcas Parceiras</h3>
-            <div class="slider">
-                <div class="slide-track">
-                    <div class="slide">
-                        <img src="https://allvectorlogo.com/img/2016/04/alienware-logo.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://rapaduratech.com.br/wp-content/uploads/2023/11/01-nvidia-logo-horiz-500x200-2c50-p@2x.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://www.gigabyte.com/Images/Assets/Layout/OgImg-Default.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://vectorseek.com/wp-content/uploads/2021/01/MSI-Logo-Vector-scaled.jpg" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://allvectorlogo.com/img/2016/04/alienware-logo.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://rapaduratech.com.br/wp-content/uploads/2023/11/01-nvidia-logo-horiz-500x200-2c50-p@2x.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://www.gigabyte.com/Images/Assets/Layout/OgImg-Default.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://vectorseek.com/wp-content/uploads/2021/01/MSI-Logo-Vector-scaled.jpg" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://allvectorlogo.com/img/2016/04/alienware-logo.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://rapaduratech.com.br/wp-content/uploads/2023/11/01-nvidia-logo-horiz-500x200-2c50-p@2x.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://www.gigabyte.com/Images/Assets/Layout/OgImg-Default.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://vectorseek.com/wp-content/uploads/2021/01/MSI-Logo-Vector-scaled.jpg" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://allvectorlogo.com/img/2016/04/alienware-logo.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://rapaduratech.com.br/wp-content/uploads/2023/11/01-nvidia-logo-horiz-500x200-2c50-p@2x.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://www.gigabyte.com/Images/Assets/Layout/OgImg-Default.png" height="100" width="250" alt="" />
-                    </div>
-                    <div class="slide">
-                        <img src="https://vectorseek.com/wp-content/uploads/2021/01/MSI-Logo-Vector-scaled.jpg" height="100" width="250" alt="" />
-                    </div>
-
-                </div>
-            </div>
-        </header>
-
-    </div>
-</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    // Função para scroll suave para a seção de produtos
     function scrollToDiv() {
-        const element = document.getElementById("moreContent");
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+        var div = document.getElementById('moreContent');
+        window.scrollTo({
+            top: div.offsetTop,
+            behavior: 'smooth'
+        });
     }
+
+    $(document).ready(function () {
+        // Pesquisa em tempo real
+        $('#pesquisa').on('input', function () {
+            var query = $(this).val();
+            $.ajax({
+                url: '@Url.Action("FrontPage", "Home")',
+                type: 'GET',
+                data: {
+                    pesquisa: query
+                },
+                success: function (result) {
+                    $('#products-container').html($(result).find('#products-container').html());
+                },
+                error: function () {
+                    alert('Erro ao buscar produtos.');
+                }
+            });
+        });
+
+        // Manter o formulário ao submeter
+        $('#searchForm').on('submit', function (e) {
+            e.preventDefault();
+            var query = $('#pesquisa').val();
+            $.ajax({
+                url: '@Url.Action("FrontPage", "Home")',
+                type: 'GET',
+                data: $(this).serialize(),
+                success: function (result) {
+                    $('#products-container').html($(result).find('#products-container').html());
+                },
+                error: function () {
+                    alert('Erro ao buscar produtos.');
+                }
+            });
+        });
+    });
 </script>
-
-
-
-
-
-

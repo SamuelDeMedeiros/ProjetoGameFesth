@@ -62,10 +62,10 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 {
                     return View(_produtoRepository.ObterTodosProdutos(por, campo, ""));
                 }
-                
+
 
             }
-            
+
             else
             {
                 return View(_produtoRepository.ObterTodosProdutos("Por Maior", "CodBarras", ""));
@@ -93,7 +93,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 };
 
                 _cookieCarrinhoCompra.Cadastrar(item);
-                
+
                 return RedirectToAction(nameof(Carrinho));
             }
         }
@@ -160,10 +160,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         }
         public IActionResult confVenda(int id)
         {
-            Venda clienteV = _clienteRepository.ObterVendaCliente(id);
-            CadastraEndereco cliente = _clienteRepository.ObterCliente(clienteV.IdCliente);
-            ViewBag.Email = cliente.cliente.Email ;
-            return View(clienteV);
+            return View(_clienteRepository.ObterVendaCliente(id));
         }
         public IActionResult Detalhes(Int64 Id) 
         {
@@ -262,6 +259,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
 
         public IActionResult PainelCliente()
         {
+            // Obtém os dados do cliente
             ViewBag.IdCliente = _loginCliente.GetCliente().IdCliente;
             ViewBag.Nome = _loginCliente.GetCliente().NomeCliente;
             ViewBag.Email = _loginCliente.GetCliente().Email;
@@ -269,8 +267,12 @@ namespace ProjetoE_CommerceGameFesth.Controllers
             ViewBag.Sexo = _loginCliente.GetCliente().Sexo;
             ViewBag.Telefone = _loginCliente.GetCliente().Telefone;
 
+            // Obtém a lista de vendas para o cliente
+            int idCliente = _loginCliente.GetCliente().IdCliente;
+            var vendas = _clienteRepository.ObterVendaList(idCliente);
 
-            return View();
+            // Retorna a view com os dados do cliente e as vendas
+            return View(vendas);
         }
         [ClienteAutorizacao]
         public IActionResult LogoutCliente()
@@ -289,7 +291,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
             bool isValid = false;
             if (cadastraEndereco.endereco.CEP != null)
             {
-                cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""));
+                cadastraEndereco.endereco = _clienteRepository.ObterEndereco(cadastraEndereco.endereco.CEP.Replace(".", "").Replace("-", ""), cadastraEndereco.endereco.NumLougradouro);
             }
             else
             {

@@ -89,6 +89,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     desc.produto.ImagemProduto = Convert.ToString(dr["ImagemProduto"]);
                     desc.produto.Valor = Convert.ToString(dr["Valor"]);
                     desc.produto.QuantidadeEstoque = Convert.ToUInt16(dr["QtdEst"]);
+                    desc.produto.Quantidade = Convert.ToUInt16(dr["Qtd"]);
 
                 }
                 return desc;
@@ -115,25 +116,26 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 return NF;
             }
         }
-        public int ObterCodCli(int nf)
+        public Venda ObterCodCli(int nf)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
-                int cod = 0;
+                
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Id_cli from tb_vendas where nf = @nf", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * from tb_vendas where nf = @nf", conexao);
                 cmd.Parameters.Add("@nf", MySqlDbType.Int64).Value = nf;
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
-
+                Venda venda = new Venda();
                 dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
                 while (dr.Read())
                 {
-                    cod = Convert.ToInt32(dr["Id_cli"]);
+                    venda.IdCliente = Convert.ToInt32(dr["Id_cli"]);
+                    venda.ValorTotal = Convert.ToInt32(dr["ValorTotal"]);
                 }
                 
-                return cod;
+                return venda;
             }
         }
         public IEnumerable<Produto> ObterCodBarras(int nf)
@@ -158,6 +160,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                             {
                                 Codbarras = Convert.ToInt64(dr["CodBarras"]),
                                 NomeProduto = (string)(dr["Produto"])
+
                                 
                             });
                     }

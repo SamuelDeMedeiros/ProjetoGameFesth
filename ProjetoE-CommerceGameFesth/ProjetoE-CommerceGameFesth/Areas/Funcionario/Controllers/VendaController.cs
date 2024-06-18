@@ -26,18 +26,19 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
         public IActionResult DetalhesVenda(int id)
         {
             ViewBag.NotaFiscal = id;
-            int idC = 0;
-            idC = _vendaRepository.ObterCodCli(id);
-            CadastraEndereco cadastra = _clienteRepository.ObterCliente(idC);
+            Venda venda = new Venda();
+            venda = _vendaRepository.ObterCodCli(id);
+            CadastraEndereco cadastra = _clienteRepository.ObterCliente(venda.IdCliente);
             ViewBag.Email = cadastra.cliente.Email;
             ViewBag.Nome = cadastra.cliente.NomeCliente;
+            ViewBag.Valor = venda.ValorTotal;
             IEnumerable<Produto> listCod = _vendaRepository.ObterCodBarras(id);
 
             return View(listCod);
         }
         public IActionResult DetalhesProduto(Int64 id, int nf)
         {
-            
+            ViewBag.NotaFiscal = nf;
             DescricaoVenda desc = _vendaRepository.ObterVenda(nf, id);
             CadastraEndereco cadastra = _clienteRepository.ObterCliente(desc.venda.IdCliente);
             ViewBag.Email = cadastra.cliente.Email;
