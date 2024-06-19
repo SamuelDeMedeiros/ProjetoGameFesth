@@ -5,12 +5,19 @@
     ViewData["Title"] = "Desativados";
     int cont = 0;
 }
+<style>
+    h4 {
+        text-align: center;
+        color: darkgray;
+        margin-top: 30%;
+    }
 
-<h1>Clientes Desativados</h1>
-<div>
+    .button {
+        text-align: center;
+    }
+</style>
 
-    <a class="btn btn-info" asp-action="Index">Clientes ativados</a>
-</div>
+
 
 <div class="table-responsive">
     <table class="table table-bordered">
@@ -23,8 +30,12 @@
         }
         @if (ViewBag.Cliente == "V"|| cont == 0 )
         {
-            <br/>
-            <h2>Sem cadastros</h2>
+          
+        <h4>Esta lista está vazia</h4>
+        <div class="button">
+        <a class="btn btn-info" asp-action="Index">Voltar para Clientes ativados</a>
+        </div>
+        
         }
         else
         {
@@ -78,3 +89,5 @@
         </tbody>
     </table>
 </div>
+
+</form>

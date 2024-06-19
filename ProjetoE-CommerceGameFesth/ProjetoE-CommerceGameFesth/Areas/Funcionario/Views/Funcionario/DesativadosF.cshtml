@@ -4,12 +4,18 @@
     ViewData["Title"] = "Funcionarios";
     int cont = 0;
 }
+<style>
+    h4 {
+        text-align: center;
+        color: darkgray;
+        margin-top: 30%;
+    }
+    .button{
+        text-align:center;
+    }
+</style>
 
 
-<h1>Funcionarios</h1>
-<div>
-    <a class="btn btn-info" asp-action="Index">Funcionarios ativados</a>
-</div>
 
 <div class="table-responsive">
     <table class="table table-bordered">
@@ -22,8 +28,13 @@
         }
         @if (ViewBag.Funci == "V" || cont == 0)
         {
-            <br />
-            <h2>Sem cadastros</h2>
+            
+        <h4>Esta lista está vazia.</h4>
+
+        <div class="button">
+        <a class="btn btn-info" asp-action="Index">Voltar para Funcionarios ativos</a>
+        </div>
+        
         }
         else
         {
@@ -87,3 +98,10 @@
     </table>
 </div>
 
+
+
+
+
+
+
+</form>

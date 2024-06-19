@@ -117,29 +117,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 return cliente;
             }
         }
-        public Cliente ObterDados(string email)
-        {
-            using (var conexao = new MySqlConnection(_conexaoMySQL))
-            {
-                conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from vw_ClienteEnd where Email=@email", conexao);
-                cmd.Parameters.AddWithValue("@email", email);
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                MySqlDataReader dr;
-
-                Cliente cliente = new Cliente();
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while (dr.Read())
-                {
-                    cliente.IdCliente = (int)dr["Id_cliente"];
-                    cliente.NomeCliente = (string)dr["Nome"];
-                    cliente.Sexo = (string)dr["Sexo"];
-                    cliente.Telefone = (string)(dr["Telefone"]);
-                }
-                return cliente;
-            }
-        }
 
         public void AtualizarDados(Cliente cliente)
         {

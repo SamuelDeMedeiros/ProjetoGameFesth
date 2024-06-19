@@ -3,27 +3,113 @@
 @{
     ViewData["Title"] = "Cadastrar";
 }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Cadastrar Funcionário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            margin: 0;
+            padding: 20px;
+        }
 
-<h1>Cadastrar</h1>
+        h4 {
+            color:slategrey;
+            text-decoration:dashed;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-<h4>Funcionario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid;
+            border-color: dodgerblue;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            border-color:dodgerblue ;
+        }
+
+        .control-label {
+            color:slategrey;
+
+            
+        }
+        input{
+            border-color:blue;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            border-color: dodgerblue;
+        }
+
+        .form-control:focus {
+            border-color: black;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+        }
+
+        .btn-primary, .btn-info {
+            background-color: dodgerblue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn-primary:hover, .btn-info:hover {
+            color: dodgerblue;
+        }
+
+        .text-danger {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>CADASTRO DE FUNCIONÁRIO</h4>
+      
+        <hr />
         <form asp-action="Cadastrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-          
+
             <div class="form-group">
                 <label asp-for="funcionario.NomeFuncionario" class="control-label"></label>
                 <input asp-for="funcionario.NomeFuncionario" class="form-control" />
                 <span asp-validation-for="funcionario.NomeFuncionario" class="text-danger"></span>
             </div>
             <div class="form-group">
-
-                <label asp-for="funcionario.Telefone">Telefone</label>
-                <input id="telefone" type="text" asp-for="funcionario.Telefone" class="form-control">
-                <span asp-validation-for="funcionario.Telefone"></span>
-                
+                <label asp-for="funcionario.Telefone" class="control-label"></label>
+                <input asp-for="funcionario.Telefone" class="form-control" />
+                <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro" class="control-label"></label>
@@ -32,12 +118,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="endereco.CEP" class="control-label"></label>
-                <input id="cep" asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
+                <input asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
                 <span asp-validation-for="endereco.CEP" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="endereco.Bairro" class="control-label"></label>
-                <input id="cep" asp-for="endereco.Bairro" class="form-control cep" placeholder="00000-000" />
+                <input asp-for="endereco.Bairro" class="form-control" />
                 <span asp-validation-for="endereco.Bairro" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -70,14 +156,19 @@
                 <input asp-for="funcionario.ConfirmaSenha" class="form-control" />
                 <span asp-validation-for="funcionario.ConfirmaSenha" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Cadastrar" class="btn btn-primary" />
-            </div>
         </form>
+        <div class="buttons">
+            <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
+            <button type="submit" class="btn btn-outline-primary"  asp-action="Index" >Voltar</button>
+        
+        </div>
     </div>
-</div>
+</body>
+</html>
 
-<div>
-    <a class="btn btn-info" asp-controller="Funcionario" asp-action="Index">Voltar</a>
-</div>
 
+
+
+
+
+</form>

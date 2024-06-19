@@ -3,95 +3,126 @@
 
 @{
     ViewData["Title"] = "DetalhesCli";
-
-    
-    
-
 }
+<style>
+    .section-header {
+        background-color: #007bff; /* Fundo azul */
+        color: white; /* Texto branco */
+        padding: 10px; /* Padding para espaçamento interno */
+        text-align: center; /* Centraliza o texto */
+        border-radius: 5px; /* Arredonda os cantos */
+        margin-bottom: 20px; /* Espaçamento inferior */
+    }
 
+    .custom-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+        color: #495057;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: dodgerblue;
+        border-radius: 10px;
+    }
+
+        .custom-table th,
+        .custom-table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border: 1px solid #dee2e6;
+            border-color:dodgerblue;
+        }
+
+        .custom-table th {
+            background-color: #e9ecef; /* Fundo cinza claro para cabeçalhos */
+            color: #495057; /* Texto escuro para cabeçalhos */
+            font-weight: bold; /* Negrito para cabeçalhos */
+        }
+
+        .custom-table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa; /* Fundo cinza claro para linhas ímpares */
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #ffffff; /* Fundo branco para linhas pares */
+        }
+
+        .custom-table tbody td {
+            vertical-align: middle; /* Alinhamento vertical centralizado */
+        }
+
+    .actions {
+        margin-top: 20px; /* Espaçamento superior */
+        text-align: center; /* Centraliza os botões */
+    }
+
+        .actions .btn {
+            margin: 5px; /* Espaçamento entre botões */
+        }
+
+</style>
     
 
-<h1>Detalhes do Cliente</h1>
+<h3 class="section-header">Detalhes do Cliente</h3>
 
 <div>
-    <h4>Cliente</h4>
+  
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.IdCliente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.IdCliente)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.NomeCliente)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.NomeCliente)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Nascimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Nascimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Sexo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Sexo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Telefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Telefone)
-        </dd>
+    <table class="table table-bordered border-primary custom-table">
+        <tbody>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.IdCliente)</th>
+                <td>@Html.DisplayFor(model => model.cliente.IdCliente)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.NomeCliente)</th>
+                <td>@Html.DisplayFor(model => model.cliente.NomeCliente)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.Nascimento)</th>
+                <td>@Html.DisplayFor(model => model.cliente.Nascimento)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.Sexo)</th>
+                <td>@Html.DisplayFor(model => model.cliente.Sexo)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.Telefone)</th>
+                <td>@Html.DisplayFor(model => model.cliente.Telefone)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.Email)</th>
+                <td>@Html.DisplayFor(model => model.cliente.Email)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.cliente.Senha)</th>
+                <td>@Html.DisplayFor(model => model.cliente.Senha)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.endereco.CEP)</th>
+                <td>@Html.DisplayFor(model => model.endereco.CEP)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.endereco.Lougradouro)</th>
+                <td>@Html.DisplayFor(model => model.endereco.Lougradouro)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.endereco.NumLougradouro)</th>
+                <td>@Html.DisplayFor(model => model.endereco.NumLougradouro)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.endereco.NomeUF)</th>
+                <td>@Html.DisplayFor(model => model.endereco.NomeUF)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.endereco.NomeCidade)</th>
+                <td>@Html.DisplayFor(model => model.endereco.NomeCidade)</td>
+            </tr>
+        </tbody>
+    </table>
 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Senha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Senha)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.CEP)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.CEP)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.Lougradouro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.Lougradouro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NumLougradouro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NumLougradouro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NomeUF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NomeUF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NomeCidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NomeCidade)
-        </dd>
-    </dl>
-    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+    <div class="actions">
         <input type="hidden" name="sit" value=@Html.DisplayFor(model => model.cliente.Situacao)>
         @if (ViewBag.sit == "A")
         {
@@ -105,17 +136,15 @@
         {
             @using (Html.BeginForm("Ativar", "Cliente", FormMethod.Post))
             {
-
                 <input type="hidden" name="id" value=@Html.DisplayFor(model => model.cliente.IdCliente)>
                 <button type="submit" class="btn btn-primary" new { onclick="return confirm('Deseja realmente ativar?')" }>ativar</button>
             }
         }
-
-
-        
     </div>
 </div>
-<div>
-    
-    <a class="btn btn-info" asp-action="Index">Voltar</a>
+
+<div class="actions">
+    <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
 </div>
+
+</form>

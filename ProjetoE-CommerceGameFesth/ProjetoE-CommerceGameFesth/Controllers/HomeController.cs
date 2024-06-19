@@ -416,7 +416,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
         }
         public IActionResult AtualizarDados(string email)
         {
-            Cliente cliente = _clienteRepository.ObterDados(email);
+            Cliente cliente = _clienteRepository.ObterClientePorEmail(email);
             ViewBag.Sexo = cliente.Sexo;
             return View(cliente);
         }

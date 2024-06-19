@@ -16,7 +16,6 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         void Ativar(int id);
         void Desativar(int id);
         Cliente ObterClientePorEmail(string email);
-        Cliente ObterDados(string email);
         Cliente ObterCpfCliente(string CPF);
         public Cliente ObterCNPJCliente(string CNPJ);
         Cliente ObterEmailCliente(string email);
