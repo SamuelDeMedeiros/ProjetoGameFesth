@@ -87,6 +87,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 {
                     Codbarras = id,
                     QuantidadeEstoque = produto.QuantidadeEstoque,
+                    Quantidade = 1,
                     ImagemProduto = produto.ImagemProduto,
                     NomeProduto = produto.NomeProduto,
                     Valor = produto.Valor,
@@ -312,7 +313,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                     ViewBag.CPF = "CPF já cadastrado, por favor verifique o CPF digitado";
                     isValid = true;
                 }
-                if (string.IsNullOrEmpty(cadastraEndereco.cliente.CPF) || cadastraEndereco.cliente.CPF.ToString().Length != 14)
+                else if (string.IsNullOrEmpty(cadastraEndereco.cliente.CPF) || cadastraEndereco.cliente.CPF.ToString().Length != 14)
                 {
                     ViewBag.CPF = "CPF invalido, por favor verifique o CPF digitado";
                     isValid = true;
@@ -330,7 +331,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                     ViewBag.CNPJ = "CNPJ já cadastrado, por favor verifique o CNPJ digitado";
                     isValid = true;
                 }
-                if (string.IsNullOrEmpty(cadastraEndereco.cliente.CNPJ) || cadastraEndereco.cliente.CNPJ.ToString().Length != 18)
+                else if (string.IsNullOrEmpty(cadastraEndereco.cliente.CNPJ) || cadastraEndereco.cliente.CNPJ.ToString().Length != 18)
                 {
                     ViewBag.CNPJ = "CNPJ invalido, por favor verifique o CNPJ digitado";
                     isValid = true;
@@ -359,7 +360,7 @@ namespace ProjetoE_CommerceGameFesth.Controllers
             }
             if (Ano < AnoLimite || Ano > Anohj)
             {
-                ViewData["MSG_Data"] = "Data invalida";
+                ViewBag.Data = "Data invalida, por favor verifique o data digitada";
                 isValid = true;
             }
 
@@ -374,23 +375,33 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 return RedirectToAction(nameof(Cadastrar));
             }
         }
-        public IActionResult AtualizarP(string email)
+        public IActionResult AtualizarDados(string email)
         {
-            return View(_clienteRepository.ObterClientePorEmail(email));
+            Cliente cliente = _clienteRepository.ObterDados(email);
+            ViewBag.Sexo = cliente.Sexo;
+            return View(cliente);
         }
 
         [HttpPost]
-        public IActionResult AtualizarP([FromForm] Cliente cliente)
+        public IActionResult AtualizarDados([FromForm] Cliente cliente)
         {
-
-            if (ModelState.IsValid)
+            bool isValid = false;
+            if (string.IsNullOrEmpty(cliente.Telefone) || cliente.Telefone.ToString().Length != 15)
             {
-                _clienteRepository.AtualizarP(cliente);
+                ViewBag.Telefone = "Telefone invalido, por favor verifique o telefone digitado";
+                isValid = true;
+            }
+            if(isValid)
+            {
+                return View();
+            }
+            else
+            {
+                _clienteRepository.AtualizarDados(cliente);
                 _loginCliente.Atualizar(cliente);
                 TempData["MSG_S"] = "Registro atualizado com sucesso!";
                 return RedirectToAction(nameof(PainelCliente));
             }
-            return View();
         }
         public IActionResult sobre()
         {

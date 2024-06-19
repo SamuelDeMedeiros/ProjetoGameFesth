@@ -13,7 +13,7 @@ CREATE TABLE tb_produto(
     Marca varchar(100) not null,
     Descricao varchar(400) not null,
     ImagemProduto varchar(255) not null,
-    Valor decimal (8,2) check (Valor > 0) not null, 
+    Valor decimal (10,2) check (Valor > 0) not null, 
     QtdEst smallint check (QtdEst >= 0) not null
 );
 /*
@@ -44,7 +44,7 @@ CREATE TABLE Tb_Cliente(
 
 CREATE TABLE Tb_Vendas( 
     Nf int not null primary key, 
-    ValorTotal decimal (8,2) not null, 
+    ValorTotal decimal (6,2) not null, 
     Data_ DateTime not null, 
     Id_cli int not null, 
     foreign key (Id_cli) references Tb_Cliente(Id_cliente) 
@@ -221,8 +221,7 @@ SELECT
     tb_produto tp ON tiv.CodBarras = tp.CodBarras;
   select * from vw_detaVenda;
   select * from tb_vendas;
-  
--- Insere produto
+   -- Insere produto
 DELIMITER $$
 CREATE PROCEDURE spInsereProduto (
  IN vCodBarras BIGINT,
@@ -383,20 +382,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL InserirFuncionarios('Betin', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus','Pirituba', 18, 'Osasco', 'SP', 'joao@email.com', '123123');
-CALL InserirFuncionarios('Lulu', 119796012340, 'G', '06029902', 'Núcleo Cidade de Deus','Pirituba', 18, 'Osasco', 'SP', 'luisidebel@gmail.com', 'qwe123');
-CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua Exemplo1','Pirituba', 123, 'Cidade Exemplo', 'SP', 'joaoe@email.com', '123123');
-CALL InserirFuncionarios('Silveira', 987654321, 'F', '87654888', 'Rua Teste','Pirituba', 456, 'Cidade Teste', 'RJ', 'silveira@email.com', '456456');
-CALL InserirFuncionarios('Santos', 987654321, 'G', '12345698', 'Rua Exemplo2','Pirituba', 789, 'Cidade asd', 'SP', 'santos@email.com', '789789');
-CALL InserirFuncionarios('Pereira', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 321, 'Cidade as', 'RJ', 'pereira@email.com', '321321');
-CALL InserirFuncionarios('Costa', 987654321, 'G', '87654321', 'Rua Exemplo3','Pirituba', 654, 'Cidade sdf', 'SP', 'costa@email.com', '654654');
-CALL InserirFuncionarios('Ferreira', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 987, 'Cidade fdgh', 'RJ', 'ferreira@email.com', '987987');
-CALL InserirFuncionarios('Almeida', 987654321, 'G', '87654321', 'Rua Exemplo4','Pirituba', 147, 'Cidade ghjk', 'SP', 'almeida@email.com', '147147');
-CALL InserirFuncionarios('Souza', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 258, 'fghj Teste', 'RJ', 'souza@email.com', '258258');
-CALL InserirFuncionarios('Gomes', 987654321, 'G', '87654321', 'Rua Exemplo5','Pirituba', 369, 'ghjf Exemplo', 'SP', 'gomes@email.com', '369369');
-CALL InserirFuncionarios('Carvalho', 123456789, 'F', '12345678', 'Rua Teste','Pirituba', 159, 'gfhj Teste', 'RJ', 'carvalho@email.com', '159159');
-CALL InserirFuncionarios('Silva', 123456789, 'G', '12345678', 'Rua A','Pirituba', 123, 'Cidade Alpha', 'SP', 'Cavalotatuado6262@gmail.com', '123123');
-
+CALL InserirFuncionarios('Luis', 119796012340, 'G', '05138040', 'Rua Adalberto Kurt','Jardim Líbano', 125, 'São Paulo', 'SP', 'luis@gmail.com', '123123');
 DELIMITER $$
 
 CREATE PROCEDURE InserirPF(
@@ -477,7 +463,7 @@ END $$
 
 DELIMITER ;
 
-CALL InserirPF('Samuel', '2000-10-02', 'M', '1234543899', 123359, 12345678909, '05317020', 'Av.Manuel bandeira', 'Villa Leopoldina', 211, 'São Paulo', 'SP', 'Samuel@gmail.com', '123123');
+CALL InserirPF('Samuel', '2000-10-02', 'M', '12345431234', 123456781, 12345678909, '05317020', 'Av.Manuel bandeira', 'Villa Leopoldina', 211, 'São Paulo', 'SP', 'Samuel@gmail.com', '123123');
 
 -- drop procedure InserirPJ;
  
@@ -846,7 +832,8 @@ CREATE PROCEDURE updFuncEnd(
 	IN vId_func INT,
     IN vNome_func VARCHAR(200),    
     IN vCep_func numeric(8),
-    IN vLogradouro VARCHAR(50), 
+    IN vLogradouro VARCHAR(50),
+    IN vBairro VARCHAR(50),
     IN vNum INT,
     IN vNomeCid VARCHAR(200),
     IN vNomeUF CHAR(2),
@@ -856,8 +843,9 @@ CREATE PROCEDURE updFuncEnd(
     IN vTipo CHAR(1)
 )
 BEGIN
-	DECLARE vId_estado, vId_Cidade INT;
+	DECLARE vId_estado, vId_Cidade, vId_Login INT;
  
+	SET vId_Login = (select id_log from tb_funcionario WHERE id_Func = vId_func);
   /*  -- Verificar se algum parâmetro é NULL
     IF vNome_func IS NULL OR vId_func IS NULL OR vCep_func IS NULL OR vLogradouro IS NULL OR vNum IS NULL OR vNomeCid IS NULL OR vNomeUF IS NULL OR vEmail IS NULL OR vSenha IS NULL OR vTel IS NULL OR vTipo IS NULL THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Nenhum campo pode ser nulo.';
@@ -878,8 +866,8 @@ BEGIN
 			SET vId_Cidade = (SELECT IdCid FROM Tb_Cidade WHERE NomeCid = vNomeCid);
 		END IF;
 		-- Inserir o novo endereço
-		INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid)
-		VALUES (vCep_func, vLogradouro, vId_estado, vId_Cidade);
+		INSERT INTO Tb_Endereco(Cep, Logradouro, IdUf, IdCid, Bairro)
+		VALUES (vCep_func, vLogradouro, vId_estado, vId_Cidade, vBairro);
 		SELECT 'Endereço cadastrado!!';
          -- Atualizar o endereço do funcionário
 		UPDATE Tb_Funcionario
@@ -889,7 +877,12 @@ BEGIN
 			tel = vTel,
 			tipo = vTipo
 		WHERE id_func = vId_func;
-		SELECT 'campos alterados com sucesso !!';
+        
+        UPDATE tb_login
+        SET email = vEmail,
+			senha = vSenha
+		WHERE id_Login = vId_login;
+		SELECT 'campos alterados com suces !!';
 		-- ceP EXISTENTE LOGO ENDERECO EXISTENTE
 	ELSE 
 		 -- Atualizar o endereço do funcionário
@@ -900,22 +893,24 @@ BEGIN
 			tel = vTel,
 			tipo = vTipo
 		WHERE id_func = vId_func;
+        
+        UPDATE tb_login
+        SET email = vEmail,
+			senha = vSenha
+		WHERE id_Login = vId_login;
+        
 		SELECT 'campos alterados com sucesso !!';
 		END IF;
 	END IF;
 END //
 DELIMITER ;
-SELECT ID_FUNC FROM tb_funcionario WHERE ID_FUNC = 2;
- SELECT * FROM TB_FUNCIONARIO;
 
-
-
-desc tb_estado;
-select * from Tb_Endereco;
-select * from Tb_Endcliente;
-select * from Tb_Estado;
-select * from Tb_cidade;
-select * from TB_FUNCIONARIO;
+UPDATE Tb_Cliente
+SET 
+    Nome = 'Novo Nome',
+    Sexo = 'M',
+    Telefone = '(99) 99999-9999'
+WHERE Id_cliente = 1;
 
 select * from vw_FuncEnd order by Id_func;
 select *  from tb_funcionario;
@@ -924,31 +919,11 @@ select * from tb_produto where nome Like 'placa%';
 select distinct nomeuf from tb_estado;
 
 select * from tb_produto;  
-/*
-DELIMITER //
 
-CREATE TRIGGER DiminuirQtdProduto 
-AFTER INSERT ON Tb_ItemVenda 
-FOR EACH ROW 
-BEGIN 
-    DECLARE nova_qtd DECIMAL(8,2); 
-    DECLARE produto_existente DECIMAL(8,2); 
-    
-    SELECT QtdEst INTO produto_existente FROM tb_produto WHERE CodBarras = NEW.CodBarras; 
-    
-    IF produto_existente IS NOT NULL THEN 
-        SET nova_qtd = produto_existente - NEW.Qtd; 
-        UPDATE tb_produto SET QtdEst = nova_qtd WHERE CodBarras = NEW.CodBarras; 
-    END IF; 
-END;//
-
-DELIMITER ;*/
-
--- Views
 select * from vw_cliCad;
 select * from vw_ClienteEnd;
+select * from vw_detavenda;
 select * from vw_FuncEnd order by Id_func;
-  select * from vw_detaVenda;
 
 desc tb_login;
 desc tb_cliente;

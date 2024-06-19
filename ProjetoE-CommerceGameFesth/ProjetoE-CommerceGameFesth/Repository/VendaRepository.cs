@@ -160,12 +160,9 @@ namespace ProjetoE_CommerceGameFesth.Repository
                             {
                                 Codbarras = Convert.ToInt64(dr["CodBarras"]),
                                 NomeProduto = (string)(dr["Produto"])
-
-                                
                             });
                     }
                     return produto;
-               
             }
         }
     }

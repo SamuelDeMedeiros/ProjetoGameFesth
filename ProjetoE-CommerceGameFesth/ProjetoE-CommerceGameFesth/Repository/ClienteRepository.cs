@@ -5,6 +5,7 @@ using NuGet.Protocol.Plugins;
 using ProjetoE_CommerceGameFesth.Models;
 using ProjetoE_CommerceGameFesth.Models.Constants;
 using ProjetoE_CommerceGameFesth.Repository.Contract;
+using System.Collections.Generic;
 using System.Data;
 
 namespace ProjetoE_CommerceGameFesth.Repository
@@ -116,44 +117,55 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 return cliente;
             }
         }
-
-        public void Atualizar(CadastraEndereco cadastraEndereco)
+        public Cliente ObterDados(string email)
         {
-            string Situacao = SituacaoConstant.Ativo;
-
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("update Tb_Cliente set Nome =@Nome, Nascimento=@Nascimento, Sexo=@Sexo, Telefone=@Telefone, Email=@Email, Senha=@Senha, Situacao=@Situacao where Id=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from vw_ClienteEnd where Email=@email", conexao);
+                cmd.Parameters.AddWithValue("@email", email);
 
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.IdCliente;
-                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.NomeCliente;
-                cmd.Parameters.Add("@Nascimento", MySqlDbType.Datetime).Value = cadastraEndereco.cliente.Nascimento.ToString("dd/MM/yyyy");
-                cmd.Parameters.Add("@Sexo", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Sexo;
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
 
-                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Telefone;
-                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Email;
-                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Senha;
-                cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = Situacao;
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.IdCliente = (int)dr["Id_cliente"];
+                    cliente.NomeCliente = (string)dr["Nome"];
+                    cliente.Sexo = (string)dr["Sexo"];
+                    cliente.Telefone = (string)(dr["Telefone"]);
+                }
+                return cliente;
+            }
+        }
+
+        public void AtualizarDados(Cliente cliente)
+        {
+            using (var conexao = new MySqlConnection(_conexaoMySQL))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE Tb_Cliente SET Nome = @nome, Sexo = @sexo, Telefone = @telefone WHERE Id_cliente = @id", conexao);
+                
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cliente.IdCliente;
+                cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cliente.NomeCliente;
+                cmd.Parameters.Add("@sexo", MySqlDbType.VarChar).Value = cliente.Sexo;
+                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = cliente.Telefone.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
 
                 cmd.ExecuteNonQuery();
                 conexao.Close();
             }
         }
-        public void AtualizarP(Cliente cliente)
+        public void AtualizarEmail(Cliente cliente)
         {
-
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("update Tb_Cliente set Nome =@Nome, Telefone=@Telefone, Email=@Email, Senha=@Senha where Id=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("update Tb_login set email=@email where id_Login=@id", conexao);
 
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cliente.IdCliente;
-                cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.NomeCliente;
-                cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
-                cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
-                cmd.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
-
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cliente.IdLog;
+                cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = cliente.Email;
 
                 cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -181,7 +193,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 conexao.Open();
                 if (cadastraEndereco.cliente.CNPJ == null)
                 {
-                    cmd = new MySqlCommand("CALL InserirPF(@Nome, @Nascimento, @Sexo, @Telefone, @Rg, @CPF, @CEP, @Logradouro, @Num, " +
+                    cmd = new MySqlCommand("CALL InserirPF(@Nome, @Nascimento, @Sexo, @Telefone, @Rg, @CPF, @CEP, @Logradouro, @Bairro,@Num, " +
                     "@NomeCid, @NomeUF, @Email, @Senha);", conexao);
 
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.NomeCliente;
@@ -192,6 +204,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.CPF.Replace(".", "").Replace("-", "");
                     cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.CEP.Replace("-", "");
                     cmd.Parameters.Add("@Logradouro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Lougradouro;
+                    cmd.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Bairro;
                     cmd.Parameters.Add("@Num", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NumLougradouro;
                     cmd.Parameters.Add("@NomeCid", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeCidade;
                     cmd.Parameters.Add("@NomeUF", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeUF;
@@ -201,7 +214,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                 else
                 {
                     cmd = new MySqlCommand("CALL InserirPJ(@Nome, @Nascimento, @Sexo, @Telefone, @Cnpj, @IE, @NomeFantasia, @RazaoSocial, @CEP," +
-                        " @Logradouro, @Num, @NomeCid, @NomeUF, @Email, @Senha);", conexao);
+                        " @Logradouro, @Bairro, @Num, @NomeCid, @NomeUF, @Email, @Senha);", conexao);
 
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.NomeCliente;
                     cmd.Parameters.Add("@Nascimento", MySqlDbType.DateTime).Value = cadastraEndereco.cliente.Nascimento.ToString("yyyy/MM/dd");
@@ -213,6 +226,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cmd.Parameters.Add("@RazaoSocial", MySqlDbType.VarChar).Value = cadastraEndereco.cliente.Razaosocial;
                     cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.CEP.Replace("-", "");
                     cmd.Parameters.Add("@Logradouro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Lougradouro;
+                    cmd.Parameters.Add("@Bairro", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.Bairro;
                     cmd.Parameters.Add("@Num", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NumLougradouro;
                     cmd.Parameters.Add("@NomeCid", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeCidade;
                     cmd.Parameters.Add("@NomeUF", MySqlDbType.VarChar).Value = cadastraEndereco.endereco.NomeUF;

@@ -46,7 +46,7 @@ namespace ProjetoE_CommerceGameFesth.CarrinhoCompra
                 {
                     Lista.Add(item);
                     ItemLocalizado = Lista.SingleOrDefault(a => a.Codbarras == item.Codbarras);
-                    ItemLocalizado.Quantidade = ItemLocalizado.Quantidade + 1;
+                    ItemLocalizado.Quantidade = 1;
                 }
                 else if (ItemLocalizado.QuantidadeEstoque <= ItemLocalizado.Quantidade)
                 {

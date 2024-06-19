@@ -130,7 +130,7 @@
                         <p>Nascimento: @ViewBag.Nascimento</p>
                         <p>Sexo: @ViewBag.Sexo</p>
                         <p>Telefone: @ViewBag.Telefone</p>
-                        <a href="#">editar</a> | <a href="#">mudar senha</a>
+                        <a asp-action="AtualizarDados" asp-controller="Home" asp-route-email="@ViewBag.Email">editar</a> | <a href="#">mudar senha</a>
                     </div>
 
                     <div class="pedidos animate__animated animate__fadeInRight">

@@ -8,14 +8,15 @@ namespace ProjetoE_CommerceGameFesth.Repository.Contract
         Cliente Login(int id);
 
         void Cadastrar(CadastraEndereco cadastraEndereco);
-        void Atualizar(CadastraEndereco cadastraEndereco);
-        void AtualizarP(Cliente cliente);
+        void AtualizarDados(Cliente cliente);
+        void AtualizarEmail(Cliente cliente);
         void AtualizarSenha(Cliente cliente);
         void Excluir(int Id);
         CadastraEndereco ObterCliente(int Id);
         void Ativar(int id);
         void Desativar(int id);
         Cliente ObterClientePorEmail(string email);
+        Cliente ObterDados(string email);
         Cliente ObterCpfCliente(string CPF);
         public Cliente ObterCNPJCliente(string CNPJ);
         Cliente ObterEmailCliente(string email);
