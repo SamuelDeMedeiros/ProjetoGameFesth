@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj": {}
+    "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj": {}
   },
   "projects": {
-    "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj": {
+    "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
+        "projectUniqueName": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
         "projectName": "ProjetoE-CommerceGameFesth",
-        "projectPath": "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
+        "projectPath": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
         "packagesPath": "C:\\Users\\3ds\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\obj\\",
+        "outputPath": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

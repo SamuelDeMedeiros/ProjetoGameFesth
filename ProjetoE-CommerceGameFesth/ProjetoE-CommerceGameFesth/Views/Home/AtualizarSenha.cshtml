@@ -1,0 +1,43 @@
+﻿@model ProjetoE_CommerceGameFesth.Models.Cliente
+@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<h1>Atualizar minha senha</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AtualizarSenha">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="IdLog" />
+                
+            </div>
+            <h4>Senha nova</h4>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" type="password" />
+                
+            </div>
+            @if (ViewBag.Senha != null)
+            {
+                @ViewBag.Senha
+            }
+            <div class="form-group">
+                <label asp-for="ConfirmaSenha" class="control-label"></label>
+                <input asp-for="ConfirmaSenha" class="form-control" type="password" />
+                
+            </div>
+            @if (ViewBag.CSenha != null)
+            {
+                @ViewBag.CSenha
+            }
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-primary" />
+                <a asp-action="PainelCliente" value="Voltar" class="btn btn-info">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

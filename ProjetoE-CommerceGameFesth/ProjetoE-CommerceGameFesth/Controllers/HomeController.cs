@@ -375,6 +375,45 @@ namespace ProjetoE_CommerceGameFesth.Controllers
                 return RedirectToAction(nameof(Cadastrar));
             }
         }
+        public IActionResult AtualizarSenha(string email)
+        {
+            return View(_clienteRepository.ObterClientePorEmail(email));
+        }
+
+        [HttpPost]
+        public IActionResult AtualizarSenha([FromForm] Cliente cliente)
+        {
+            bool isvalid = false;
+            if (cliente.Senha != cliente.ConfirmaSenha)
+            {
+                ViewBag.CSenha = "Senhas devem ser iguais!";
+                isvalid = true;
+            }
+            if (string.IsNullOrEmpty(cliente.Senha) || string.IsNullOrEmpty(cliente.ConfirmaSenha))
+            {
+                ViewBag.CSenha = "Campos vazios!";
+                isvalid = true;
+
+            }
+            if (cliente.Senha.Length > 20 || cliente.Senha.Length < 4)
+            {
+                ViewBag.CSenha = "Senha deve ter entre 4 a 20 caracteres!";
+                isvalid = true;
+
+            }
+            if (isvalid)
+            {
+                return View();
+            }
+            else
+            {
+                _clienteRepository.AtualizarSenha(cliente);
+                TempData["MSG_S"] = "Registro atualizado com sucesso!";
+                return RedirectToAction(nameof(PainelCliente));
+            }
+
+
+        }
         public IActionResult AtualizarDados(string email)
         {
             Cliente cliente = _clienteRepository.ObterDados(email);

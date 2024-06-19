@@ -18,7 +18,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
         public LoginRepository(IConfiguration conf)
         {
             _conexaoMySQL = conf.GetConnectionString("ConexaoMySQL");
-            ConfiguracaoEmail configuracao = new ConfiguracaoEmail("rbpeixotojr@hotmail.com", "GameFesth.co", "junior26", "smtp-mail.outlook.com", "587");
+            ConfiguracaoEmail configuracao = new ConfiguracaoEmail("rbpeixotojr@hotmail.com", "GameFesth.co", "junior26.", "smtp-mail.outlook.com", "587");
             _Configuracao = configuracao;
         }
         

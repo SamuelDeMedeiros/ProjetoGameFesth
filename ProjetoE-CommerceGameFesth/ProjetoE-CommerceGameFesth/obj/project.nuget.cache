@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+EsX71WJ4R1brconSIteiKTmTNUE62dFLL7t09zSW3Mk6XaDOsTeIgy6z5Z5sydHPLe0oU7ygPQJwdNUIURZJg==",
+  "dgSpecHash": "8bctOIeFnynuAWM5O82uYkUo00HXEEn/9e9yCKA5fO58NU/0FdinS0WsfS2eGbcdE5Arw8LDZIUxgjWFPESSgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\3ds\\Desktop\\18 06\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
+  "projectFilePath": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3ds\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\3ds\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
