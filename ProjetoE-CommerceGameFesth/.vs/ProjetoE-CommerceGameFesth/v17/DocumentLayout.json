@@ -1,82 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\detalhesfunc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\detalhesfunc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc19 06\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhescli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhescli.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\detalhesfuncdesativado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\detalhesfuncdesativado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\desativadosf.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\desativadosf.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\atualizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\funcionario\\atualizar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhesclidesativado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\detalhesclidesativado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\desativados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\desativados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\3ds\\desktop\\tcc\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\cliente\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\views\\home\\atualizarp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\atualizarp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\views\\home\\atualizardados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc19 06\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\home\\atualizardados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\atualizardados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\views\\home\\painelcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\painelcliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\views\\home\\atualizarp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\atualizarp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\repository\\contract\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\repository\\contract\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\repository\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\projetoe-commercegamefesth\\areas\\funcionario\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\areas\\funcionario\\views\\produto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc19 06\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\home\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc19 06\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|c:\\users\\administrador\\desktop\\tcc19 06\\projetogamefesth\\projetoe-commercegamefesth\\projetoe-commercegamefesth\\views\\home\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{45D3D5FC-7B35-4F31-9664-E07FEC53962A}|ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth.csproj|solutionrelative:projetoe-commercegamefesth\\views\\home\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,247 +45,117 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Index.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Index.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Index.cshtml",
-              "ViewState": "AQIAABQAAAAAAAAAAAAUwCMAAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:36:18.405Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DetalhesFuncDesativado.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFuncDesativado.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFuncDesativado.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFuncDesativado.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFuncDesativado.cshtml",
-              "ViewState": "AQIAABEAAAAAAAAAAAAcwHUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:35:43.984Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DetalhesFunc.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFunc.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFunc.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFunc.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DetalhesFunc.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAABkAAABIAAAA",
+              "Title": "Cliente.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Models\\Cliente.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAywBoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-20T15:42:56.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AtualizarDados.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAFcAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:35:19.394Z",
+              "WhenOpened": "2024-06-20T15:33:06.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "DesativadosF.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\DesativadosF.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAGsAAAAAAAAA",
+              "Title": "Cadastrar.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\Cadastrar.cshtml",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAAANwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:34:41.14Z",
+              "WhenOpened": "2024-06-20T15:26:42.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Cadastrar.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Cadastrar.cshtml",
-              "ViewState": "AQIAAIcAAAAAAAAAAAAwwK4AAAAAAAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAJUBAAAAAAAAAAAuwJwBAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:34:20.676Z",
+              "WhenOpened": "2024-06-20T15:17:30.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Atualizar.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Funcionario\\Atualizar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKUAAAAAAAAA",
+              "Title": "FrontPage.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
+              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
+              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\FrontPage.cshtml",
+              "ViewState": "AQIAALIBAAAAAAAAAAAAADMBAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:33:10.211Z",
+              "WhenOpened": "2024-06-20T14:41:48.166Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Index.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Index.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Index.cshtml",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAmwBsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:32:37.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DetalhesCliDesativado.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCliDesativado.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCliDesativado.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCliDesativado.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCliDesativado.cshtml",
-              "ViewState": "AQIAAFIAAAAAAAAAAAAwwHkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:32:31.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DetalhesCli.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\DetalhesCli.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAJYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:31:51.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Desativados.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Desativados.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Desativados.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Desativados.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Desativados.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAF0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:31:21.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Cadastrar.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Cadastrar.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Cadastrar.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Cadastrar.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Cliente\\Cadastrar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T20:30:05.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 4,
               "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
               "RelativeToolTip": "ProjetoE-CommerceGameFesth\\wwwroot\\js\\site.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-06-19T19:52:23.258Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Areas\\Funcionario\\Views\\Produto\\Index.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T19:40:24.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IClienteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\Contract\\IClienteRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Repository\\Contract\\IClienteRepository.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\Contract\\IClienteRepository.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Repository\\Contract\\IClienteRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T17:59:25.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PainelCliente.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\PainelCliente.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\PainelCliente.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\PainelCliente.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\PainelCliente.cshtml",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAIQAAADLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T17:55:40.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "AtualizarP.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
               "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
               "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarP.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAA4AAAABAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-19T18:18:07.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AtualizarDados.cshtml",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Views\\Home\\AtualizarDados.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T17:49:32.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ClienteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
-              "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Repository\\ClienteRepository.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAADwv3cAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T17:11:07.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\tcc\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\tcc19 06\\ProjetoGameFesth\\ProjetoE-CommerceGameFesth\\ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
               "RelativeToolTip": "ProjetoE-CommerceGameFesth\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAANgAAAAAAAAAAAAqwKUBAAAJAAAA",
+              "ViewState": "AQIAAJgBAAAAAAAAAAAiwKsBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-19T17:06:38.851Z",
               "EditorCaption": ""

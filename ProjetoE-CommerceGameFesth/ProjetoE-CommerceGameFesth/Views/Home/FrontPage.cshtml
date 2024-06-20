@@ -259,7 +259,7 @@
                 color: white;
             }
 
-
+    
     /* Estilos para a imagem do produto */
     .product-card img {
         width: 100%;
@@ -318,15 +318,12 @@
                         <input class="form-check-label" type="radio" name="por" value="Por Menor">
                         Decrescente
                     </label>
-                    <select name="campo">
-                        <option value="Nome">Nome</option>
-                        <option value="Valor">Valor</option>
-                    </select>
+                        <select name="campo">
+                            <option value="Nome">Nome</option>
+                            <option value="Valor">Valor</option>
+                        </select>
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
-
-
                 </div>
-
             }
         </div>
 
@@ -365,7 +362,7 @@
                                                 <p class="product-description small text-muted">@item.Descricao</p>
                                                 <p class="product-price  text-success">R$@item.Valor</p>
                                                 <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
-
+                                                    
                                                     @using (Html.BeginForm("AdicionarItem", "Home", FormMethod.Post))
                                                     {
                                                         <input type="hidden" name="id" value="@item.Codbarras" />
@@ -386,9 +383,9 @@
                                                                 </svg>
                                                             </div>
                                                         </button>
-
-
-
+                                                            
+                                                           
+                                                       
                                                     }
                                                     @using (Html.BeginForm("Detalhes", "Home", FormMethod.Post))
                                                     {
@@ -417,6 +414,7 @@
         </div>
     </div>
 </section>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

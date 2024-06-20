@@ -230,6 +230,27 @@
             font-size: 1.5em;
             color: #000;
         }
+
+        .logo, .gif {
+            transition: opacity 0.5s ease;
+        }
+
+        .hidden {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            width: 0;
+        }
+
+        .visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gif {
+            max-width: 100px; /* Limitar o tamanho da logo */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -237,8 +258,9 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-between">
                 <!-- Logo -->
-                <a asp-area="" asp-controller="Home" asp-action="frontpage" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
-                    <img src="/Imagens/logoamefesthdeitadafundobranco.png" alt="Logo" class="logo me-3">
+                <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none" onclick="showGif()">
+                    <img id="logo" src="/Imagens/logoamefesthdeitadafundobranco.png" alt="Logo" class="logo me-3 visible">
+                    <img id="gif" src="/Imagens/gamefesthi.gif" alt="Loading" class="gif hidden">
                 </a>
 
                 <!-- Navegação -->
@@ -285,6 +307,7 @@
             </div>
         </div>
     </header>
+
 
     <main role="main" class="pb-3">
         @RenderBody()
@@ -385,7 +408,22 @@
                 });
             }
         });
+        function showGif() {
+            var logo = document.getElementById('logo');
+            var gif = document.getElementById('gif');
 
+            logo.classList.remove('visible');
+            logo.classList.add('hidden');
+            gif.classList.remove('hidden');
+            gif.classList.add('visible');
+
+            setTimeout(function () {
+                logo.classList.remove('hidden');
+                logo.classList.add('visible');
+                gif.classList.remove('visible');
+                gif.classList.add('hidden');
+            }, 3000);
+        }
     </script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

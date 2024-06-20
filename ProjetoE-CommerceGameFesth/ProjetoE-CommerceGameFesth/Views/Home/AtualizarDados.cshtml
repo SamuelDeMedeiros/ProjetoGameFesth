@@ -79,16 +79,20 @@
 
     <div class="row">
         <div class="col-md-12">
-            <form asp-action="AtualizarP">
+            <form asp-action="AtualizarDados">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
+                    <input type="hidden" asp-for="IdCliente" />
+                    <input type="hidden" asp-for="NomeCliente" />
+                    <input type="hidden" asp-for="Nascimento" />
+                    <input type="hidden" asp-for="Nascimento" />
                     <label asp-for="NomeCliente" class="control-label">Nome do Cliente</label>
                     <input asp-for="NomeCliente" class="form-control" />
                     <span asp-validation-for="NomeCliente" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Telefone" class="control-label">Telefone</label>
-                    <input asp-for="Telefone" class="form-control" />
+                    <input id="telefone" asp-for="Telefone" class="form-control" />
                     <span asp-validation-for="Telefone" class="text-danger"></span>
                 </div>
                 @if (ViewBag.Sexo == "M")
@@ -113,11 +117,13 @@
                         <span class="form-check-label">Feminino</span>
                     </label>
                 }
+                <div class="button">
+@*                     <a asp-action="PainelCliente" value="Atualizar" class="btn btn-outline-primary">Voltar</a> *@
+                    <input type="submit" value="Atualizar" class="btn btn-outline-primary" />
+                    <a asp-action="PainelCliente" value="Voltar" class="btn btn-outline-info">Voltar</a>
+                </div>
             </form>
-            <div class="button">
-                <input type="submit" value="Atualizar" class="btn btn-outline-primary" />
-                <a asp-action="PainelCliente" value="Voltar" class="btn btn-outline-info">Voltar</a>
-            </div>
+
         </div>
     </div>
 </div>

@@ -4,85 +4,60 @@
     ViewData["Title"] = "Cadastrar";
 }
 
-<title>Registrar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
 
+        .containeri {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-    }
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
 
         .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ccc;
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
             border-radius: 4px;
-            margin-bottom: 0.5rem;
+            cursor: pointer;
         }
 
-            .form-group input[type="radio"] {
-                width: auto;
+            .btn-primary:hover {
+                background-color: #0056b3;
             }
 
-    .form-row {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-        .form-row .form-group {
-            flex: 1;
-            min-width: calc(50% - 1rem);
+        .form-check-label {
             margin-right: 1rem;
         }
 
-            .form-row .form-group:last-child {
-                margin-right: 0;
-            }
-
-    .form-check-label {
-        margin-right: 1rem;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        cursor: pointer;
-        width: 100%;
-        text-align: center;
-    }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
+        #divPessoaJuridica, #divPessoaFisica {
+            display: none;
         }
-
-    #divPessoaJuridica, #divPessoaFisica {
-        display: none;
-    }
-
-    .containeri {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-</style>
+    </style>
+</head>
 <body>
     <div class="containeri">
         <h1>Cadastrar</h1>
@@ -91,49 +66,29 @@
             {
                 <p class="alert alert-success">@TempData["MSG_S"]</p>
             }
-           
-            @if (ViewData["MSG_Email"] != null)
-            {
-                <p class="alert alert-danger">@ViewData["MSG_Email"]</p>
-            }
-            @if (TempData["MSG_CEP"] != null)
-            {
-                <p class="alert alert-danger">@TempData["MSG_CEP"]</p>
-            }
-            <div class="form-group">
-                <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" asp-for="cliente.TipoPessoa" id="radioPF" value="PF" checked>
-                    <span class="form-check-label">Pessoa Física</span>
-                </label>
-                <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" asp-for="cliente.TipoPessoa" id="radioPJ" value="PJ">
-                    <span class="form-check-label">Pessoa Jurídica</span>
-                </label>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoPessoa" value="PF" id="radioPF" checked>
+                        <span class="form-check-label">Pessoa Física</span>
+                    </label>
+                    <label class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tipoPessoa" value="PJ" id="radioPJ">
+                        <span class="form-check-label">Pessoa Jurídica</span>
+                    </label>
+                </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="cliente.NomeCliente">Nome</label>
                     <input type="text" asp-for="cliente.NomeCliente" class="form-control">
                     <span asp-validation-for="cliente.NomeCliente"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="cliente.Nascimento">Data de nascimento</label>
                     <input id="data" type="text" asp-for="cliente.Nascimento" class="form-control">
-                    @if (ViewBag.Num != null)
-                    {
-                        <span class="alert">@ViewBag.Data</span>
-                    }
+                    <span asp-validation-for="cliente.Nascimento"></span>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" asp-for="cliente.Sexo" value="M" checked>
-                    <span class="form-check-label">Masculino</span>
-                </label>
-                <label class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" asp-for="cliente.Sexo" value="F">
-                    <span class="form-check-label">Feminino</span>
-                </label>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -141,96 +96,104 @@
                     <input id="telefone" type="text" asp-for="cliente.Telefone" class="form-control">
                     <span asp-validation-for="cliente.Telefone"></span>
                 </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="cliente.Email">E-mail</label>
+                    <input type="text" asp-for="cliente.Email" class="form-control">
+                    <span asp-validation-for="cliente.Email"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="cliente.Senha">Senha</label>
+                    <input class="form-control" asp-for="cliente.Senha" type="password">
+                    <span asp-validation-for="cliente.Senha"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="cliente.ConfirmaSenha">Confirmar a senha</label>
+                    <input class="form-control" asp-for="cliente.ConfirmaSenha" type="password">
+                    <span asp-validation-for="cliente.ConfirmaSenha"></span>
+                </div>
             </div>
             <div id="divPessoaFisica">
                 <h4>Cadastro de Pessoa Física</h4>
-                <div class="form-group">
-                    <label asp-for="cliente.RG">RG</label>
-                    <input id="rg" type="text" asp-for="cliente.RG" class="form-control">
-                    <span asp-validation-for="cliente.RG"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="cliente.CPF">CPF</label>
-                    <input id="cpf" type="text" asp-for="cliente.CPF" class="form-control">
-                    <span asp-validation-for="cliente.CPF"></span>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.RG">RG</label>
+                        <input id="rg" type="text" asp-for="cliente.RG" class="form-control">
+                        <span asp-validation-for="cliente.RG"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.CPF">CPF</label>
+                        <input id="cpf" type="text" asp-for="cliente.CPF" class="form-control">
+                        <span asp-validation-for="cliente.CPF"></span>
+                    </div>
                 </div>
             </div>
-
             <div id="divPessoaJuridica">
                 <h4>Cadastro de Pessoa Jurídica</h4>
-                <div class="form-group">
-                    <label asp-for="cliente.CNPJ">CNPJ</label>
-                    <input id="cnpj" type="text" asp-for="cliente.CNPJ" class="form-control">
-                    <span asp-validation-for="cliente.CNPJ"></span>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.CNPJ">CNPJ</label>
+                        <input id="cnpj" type="text" asp-for="cliente.CNPJ" class="form-control">
+                        <span asp-validation-for="cliente.CNPJ"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.IE">IE</label>
+                        <input type="text" asp-for="cliente.IE" class="form-control">
+                        <span asp-validation-for="cliente.IE"></span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="cliente.IE">IE</label>
-                    <input id="ie" type="text" asp-for="cliente.IE" class="form-control">
-                    <span asp-validation-for="cliente.IE"></span>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.NomeFantasia">Nome Fantasia</label>
+                        <input type="text" asp-for="cliente.NomeFantasia" class="form-control">
+                        <span asp-validation-for="cliente.NomeFantasia"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="cliente.Razaosocial">Razão Social</label>
+                        <input type="text" asp-for="cliente.Razaosocial" class="form-control">
+                        <span asp-validation-for="cliente.Razaosocial"></span>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label asp-for="cliente.NomeFantasia">Nome Fantasia</label>
-                    <input type="text" asp-for="cliente.NomeFantasia" class="form-control">
-                    <span asp-validation-for="cliente.NomeFantasia"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="cliente.Razaosocial">Razão Social</label>
-                    <input type="text" asp-for="cliente.Razaosocial" class="form-control">
-                    <span asp-validation-for="cliente.Razaosocial"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="cliente.Email">E-mail</label>
-                <input type="text" asp-for="cliente.Email" class="form-control">
-                <span asp-validation-for="cliente.Email"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cliente.Senha">Senha</label>
-                <input class="form-control" asp-for="cliente.Senha" type="password">
-                <span asp-validation-for="cliente.Senha"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="cliente.ConfirmaSenha">Confirmar a senha</label>
-                <input class="form-control" asp-for="cliente.ConfirmaSenha" type="password">
-                <span asp-validation-for="cliente.ConfirmaSenha"></span>
             </div>
             <h4>Endereço</h4>
-            <div class="form-group">
-                <label asp-for="endereco.CEP">CEP</label>
-                <input id="cep" type="text" asp-for="endereco.CEP" class="form-control">
-
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.NumLougradouro">Número</label>
-                <input type="number" asp-for="endereco.NumLougradouro" class="form-control">
-                @if (ViewBag.Num != null)
-                {
-                    <span class="alert">@ViewBag.Num</span>
-                }
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="endereco.CEP">CEP</label>
+                    <input id="cep" type="text" asp-for="endereco.CEP" class="form-control">
+                    @if (TempData["MSG_CEP"] != null)
+                    {
+                        <p class="alert alert-success">@TempData["MSG_CEP"]</p>
+                    }
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="endereco.NumLougradouro">Número</label>
+                    <input type="text" value="@ViewBag.NumLougradouro" class="form-control">
+                    <span asp-validation-for="endereco.NumLougradouro"></span>
+                </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="endereco.Lougradouro">Logradouro</label>
                     <input id="Lougradouro" type="text" class="form-control" readonly>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="endereco.Bairro">Bairro</label>
                     <input id="Bairro" type="text" class="form-control" readonly>
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="endereco.NomeUF">Estado</label>
                     <input id="UF" type="text" class="form-control" readonly>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <label asp-for="endereco.NomeCidade">Cidade</label>
                     <input id="Cidade" type="text" class="form-control" readonly>
                 </div>
             </div>
-
             <div class="form-group">
-                <button type="submit" class="btn-primary">Cadastrar</button>
+                <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
             </div>
         </form>
     </div>
@@ -251,8 +214,7 @@
             document.getElementById('radioPF').dispatchEvent(new Event('change'));
         </script>
     }
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
