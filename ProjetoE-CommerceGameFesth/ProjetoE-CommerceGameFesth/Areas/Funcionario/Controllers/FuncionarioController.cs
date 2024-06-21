@@ -179,13 +179,12 @@ namespace ProjetoE_CommerceGameFesth.Areas.Funcionario.Controllers
         [HttpPost]
         public IActionResult Atualizar([FromForm] Models.CadastraEndereco cadastra) 
         {
-            if(ModelState.IsValid) 
-            {
+
                 _funcionarioRepository.Atualizar(cadastra);
                 TempData["MSG_S"] = "Funcionario atualizado com sucesso! ";
                 return RedirectToAction(nameof(Index));
-            }
-            return View();
+
+           
         }
         [ValidateHttpRefer]
         public IActionResult Excluir(int id)

@@ -198,7 +198,6 @@ LEFT JOIN
     Tb_PJ tpj ON tc.Id_cliente = tpj.Id_Cli;
   
   -- detalhes da venda
-  -- drop VIEW vw_detaVenda;
     CREATE OR REPLACE VIEW vw_detaVenda AS
 SELECT 
     tv.NF AS NotaFiscal,
@@ -209,19 +208,19 @@ SELECT
     tp.Marca AS Marca,
     tp.Descricao AS Descricao,
     tp.ImagemProduto AS ImagemProduto,
+    tp.Codbarras AS Codbarras,
     tp.Valor AS Valor,
-    tp.CodBarras AS CodBarras,
-    tp.QtdEst AS QtdEst,
-    tiv.Qtd AS Qtd
+    tiv.Qtd AS quantidade,
+    tp.QtdEst AS QtdEst
 		FROM 
     tb_vendas tv
     JOIN 
     tb_itemvenda tiv ON tiv.NF = tv.NF
 	JOIN 
     tb_produto tp ON tiv.CodBarras = tp.CodBarras;
-  select * from vw_detaVenda;
-  select * from tb_vendas;
-   -- Insere produto
+  select * from vw_detaVenda where ClienteiD = 1;
+  
+-- Insere produto
 DELIMITER $$
 CREATE PROCEDURE spInsereProduto (
  IN vCodBarras BIGINT,
@@ -332,6 +331,27 @@ CALL spInsereProduto(111232333549, 'Monitor LG 27GN950-B', 'LG', '/Imagens/lg27g
 CALL spInsereProduto(111232333550, 'Monitor ViewSonic Elite XG270QG', 'ViewSonic', '/Imagens/viewsonicelitexg270qg.jpeg', 'Monitor ViewSonic Elite XG270QG de 27 polegadas com resolução QHD (2560x1440), taxa de atualização de 165Hz, tecnologia IPS e suporte para NVIDIA G-SYNC.', 2799.90, 10);
 CALL spInsereProduto(111232333551, 'Monitor MSI Optix MAG274QRF-QD', 'MSI', '/Imagens/msioptixmag274qrfqd.jpeg', 'Monitor MSI Optix MAG274QRF-QD de 27 polegadas com resolução QHD (2560x1440), taxa de atualização de 165Hz, tecnologia IPS e suporte para AMD FreeSync.', 2299.90, 12);
 
+-- Coolers
+CALL spInsereProduto(111232333601, 'Cooler Master Hyper 212', 'Cooler Master', '/Imagens/hyper212.jpg', 'Cooler para processador com suporte a vários sockets e tecnologia de heatpipes.', 189.90, 15);
+CALL spInsereProduto(111232333602, 'Noctua NH-D15', 'Noctua', '/Imagens/nhd15.jpg', 'Cooler para processador com design de torres duplas e dois ventiladores NF-A15 PWM.', 499.90, 20);
+CALL spInsereProduto(111232333603, 'Corsair H100i RGB', 'Corsair', '/Imagens/h100i-rgb.jpg', 'Sistema de refrigeração líquida All-in-One com iluminação RGB e radiador de 240mm.', 699.90, 10);
+CALL spInsereProduto(111232333604, 'Arctic Freezer 34 eSports', 'Arctic', '/Imagens/freezer34-esports.jpg', 'Cooler para processador com design otimizado para melhor dissipação de calor e ventilador de 120mm.', 249.90, 30);
+CALL spInsereProduto(111232333605, 'Be Quiet! Dark Rock Pro 4', 'Be Quiet!', '/Imagens/darkrockpro4.jpg', 'Cooler para processador com alta performance de refrigeração e operação silenciosa.', 399.90, 18);
+
+-- Gabinetes
+CALL spInsereProduto(111232333701, 'NZXT H510', 'NZXT', '/Imagens/nzxt-h510.jpg', 'Gabinete Mid Tower com design minimalista e excelente fluxo de ar, suporte para radiadores e placas mãe ATX.', 499.90, 10);
+CALL spInsereProduto(111232333702, 'Corsair 4000D Airflow', 'Corsair', '/Imagens/4000d-airflow.jpg', 'Gabinete Mid Tower com design focado em fluxo de ar e suporte para radiadores até 360mm.', 449.90, 12);
+CALL spInsereProduto(111232333703, 'Cooler Master MasterBox Q300L', 'Cooler Master', '/Imagens/q300l.jpg', 'Gabinete compacto com excelente fluxo de ar, painel lateral transparente e suporte para placas mãe Micro-ATX.', 299.90, 25);
+CALL spInsereProduto(111232333704, 'Fractal Design Meshify C', 'Fractal Design', '/Imagens/meshify-c.jpg', 'Gabinete Mid Tower com painel frontal em malha para melhor fluxo de ar e espaço interno otimizado.', 599.90, 8);
+CALL spInsereProduto(111232333705, 'Thermaltake Core P3', 'Thermaltake', '/Imagens/core-p3.jpg', 'Gabinete aberto com suporte para montagem vertical e radiadores até 420mm.', 799.90, 5);
+
+-- Fontes
+CALL spInsereProduto(111232333801, 'Corsair RM750x', 'Corsair', '/Imagens/corsair-rm750x.jpg', 'Fonte de alimentação modular com certificação 80 Plus Gold e potência de 750W.', 599.90, 8);
+CALL spInsereProduto(111232333802, 'EVGA SuperNOVA 650 G5', 'EVGA', '/Imagens/supernova-650g5.jpg', 'Fonte de alimentação com certificação 80 Plus Gold e potência de 650W.', 549.90, 10);
+CALL spInsereProduto(111232333803, 'Cooler Master MWE 650', 'Cooler Master', '/Imagens/mwe-650.jpg', 'Fonte de alimentação com certificação 80 Plus Bronze e potência de 650W.', 399.90, 15);
+CALL spInsereProduto(111232333804, 'Seasonic Focus GX-550', 'Seasonic', '/Imagens/focus-gx-550.jpg', 'Fonte de alimentação modular com certificação 80 Plus Gold e potência de 550W.', 479.90, 12);
+CALL spInsereProduto(111232333805, 'Thermaltake Smart RGB 500W', 'Thermaltake', '/Imagens/smart-rgb-500w.jpg', 'Fonte de alimentação com iluminação RGB e certificação 80 Plus White.', 299.90, 20);
+
 -- quase pronto
 DELIMITER //
 CREATE PROCEDURE InserirFuncionarios(
@@ -382,7 +402,19 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL InserirFuncionarios('Luis', 119796012340, 'G', '05138040', 'Rua Adalberto Kurt','Jardim Líbano', 125, 'São Paulo', 'SP', 'luis@gmail.com', '123123');
+CALL InserirFuncionarios('Luis', 119796012340, 'G', '05138040', 'Rua Adalberto Kurt','Jardim Líbano', 125, 'São Paulo', 'SP', 'luis@email.com', '123123');
+CALL InserirFuncionarios(
+    'Mariana',              -- Nome
+    119876543210,           -- Telefone
+    'F',                    -- Sexo
+    '01001000',             -- CEP
+    'Praça da Sé',          -- Logradouro
+    'Centro',               -- Bairro
+    1,                      -- Número
+    'São Paulo',            -- Cidade
+    'SP',                   -- Estado
+    'mariana@email.com',    -- Email
+    'senha456'              -- Senha
 DELIMITER $$
 
 CREATE PROCEDURE InserirPF(
@@ -463,7 +495,7 @@ END $$
 
 DELIMITER ;
 
-CALL InserirPF('Samuel', '2000-10-02', 'M', '12345431234', 123456781, 12345678909, '05317020', 'Av.Manuel bandeira', 'Villa Leopoldina', 211, 'São Paulo', 'SP', 'Samuel@gmail.com', '123123');
+CALL InserirPF('Samuel', '2000-10-02', 'M', '1234543899', 123359, 12345678909, '05317020', 'Av.Manuel bandeira', 'Villa Leopoldina', 211, 'São Paulo', 'SP', 'Samuel@gmail.com', '123123');
 
 -- drop procedure InserirPJ;
  
@@ -905,12 +937,16 @@ BEGIN
 END //
 DELIMITER ;
 
-UPDATE Tb_Cliente
-SET 
-    Nome = 'Novo Nome',
-    Sexo = 'M',
-    Telefone = '(99) 99999-9999'
-WHERE Id_cliente = 1;
+SELECT ID_FUNC FROM tb_funcionario WHERE ID_FUNC = 2;
+ SELECT * FROM TB_FUNCIONARIO;
+
+desc tb_estado;
+select * from Tb_Endereco;
+select * from Tb_Endcliente;
+select * from Tb_Estado;
+select * from Tb_cidade;
+select * from TB_FUNCIONARIO;
+select * from tb_login;
 
 select * from vw_FuncEnd order by Id_func;
 select *  from tb_funcionario;
@@ -919,10 +955,29 @@ select * from tb_produto where nome Like 'placa%';
 select distinct nomeuf from tb_estado;
 
 select * from tb_produto;  
+/*
+DELIMITER //
 
+CREATE TRIGGER DiminuirQtdProduto 
+AFTER INSERT ON Tb_ItemVenda 
+FOR EACH ROW 
+BEGIN 
+    DECLARE nova_qtd DECIMAL(8,2); 
+    DECLARE produto_existente DECIMAL(8,2); 
+    
+    SELECT QtdEst INTO produto_existente FROM tb_produto WHERE CodBarras = NEW.CodBarras; 
+    
+    IF produto_existente IS NOT NULL THEN 
+        SET nova_qtd = produto_existente - NEW.Qtd; 
+        UPDATE tb_produto SET QtdEst = nova_qtd WHERE CodBarras = NEW.CodBarras; 
+    END IF; 
+END;//
+
+DELIMITER ;*/
+
+-- Views
 select * from vw_cliCad;
 select * from vw_ClienteEnd;
-select * from vw_detavenda;
 select * from vw_FuncEnd order by Id_func;
 
 desc tb_login;

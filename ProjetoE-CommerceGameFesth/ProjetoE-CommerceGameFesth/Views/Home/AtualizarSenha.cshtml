@@ -4,7 +4,69 @@
 }
 
 <h1>Atualizar minha senha</h1>
+<style>
+    h4 {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
 
+    .form-container {
+        width: 100%;
+        max-width: 900px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 50px auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        padding: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: dodgerblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #007bff;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+
+    .text-danger {
+        color: red;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Espaçamento entre os botões */
+        padding: 10px;
+    }
+</style>
 <h4>Cliente</h4>
 <hr />
 <div class="row">
@@ -13,7 +75,6 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input type="hidden" asp-for="IdLog" />
-                
             </div>
             <h4>Senha nova</h4>
             <div class="form-group">

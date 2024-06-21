@@ -27,11 +27,9 @@ namespace ProjetoE_CommerceGameFesth.Models
         public string Sexo { get; set; }
 
         [Phone]
-        [Required(ErrorMessage = "O número de telefone é obrigatório")]
         [DisplayName("Número de telefone")]
         public string Telefone { get; set; }
 
-        [Required(ErrorMessage = "O CNPJ é obrigatório")]
         [DisplayName("CNPJ")]
         public string CNPJ { get; set; }
 
@@ -42,16 +40,15 @@ namespace ProjetoE_CommerceGameFesth.Models
 
         [StringLength(200)]
         [DisplayName("Nome fantasia")]
+        [Required(ErrorMessage = "O nome fantasia é obrigatório")]
         public string NomeFantasia { get; set; }
         [StringLength(200)]
         [DisplayName("Razão social")]
+        [Required(ErrorMessage = "O razão social é obrigatório")]
         public string Razaosocial { get; set; }
 
-        [Required(ErrorMessage = "O RG é obrigatório")]
         [DisplayName("RG")]
         public string RG { get; set; }
-
-        [Required(ErrorMessage = "O CPF é obrigatório")]
         [DisplayName("CPF")]
         public string CPF { get; set; }
 

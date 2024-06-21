@@ -24,12 +24,13 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("CALL updFuncEnd(@id,@nome, @cep,@log, @num, @nc,  @nuf, @email, @senha, @tel,@tipo);", conexao);
+                MySqlCommand cmd = new MySqlCommand("CALL updFuncEnd(@id,@nome, @cep,@log,@bairro, @num, @nc,  @nuf, @email, @senha, @tel,@tipo);", conexao);
 
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cadastra.funcionario.NomeFuncionario;
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = cadastra.funcionario.IdFuncionario;
                 cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cadastra.endereco.CEP.Replace("-", "");
                 cmd.Parameters.Add("@log", MySqlDbType.VarChar).Value = cadastra.endereco.Lougradouro;
+                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = cadastra.endereco.Bairro;
                 cmd.Parameters.Add("@num", MySqlDbType.VarChar).Value = cadastra.endereco.NumLougradouro;
                 cmd.Parameters.Add("@nc", MySqlDbType.VarChar).Value = cadastra.endereco.NomeCidade;
                 cmd.Parameters.Add("@nuf", MySqlDbType.VarChar).Value = cadastra.endereco.NomeUF;
@@ -137,13 +138,14 @@ namespace ProjetoE_CommerceGameFesth.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("CALL InserirFuncionarios (@nome,@tel,@tipo,@cep,@logradouro,@num,@cid,@uf,@email,@senha)", conexao);
+                MySqlCommand cmd = new MySqlCommand("CALL InserirFuncionarios (@nome,@tel,@tipo,@cep,@logradouro,@bairro,@num,@cid,@uf,@email,@senha)", conexao);
 
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = cadastra.funcionario.NomeFuncionario;
                 cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = cadastra.funcionario.Telefone.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
                 cmd.Parameters.Add("@tipo", MySqlDbType.VarChar).Value = Tipo;
                 cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cadastra.endereco.CEP.Replace("-","");
                 cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = cadastra.endereco.Lougradouro;
+                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = cadastra.endereco.Bairro;
                 cmd.Parameters.Add("@num", MySqlDbType.VarChar).Value = cadastra.endereco.NumLougradouro;
                 cmd.Parameters.Add("@cid", MySqlDbType.VarChar).Value = cadastra.endereco.NomeCidade;
                 cmd.Parameters.Add("@uf", MySqlDbType.VarChar).Value = cadastra.endereco.NomeUF;
@@ -221,6 +223,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cadastraEndereco.endereco.NumLougradouro = Convert.ToString(dr["num"]);
                     cadastraEndereco.endereco.CEP = Convert.ToString(dr["Cep_Func"]);
                     cadastraEndereco.endereco.Lougradouro = (string)dr["Logradouro"];
+                    cadastraEndereco.endereco.Bairro = (string)dr["Bairro"];
                     cadastraEndereco.endereco.NomeUF = (string)dr["NomeUf"];
                     cadastraEndereco.endereco.NomeCidade = (string)dr["NomeCid"];
                     cadastraEndereco.funcionario.Email = (string)(dr["Email"]);

@@ -108,7 +108,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="funcionario.Telefone" class="control-label"></label>
-                <input asp-for="funcionario.Telefone" class="form-control" />
+                <input id="telefone" type="text" asp-for="funcionario.Telefone" class="form-control" />
                 <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -118,7 +118,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="endereco.CEP" class="control-label"></label>
-                <input asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
+                <input id="cep" type="text" asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
                 <span asp-validation-for="endereco.CEP" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -156,12 +156,13 @@
                 <input asp-for="funcionario.ConfirmaSenha" class="form-control" />
                 <span asp-validation-for="funcionario.ConfirmaSenha" class="text-danger"></span>
             </div>
+            <div class="buttons">
+                <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
+                <button type="submit" class="btn btn-outline-primary" asp-action="Index">Voltar</button>
+
+            </div>
         </form>
-        <div class="buttons">
-            <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
-            <button type="submit" class="btn btn-outline-primary"  asp-action="Index" >Voltar</button>
-        
-        </div>
+
     </div>
 </body>
 </html>

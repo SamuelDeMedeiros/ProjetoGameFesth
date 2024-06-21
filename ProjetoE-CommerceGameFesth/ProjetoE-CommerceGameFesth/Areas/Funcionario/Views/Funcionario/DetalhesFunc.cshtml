@@ -131,7 +131,7 @@
             @using (Html.BeginForm("Atualizar", "Funcionario", FormMethod.Get))
             {
                 <div>
-                <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.id_Login)>
+                    <input type="hidden" name="id" value=@Html.DisplayFor(model => model.funcionario.IdFuncionario)>
                 <button type="submit" class="btn btn-info">Atualizar</button>
                 </div>
             }
