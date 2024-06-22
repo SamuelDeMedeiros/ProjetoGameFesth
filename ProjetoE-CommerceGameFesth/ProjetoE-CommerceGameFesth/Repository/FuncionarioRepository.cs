@@ -223,7 +223,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     cadastraEndereco.endereco.NumLougradouro = Convert.ToString(dr["num"]);
                     cadastraEndereco.endereco.CEP = Convert.ToString(dr["Cep_Func"]);
                     cadastraEndereco.endereco.Lougradouro = (string)dr["Logradouro"];
-                    cadastraEndereco.endereco.Bairro = (string)dr["Bairro"];
+                    //cadastraEndereco.endereco.Bairro = (string)dr["Bairro"];
                     cadastraEndereco.endereco.NomeUF = (string)dr["NomeUf"];
                     cadastraEndereco.endereco.NomeCidade = (string)dr["NomeCid"];
                     cadastraEndereco.funcionario.Email = (string)(dr["Email"]);

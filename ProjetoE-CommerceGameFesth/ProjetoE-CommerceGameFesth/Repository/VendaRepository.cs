@@ -89,7 +89,7 @@ namespace ProjetoE_CommerceGameFesth.Repository
                     desc.produto.ImagemProduto = Convert.ToString(dr["ImagemProduto"]);
                     desc.produto.Valor = Convert.ToString(dr["Valor"]);
                     desc.produto.QuantidadeEstoque = Convert.ToUInt16(dr["QtdEst"]);
-                    desc.produto.Quantidade = Convert.ToUInt16(dr["Qtd"]);
+                    desc.produto.Quantidade = Convert.ToUInt16(dr["Quantidade"]);
 
                 }
                 return desc;

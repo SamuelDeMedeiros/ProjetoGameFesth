@@ -3072,6 +3072,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-4.2.1-dist\js\bootstrap.min.js.map))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\css\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/css/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\css\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\css\bootstrap.css))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -3232,6 +3264,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\js\script.js))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\bootstrap-ecommerce-uikit.sketch))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -3247,6 +3295,38 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\bootstrap-ecommerce-uikit.sketch))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/icons/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\32x32-transparent\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/icons/32x32-transparent/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\32x32-transparent\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\32x32-transparent\android.png))">
       <SourceType>Package</SourceType>
@@ -3920,6 +4000,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\32x32-transparent\windows.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-transparent\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/icons/64x64-transparent/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-transparent\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-transparent\android.png))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -4591,6 +4687,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-transparent\windows.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-white\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/icons/64x64-white/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-white\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\64x64-white\android.png))">
       <SourceType>Package</SourceType>
@@ -5280,6 +5392,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\icons-all.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\svg\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/icons/svg/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\svg\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\icons\svg\android.svg))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -5968,6 +6096,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\index.html))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\shots\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-design/shots/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\shots\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-design\shots\cards-grid.png))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -6175,6 +6319,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\example-sliders.html))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\fonts\fontawesome\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-ecommerce/fonts/fontawesome/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\fonts\fontawesome\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\fonts\fontawesome\css\fa-brands.css))">
       <SourceType>Package</SourceType>
@@ -8272,6 +8432,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\plugins\slickslider\slick.min.js))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-ecommerce/sass/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\.DS_Store))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\bootstrap-assets\mixins\_alert.scss))">
       <SourceType>Package</SourceType>
       <SourceId>ProjetoE-CommerceGameFesth</SourceId>
@@ -9711,6 +9887,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\ui-assets\components\_plugin-styles.scss))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\ui-assets\helpers\.DS_Store))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProjetoE-CommerceGameFesth</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProjetoE-CommerceGameFesth</BasePath>
+      <RelativePath>resources/lib/bootstrap-ecommerce-uikit/ui-ecommerce/sass/ui-assets/helpers/.DS_Store</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\ui-assets\helpers\.DS_Store))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\resources\lib\bootstrap-ecommerce-uikit\ui-ecommerce\sass\ui-assets\helpers\_bg.scss))">
       <SourceType>Package</SourceType>

@@ -5,28 +5,116 @@
     ViewData["Title"] = "Clientes";
     int cont = 0;
 }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h1>Clientes</h1>
-<div>
+<style>
 
-    <a class="btn btn-info" asp-action="Desativados">Clientes desativados</a>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa; /* Light gray background for the page */
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px
+    }
+
+        .search-container label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .search-container .form-check-label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .search-container input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .search-container select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            flex-grow: 1; /* Faz o select crescer para preencher o espaço disponível */
+        }
+
+    .table-responsive {
+        margin-top: 30px;
+    }
+
+    .table {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        border-color: dodgerblue;
+    }
+
+        .table thead {
+            background-color: dodgerblue;
+            color: #ffffff;
+            border-color: dodgerblue;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+            border-color: dodgerblue;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    h4 {
+        text-align: center;
+        color: darkgray;
+        margin-top: 30%;
+    }
+
+    .buttons {
+        text-align: center
+    }
+
+    .button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+</style>
+
+
+<div class="button">
+    <a class="btn btn-outline-info" asp-action="Desativados">Clientes desativados</a> 
 </div>
-<div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
+
+<div class="search-container">
     @using (Html.BeginForm("Index", "Cliente", FormMethod.Get))
     {
-        <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
-        <span class="form-check-label">Cres</span>
-        <input class="form-check-label" type="radio" name="por" value="Por Menor">
-        <span class="form-check-label">Descr</span>
+        <label>
+            <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+            Cres
+        </label>
+        <label>
+            <input class="form-check-label" type="radio" name="por" value="Por Menor">
+            Descr
+        </label>
         <select name="campo">
             <option value="Id">Id</option>
             <option value="Nome">Nome</option>
             <option value="Nascimento">Data de aniversario</option>
         </select>
-
-        <button type="submit" class="btn btn-primary">Pesquisar</button>
+        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
     }
 </div>
+
 <div class="table-responsive">
     <table class="table table-bordered">
         @foreach (Cliente cliente in Model)
@@ -38,8 +126,11 @@
         }
         @if (ViewBag.Cliente == "V" || cont == 0)
         {
-            <br />
-            <h2>Sem cadastros</h2>
+
+            <h2>Esta lista está vazia</h2>
+            <div class="buttons">
+                <a class="btn btn-outline-info" asp-action="Desativados">Voltar para Clientes ativos</a>
+            </div>
         }
         else
         {

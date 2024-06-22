@@ -4,14 +4,20 @@
 @{
     ViewData["Title"] = "DetalhesCli";
 }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
     .section-header {
         background-color: #007bff; /* Fundo azul */
         color: white; /* Texto branco */
         padding: 10px; /* Padding para espaçamento interno */
         text-align: center; /* Centraliza o texto */
         border-radius: 5px; /* Arredonda os cantos */
-        margin-bottom: 20px; /* Espaçamento inferior */
+        margin-bottom: 40px; /* Espaçamento inferior */
     }
 
     .custom-table {
@@ -31,7 +37,7 @@
             padding: 0.75rem;
             vertical-align: top;
             border: 1px solid #dee2e6;
-            border-color:dodgerblue;
+            border-color: dodgerblue;
         }
 
         .custom-table th {
@@ -62,12 +68,12 @@
         }
 
 </style>
-    
+
 
 <h3 class="section-header">Detalhes do Cliente</h3>
 
 <div>
-  
+
     <hr />
     <table class="table table-bordered border-primary custom-table">
         <tbody>

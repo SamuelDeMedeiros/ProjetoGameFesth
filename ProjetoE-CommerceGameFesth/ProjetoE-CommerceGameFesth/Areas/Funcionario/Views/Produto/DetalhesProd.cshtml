@@ -1,73 +1,126 @@
 ﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+@inject ProjetoE_CommerceGameFesth.Libraries.Login.LoginFuncionario _funcionario
+
 
 @{
     ViewData["Title"] = "Detalhes";
 }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-<h1>Detalhes</h1>
-
-<div>
-    <h4>Produto</h4>
-
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Codbarras)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Codbarras)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.NomeProduto)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.NomeProduto)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Marca)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Marca)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagemProduto)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ImagemProduto)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Valor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Valor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantidadeEstoque)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.QuantidadeEstoque)
-        </dd>
-    </dl>
-</div>
-<div>
-    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
-        @using (Html.BeginForm("Atualizar", "Produto", FormMethod.Get))
-        {
-            <input type="hidden" name="id" value=@Html.DisplayFor(model => model.Codbarras)>
-            <button type="submit" class="btn btn-primary" >Atualizar</button>
+    <style>
+        body {
+            
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
         }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid dodgerblue; /* Adiciona borda com cor dodgerblue */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h4 {
+            text-align: center;
+            color: dimgrey;
+            font-weight: bold;
+        }
+
+        .details-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border: 1px solid dodgerblue; /* Adiciona borda com cor dodgerblue */
+        }
+
+            .details-table th, .details-table td {
+                padding: 12px;
+                text-align: left;
+                border: 1px solid dodgerblue; /* Adiciona borda com cor dodgerblue */
+            }
+
+            .details-table th {
+                background-color: #f8f9fa;
+                font-weight: bold;
+                width: 30%;
+            }
+
+            .details-table td {
+                width: 70%;
+            }
+
+            .details-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .btn-container .btn {
+                margin: 5px;
+            }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h4>Detalhes do produto</h4>
+        <div class="table-responsive">
+            <table class="details-table">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Codbarras)</th>
+                    <td>@Html.DisplayFor(model => model.Codbarras)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.NomeProduto)</th>
+                    <td>@Html.DisplayFor(model => model.NomeProduto)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Marca)</th>
+                    <td>@Html.DisplayFor(model => model.Marca)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+                    <td>@Html.DisplayFor(model => model.Descricao)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ImagemProduto)</th>
+                    <td>@Html.DisplayFor(model => model.ImagemProduto)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Valor)</th>
+                    <td>@Html.DisplayFor(model => model.Valor)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.QuantidadeEstoque)</th>
+                    <td>@Html.DisplayFor(model => model.QuantidadeEstoque)</td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-container">
+            @using (Html.BeginForm("Atualizar", "Produto", FormMethod.Get))
+            {
+                <input type="hidden" name="id" value="@Html.DisplayFor(model => model.Codbarras)" />
+                <button type="submit" class="btn btn-outline-info">Atualizar</button> <a asp-action="Index" class="btn btn-outline-primary">Voltar</a>
+            }
+
+        </div>
     </div>
-
-</div>
-
-<div>
-    <a asp-action="Index" value="Voltar" class="btn btn-info">Voltar</a>
-</div>
-
+</body>
+</html>

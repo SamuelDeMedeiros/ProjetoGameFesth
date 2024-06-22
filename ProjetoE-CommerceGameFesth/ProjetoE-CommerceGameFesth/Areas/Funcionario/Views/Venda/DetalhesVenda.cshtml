@@ -6,77 +6,127 @@
     ViewData["Title"] = "Detalhes";
     int count = 0;
 }
-
-
-<h1>Detalhes</h1>
-
-<div>
-    <h4>Venda</h4>
-    <tbody>
-        <dl class="row">
-            <dt class="col-sm-2">
-                Nota Fiscal
-            </dt>
-            <dd class="col-sm-10">
-                @ViewBag.NotaFiscal
-            </dd>
-            <dt class="col-sm-2">
-                Valor Total
-            </dt>
-            <dd class="col-sm-10">
-                @ViewBag.Valor
-            </dd>
-
-        </dl>
-    </tbody>
-    <h4>Cliente</h4>
-    <tbody>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    Email
-                </dt>
-                <dd class="col-sm-10">
-                    @ViewBag.Email
-                </dd>    
-                <dt class="col-sm-2">
-                    Nome
-                </dt>
-                <dd class="col-sm-10">
-                    @ViewBag.Nome
-                </dd>
-
-            </dl>
-    </tbody>
-
-    <h4>Produtos</h4>
-
-    <tbody>
-        @foreach (Produto produto in Model)
-        {
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.First().Codbarras)
-                </dt>
-
-                <dd class="col-sm-10">
-                    @produto.Codbarras
-                </dd>
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.First().NomeProduto)
-                </dt>
-                <dd class="col-sm-10">
-                    @produto.NomeProduto
-                </dd>
-                <a class="btn btn-primary" asp-route-id="@produto.Codbarras" asp-route-nf="@ViewBag.NotaFiscal" asp-area="Funcionario" asp-controller="Venda" asp-action="DetalhesProduto">Produto</a>
-            </dl>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Detalhes de Venda</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
         }
 
-    </tbody>
-    <hr />
-    
-</div>
+        .section-header {
+            background-color: #007bff; /* Fundo azul */
+            color: white; /* Texto branco */
+            padding: 10px; /* Padding para espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            border-radius: 5px; /* Arredonda os cantos */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
 
-<div>
-    <a asp-action="Index" value="Voltar" class="btn btn-info">Voltar</a>
-</div>
+        .table-container {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .table th, .table td {
+                padding: 17px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                border-color:dodgerblue;
+            }
+
+            .table th {
+                background-color: #f0f0f0;
+                color: #333;
+                font-weight: bold;
+                width: 30%;
+            }
+
+            .table td {
+                width: 70%;
+            }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <h3 class="section-header">Detalhes do Cliente</h3>
+
+    <div class="table-container">
+
+        <table class="table">
+            <tr>
+                <th>Informação</th>
+                <td>Detalhes</td>
+            </tr>
+            <tr>
+                <th>Nota Fiscal</th>
+                <td>@ViewBag.NotaFiscal</td>
+            </tr>
+            <tr>
+                <th>Valor Total</th>
+                <td>@ViewBag.Valor</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@ViewBag.Email</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>@ViewBag.Nome</td>
+            </tr>
+            @foreach (Produto produto in Model)
+            {
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().Codbarras)</th>
+                    <td>@produto.Codbarras</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().NomeProduto)</th>
+                    <td>@produto.NomeProduto</td>
+                </tr>
+                    <td colspan="2" style="text-align: center;">
+                        <a class="btn btn-outline-info" asp-route-id="@produto.Codbarras" asp-route-nf="@ViewBag.NotaFiscal"
+                           asp-area="Funcionario" asp-controller="Venda" asp-action="DetalhesProduto">Detalhes do Produto</a>
+                    </td>
+            }
+        </table>
+    </div>
+
+    <div class="btn-container">
+        <a class="btn btn-outline-primary" asp-action="Index" value="Voltar" class="btn">Voltar</a>
+    </div>
+</body>
+</html>
 

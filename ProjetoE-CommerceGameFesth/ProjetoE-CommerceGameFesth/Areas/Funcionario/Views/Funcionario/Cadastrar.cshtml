@@ -7,20 +7,19 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Funcionário</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
         }
 
         h4 {
-            color:slategrey;
-            text-decoration:dashed;
+            color: slategrey;
+            text-decoration: dashed;
             text-align: center;
             margin-bottom: 20px;
             font-weight: bold;
@@ -41,16 +40,15 @@
 
         .form-group {
             margin-bottom: 20px;
-            border-color:dodgerblue ;
+            border-color: dodgerblue;
         }
 
         .control-label {
-            color:slategrey;
-
-            
+            color: slategrey;
         }
-        input{
-            border-color:blue;
+
+        input {
+            border-color: blue;
         }
 
         .form-control {
@@ -63,11 +61,11 @@
             border-color: dodgerblue;
         }
 
-        .form-control:focus {
-            border-color: black;
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
-        }
+            .form-control:focus {
+                border-color: black;
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            }
 
         .btn-primary, .btn-info {
             background-color: dodgerblue;
@@ -79,11 +77,13 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        .buttons{
+
+        .buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
+
         .btn-primary:hover, .btn-info:hover {
             color: dodgerblue;
         }
@@ -96,7 +96,7 @@
 <body>
     <div class="container">
         <h4>CADASTRO DE FUNCIONÁRIO</h4>
-      
+
         <hr />
         <form asp-action="Cadastrar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -108,8 +108,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="funcionario.Telefone" class="control-label"></label>
-                <input id="telefone" type="text" asp-for="funcionario.Telefone" class="form-control" />
-                <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
+                <input asp-for="funcionario.Telefone" class="form-control" />
+                <span asp-validation-for="funcionario.Telefone" class="number"></span>
             </div>
             <div class="form-group">
                 <label asp-for="endereco.NumLougradouro" class="control-label"></label>
@@ -118,8 +118,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="endereco.CEP" class="control-label"></label>
-                <input id="cep" type="text" asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
-                <span asp-validation-for="endereco.CEP" class="text-danger"></span>
+                <input asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
+                <span asp-validation-for="endereco.CEP" id="cep" name="cep" class="cep-input" maxlength="9" placeholder="00000-000" required></span>
             </div>
             <div class="form-group">
                 <label asp-for="endereco.Bairro" class="control-label"></label>
@@ -156,13 +156,48 @@
                 <input asp-for="funcionario.ConfirmaSenha" class="form-control" />
                 <span asp-validation-for="funcionario.ConfirmaSenha" class="text-danger"></span>
             </div>
-            <div class="buttons">
-                <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
-                <button type="submit" class="btn btn-outline-primary" asp-action="Index">Voltar</button>
-
-            </div>
         </form>
 
+        <script>
+            document.getElementById('cep').addEventListener('input', function (e) {
+                let value = e.target.value;
+                value = value.replace(/\D/g, ''); // Remove caracteres não numéricos
+                if (value.length > 5) {
+                    value = value.replace(/(\d{5})(\d{1,3})/, '$1-$2'); // Formata com hífen
+                }
+                e.target.value = value;
+            });
+
+            document.getElementById('cep').addEventListener('keypress', function (e) {
+                const char = String.fromCharCode(e.which);
+                if (!/[0-9]/.test(char)) {
+                    e.preventDefault();
+                }
+            });
+
+            document.getElementById('address-form').addEventListener('submit', function (e) {
+                const cepInput = document.getElementById('cep');
+                const cepValue = cepInput.value;
+                const cepError = document.getElementById('cep-error');
+
+                // Validação simples do CEP
+                const cepRegex = /^[0-9]{5}-[0-9]{3}$/;
+                if (!cepRegex.test(cepValue)) {
+                    e.preventDefault();
+                    cepError.textContent = 'Por favor, insira um CEP válido no formato 00000-000.';
+                } else {
+                    cepError.textContent = '';
+                }
+            });
+        </script>
+
+
+
+        <div class="buttons">
+            <button type="submit" class="btn btn-outline-info btn-block">Cadastrar</button>
+            <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+
+        </div>
     </div>
 </body>
 </html>

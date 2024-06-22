@@ -3,96 +3,143 @@
 @{
     ViewData["Title"] = "Detalhes";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Detalhes do Produto</title>
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-header 
+        {
+            background-color: #007bff; /* Fundo azul */
+            color: white; /* Texto branco */
+            padding: 10px; /* Padding para espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            border-radius: 5px; /* Arredonda os cantos */
+            
+        }
 
 
-<h1>Detalhes</h1>
+        .table-container 
+        {
+            width: 100%;
+            margin-bottom: 20px;
 
-<div>
-    <h4>Cliente</h4>
-        <dl class="row">
-            <dt class="col-sm-2">
-                Email
-            </dt>
-            <dd class="col-sm-10">
-                @ViewBag.Email
-            </dd>  
-            <dt class="col-sm-2">
-                Nome
-            </dt>
-            <dd class="col-sm-10">
-                @ViewBag.Nome
-            </dd>
-        </dl>
-    <h4>Produto</h4>
+        }
 
-    <hr />
+        .table 
+        {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-color:dodgerblue;
+        }
 
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.venda.NotaFiscal)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.venda.NotaFiscal)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.venda.DataVenda)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.venda.DataVenda)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.NomeProduto)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.NomeProduto)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.Marca)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.Marca)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.Descricao)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.Descricao)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.ImagemProduto)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.ImagemProduto)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.Valor)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.Valor)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.QuantidadeEstoque)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.QuantidadeEstoque)
-            </dd>    
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.produto.Quantidade)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.produto.Quantidade)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.venda.IdCliente)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.venda.IdCliente)
-            </dd>
+        .table th, .table td 
+        {
+            padding: 10px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+            border-color: dodgerblue;
+        }
 
-        </dl>
-</div>
+        .table th 
+        {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: left;
+        }
 
-<div>
-    <a asp-route-id="@ViewBag.NotaFiscal" asp-action="DetalhesVenda" class="btn btn-info">Voltar</a>
-</div>
+        .table td 
+        {
+            background-color: #ffffff;
+        }
+
+        .btn-container 
+        {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        hr{
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 class="section-header">Detalhes do produto</h3>
+
+    <div class="table-container">
+      
+        <table class="table">
+            <tr>
+                <th>Email</th>
+                <td>@ViewBag.Email</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>@ViewBag.Nome</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.venda.NotaFiscal)</th>
+                <td>@Html.DisplayFor(model => model.venda.NotaFiscal)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.venda.DataVenda)</th>
+                <td>@Html.DisplayFor(model => model.venda.DataVenda)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.NomeProduto)</th>
+                <td>@Html.DisplayFor(model => model.produto.NomeProduto)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.Marca)</th>
+                <td>@Html.DisplayFor(model => model.produto.Marca)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.Descricao)</th>
+                <td>@Html.DisplayFor(model => model.produto.Descricao)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.ImagemProduto)</th>
+                <td>@Html.DisplayFor(model => model.produto.ImagemProduto)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.Valor)</th>
+                <td>@Html.DisplayFor(model => model.produto.Valor)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.QuantidadeEstoque)</th>
+                <td>@Html.DisplayFor(model => model.produto.QuantidadeEstoque)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.produto.Quantidade)</th>
+                <td>@Html.DisplayFor(model => model.produto.Quantidade)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.venda.IdCliente)</th>
+                <td>@Html.DisplayFor(model => model.venda.IdCliente)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-container">
+        <a asp-route-id="@ViewBag.NotaFiscal" asp-action="DetalhesVenda" class="btn btn-outline-primary">Voltar</a>
+    </div>
+</body>
+</html>
+
 

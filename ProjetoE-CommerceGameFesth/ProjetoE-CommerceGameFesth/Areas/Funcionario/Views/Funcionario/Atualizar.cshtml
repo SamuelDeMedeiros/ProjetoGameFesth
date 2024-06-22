@@ -4,74 +4,172 @@
     ViewData["Title"] = "Atualizar";
 }
 
-<h1>Atualizar</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h4>Funcionario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Atualizar">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="funcionario.Tipo" class="form-control" />
-            <div class="form-group">
-                <label asp-for="funcionario.NomeFuncionario" class="control-label"></label>
-                <input asp-for="funcionario.NomeFuncionario" class="form-control" />
-                <span asp-validation-for="funcionario.NomeFuncionario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="funcionario.Telefone" class="control-label"></label>
-                <input id="tel" asp-for="funcionario.Telefone" class="form-control tel" placeholder="(00) 0000-0000" />
-                <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.NumLougradouro" class="control-label"></label>
-                <input asp-for="endereco.NumLougradouro" class="form-control" />
-                <span asp-validation-for="endereco.NumLougradouro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.CEP" class="control-label"></label>
-                <input id="cep" asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
-                <span asp-validation-for="endereco.CEP" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.Lougradouro" class="control-label"></label>
-                <input asp-for="endereco.Lougradouro" class="form-control" />
-                <span asp-validation-for="endereco.Lougradouro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.Bairro" class="control-label"></label>
-                <input asp-for="endereco.Bairro" class="form-control" />
-                <span asp-validation-for="endereco.Bairro" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.NomeUF" class="control-label"></label>
-                <input asp-for="endereco.NomeUF" class="form-control" />
-                <span asp-validation-for="endereco.NomeUF" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="endereco.NomeCidade" class="control-label"></label>
-                <input asp-for="endereco.NomeCidade" class="form-control" />
-                <span asp-validation-for="endereco.NomeCidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="funcionario.Email" class="control-label"></label>
-                <input asp-for="funcionario.Email" class="form-control" />
-                <span asp-validation-for="funcionario.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="funcionario.Senha" class="control-label"></label>
-                <input asp-for="funcionario.Senha" class="form-control" />
-                <span asp-validation-for="funcionario.Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="funcionario.ConfirmaSenha" class="control-label"></label>
-                <input asp-for="funcionario.ConfirmaSenha" class="form-control" />
-                <span asp-validation-for="funcionario.ConfirmaSenha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Atualizar" class="btn btn-primary" />
-                <a asp-action="Index" value="Voltar" class="btn btn-info">Voltar</a>
-            </div>
-        </form>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-color:dodgerblue;
+            margin-top:20px;
+        }
+        .text-center{
+            font-weight:bold;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+           border-color:dodgerblue;
+        }
+
+        .form-label {
+            text-align:center;
+            border-color:dodgerblue;    
+        }
+        .form label, input{
+            border-color:dodgerblue;
+        }
+         .botoes{
+             text-align:center;
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h4 class="text-center">Atualizar Funcionário</h4>
+            <hr />
+
+            <form asp-action="Atualizar" class="form-horizontal">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="funcionario.Tipo" class="form-control" />
+
+                <div class="form-section">
+                    <h5 class="form-label">Dados Pessoais</h5>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Nome do Funcionário:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="funcionario.NomeFuncionario" class="form-control" />
+                            <span asp-validation-for="funcionario.NomeFuncionario" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Telefone:</label>
+                        <div class="col-sm-9">
+                            <input id="tel" asp-for="funcionario.Telefone" class="form-control tel" placeholder="(00) 0000-0000" />
+                            <span asp-validation-for="funcionario.Telefone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">E-mail:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="funcionario.Email" class="form-control" />
+                            <span asp-validation-for="funcionario.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Senha:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="funcionario.Senha" class="form-control" />
+                            <span asp-validation-for="funcionario.Senha" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Confirmar Senha:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="funcionario.ConfirmaSenha" class="form-control" />
+                            <span asp-validation-for="funcionario.ConfirmaSenha" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5 class="form-label">Endereço</h5>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Número do Logradouro:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="endereco.NumLougradouro" class="form-control" />
+                            <span asp-validation-for="endereco.NumLougradouro" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">CEP:</label>
+                        <div class="col-sm-9">
+                            <input id="cep" asp-for="endereco.CEP" class="form-control cep" placeholder="00000-000" />
+                            <span asp-validation-for="endereco.CEP" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Logradouro:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="endereco.Lougradouro" class="form-control" />
+                            <span asp-validation-for="endereco.Lougradouro" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Bairro:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="endereco.Bairro" class="form-control" />
+                            <span asp-validation-for="endereco.Bairro" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Estado:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="endereco.NomeUF" class="form-control" />
+                            <span asp-validation-for="endereco.NomeUF" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Cidade:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="endereco.NomeCidade" class="form-control" />
+                            <span asp-validation-for="endereco.NomeCidade" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-info">Atualizar</button>
+                    <a asp-action="Index" class="btn btn-outline-primary">Voltar</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#tel').mask('(00) 0000-0000');
+            $('#cep').mask('00000-000');
+        });
+    </script>
+
+</body>
+</html>

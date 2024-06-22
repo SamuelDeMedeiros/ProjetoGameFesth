@@ -4,60 +4,135 @@
     ViewData["Title"] = "Atualizar";
 }
 
-<h1>Atualizar</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h4>Produto</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Atualizar" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Codbarras" class="control-label"></label>
-                <input asp-for="Codbarras" class="form-control" />
-                <span asp-validation-for="Codbarras" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeProduto" class="control-label"></label>
-                <input asp-for="NomeProduto" class="form-control" />
-                <span asp-validation-for="NomeProduto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
-                <span asp-validation-for="Marca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagemProduto" class="control-label"></label>
-                <input asp-for="ImagemProduto" class="form-control" type="file" name="file" id="file" />
-                <span asp-validation-for="ImagemProduto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Valor" class="control-label"></label>
-                <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
-                @* @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { placeholder = "Informe o valor", @class = "form-control", @id = "PrecoUni" } })
-                @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" }) *@
-                <span asp-validation-for="Valor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuantidadeEstoque" class="control-label"></label>
-                <input asp-for="QuantidadeEstoque" class="form-control" />
-                <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
-            </div>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-color:dodgerblue;
+            margin-top:20px;
+        }
 
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-color:dodgerblue;
+        }
+        .control-label{
+            border-color:dodgerblue;
+        }
+        .form-group-bot{
+            display:flex;
+            gap:5px;
+            justify-content:center;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #0056b3;
+            }
+
+        .btn-info {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+            .btn-info:hover {
+                background-color: #117a8b;
+                border-color: #117a8b;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h4 class="form-header">Atualizar Produto</h4>
+            <hr />
+
+            <form asp-action="Atualizar" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Codbarras" class="control-label"></label>
+                    <input asp-for="Codbarras" class="form-control" />
+                    <span asp-validation-for="Codbarras" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NomeProduto" class="control-label"></label>
+                    <input asp-for="NomeProduto" class="form-control" />
+                    <span asp-validation-for="NomeProduto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Marca" class="control-label"></label>
+                    <input asp-for="Marca" class="form-control" />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descricao" class="control-label"></label>
+                    <input asp-for="Descricao" class="form-control" />
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImagemProduto" class="control-label"></label>
+                    <input asp-for="ImagemProduto" class="form-control-file" type="file" name="file" id="file" />
+                    <span asp-validation-for="ImagemProduto" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="QuantidadeEstoque" class="control-label"></label>
+                    <input asp-for="QuantidadeEstoque" class="form-control" />
+                    <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
+                </div>
+
+                <div class="form-group-bot">
+                    <input type="submit" value="Atualizar" class="btn btn-primary" />
+                    <a class="btn btn-outline-primary" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a class="btn btn-info " asp-action="Index">Voltar</a>
-</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Máscara para dinheiro (valor)
+            $('#dinheiro').mask('000.000.000,00', { reverse: true });
 
+            // Máscara para código de barras (opcional, exemplo de máscara para EAN-13)
+            $('input[name="Codbarras"]').mask('0000000000000');
+        });
+    </script>
+
+
+</body>
+</html>

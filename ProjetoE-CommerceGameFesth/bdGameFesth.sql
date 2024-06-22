@@ -44,7 +44,7 @@ CREATE TABLE Tb_Cliente(
 
 CREATE TABLE Tb_Vendas( 
     Nf int not null primary key, 
-    ValorTotal decimal (6,2) not null, 
+    ValorTotal decimal (10,2) not null, 
     Data_ DateTime not null, 
     Id_cli int not null, 
     foreign key (Id_cli) references Tb_Cliente(Id_cliente) 
@@ -53,7 +53,7 @@ CREATE TABLE Tb_Vendas(
 CREATE TABLE Tb_ItemVenda( 
     Nf int not null, 
     CodBarras bigint not null, 
-    Valor Decimal (8,2) check (Valor > 0) not null, 
+    Valor Decimal (10,2) check (Valor > 0) not null, 
     Qtd smallint check (Qtd > 0) not null, 
     foreign key (Nf) references Tb_Vendas(Nf), 
     foreign key (CodBarras) references Tb_Produto(CodBarras), 
@@ -152,8 +152,9 @@ CREATE TABLE Tb_Funcionario(
 -- DROP procedure spInsereProduto;
 -- Views
 -- view funcionario
+-- drop view vw_FuncEnd ;
 create view vw_FuncEnd as
-select Id_func, id_log, Nome_Func, DataAdmissao, Tel, Tipo,Situacao, Num, TF.Cep_Func, Logradouro, NomeUf, NomeCid, email, senha
+select Id_func, id_log, Nome_Func, DataAdmissao, Tel, Tipo,Situacao, Num, TF.Cep_Func, Logradouro, Bairro, NomeUf, NomeCid, email, senha
 from TB_FUNCIONARIO TF
 join Tb_Endereco TE on TF.Cep_Func = TE.CEP
 join Tb_Estado TES on TE.idUf = TES.idUF
@@ -331,26 +332,6 @@ CALL spInsereProduto(111232333549, 'Monitor LG 27GN950-B', 'LG', '/Imagens/lg27g
 CALL spInsereProduto(111232333550, 'Monitor ViewSonic Elite XG270QG', 'ViewSonic', '/Imagens/viewsonicelitexg270qg.jpeg', 'Monitor ViewSonic Elite XG270QG de 27 polegadas com resolução QHD (2560x1440), taxa de atualização de 165Hz, tecnologia IPS e suporte para NVIDIA G-SYNC.', 2799.90, 10);
 CALL spInsereProduto(111232333551, 'Monitor MSI Optix MAG274QRF-QD', 'MSI', '/Imagens/msioptixmag274qrfqd.jpeg', 'Monitor MSI Optix MAG274QRF-QD de 27 polegadas com resolução QHD (2560x1440), taxa de atualização de 165Hz, tecnologia IPS e suporte para AMD FreeSync.', 2299.90, 12);
 
--- Coolers
-CALL spInsereProduto(111232333601, 'Cooler Master Hyper 212', 'Cooler Master', '/Imagens/hyper212.jpg', 'Cooler para processador com suporte a vários sockets e tecnologia de heatpipes.', 189.90, 15);
-CALL spInsereProduto(111232333602, 'Noctua NH-D15', 'Noctua', '/Imagens/nhd15.jpg', 'Cooler para processador com design de torres duplas e dois ventiladores NF-A15 PWM.', 499.90, 20);
-CALL spInsereProduto(111232333603, 'Corsair H100i RGB', 'Corsair', '/Imagens/h100i-rgb.jpg', 'Sistema de refrigeração líquida All-in-One com iluminação RGB e radiador de 240mm.', 699.90, 10);
-CALL spInsereProduto(111232333604, 'Arctic Freezer 34 eSports', 'Arctic', '/Imagens/freezer34-esports.jpg', 'Cooler para processador com design otimizado para melhor dissipação de calor e ventilador de 120mm.', 249.90, 30);
-CALL spInsereProduto(111232333605, 'Be Quiet! Dark Rock Pro 4', 'Be Quiet!', '/Imagens/darkrockpro4.jpg', 'Cooler para processador com alta performance de refrigeração e operação silenciosa.', 399.90, 18);
-
--- Gabinetes
-CALL spInsereProduto(111232333701, 'NZXT H510', 'NZXT', '/Imagens/nzxt-h510.jpg', 'Gabinete Mid Tower com design minimalista e excelente fluxo de ar, suporte para radiadores e placas mãe ATX.', 499.90, 10);
-CALL spInsereProduto(111232333702, 'Corsair 4000D Airflow', 'Corsair', '/Imagens/4000d-airflow.jpg', 'Gabinete Mid Tower com design focado em fluxo de ar e suporte para radiadores até 360mm.', 449.90, 12);
-CALL spInsereProduto(111232333703, 'Cooler Master MasterBox Q300L', 'Cooler Master', '/Imagens/q300l.jpg', 'Gabinete compacto com excelente fluxo de ar, painel lateral transparente e suporte para placas mãe Micro-ATX.', 299.90, 25);
-CALL spInsereProduto(111232333704, 'Fractal Design Meshify C', 'Fractal Design', '/Imagens/meshify-c.jpg', 'Gabinete Mid Tower com painel frontal em malha para melhor fluxo de ar e espaço interno otimizado.', 599.90, 8);
-CALL spInsereProduto(111232333705, 'Thermaltake Core P3', 'Thermaltake', '/Imagens/core-p3.jpg', 'Gabinete aberto com suporte para montagem vertical e radiadores até 420mm.', 799.90, 5);
-
--- Fontes
-CALL spInsereProduto(111232333801, 'Corsair RM750x', 'Corsair', '/Imagens/corsair-rm750x.jpg', 'Fonte de alimentação modular com certificação 80 Plus Gold e potência de 750W.', 599.90, 8);
-CALL spInsereProduto(111232333802, 'EVGA SuperNOVA 650 G5', 'EVGA', '/Imagens/supernova-650g5.jpg', 'Fonte de alimentação com certificação 80 Plus Gold e potência de 650W.', 549.90, 10);
-CALL spInsereProduto(111232333803, 'Cooler Master MWE 650', 'Cooler Master', '/Imagens/mwe-650.jpg', 'Fonte de alimentação com certificação 80 Plus Bronze e potência de 650W.', 399.90, 15);
-CALL spInsereProduto(111232333804, 'Seasonic Focus GX-550', 'Seasonic', '/Imagens/focus-gx-550.jpg', 'Fonte de alimentação modular com certificação 80 Plus Gold e potência de 550W.', 479.90, 12);
-CALL spInsereProduto(111232333805, 'Thermaltake Smart RGB 500W', 'Thermaltake', '/Imagens/smart-rgb-500w.jpg', 'Fonte de alimentação com iluminação RGB e certificação 80 Plus White.', 299.90, 20);
 
 -- quase pronto
 DELIMITER //
@@ -403,6 +384,7 @@ END//
 DELIMITER ;
 
 CALL InserirFuncionarios('Luis', 119796012340, 'G', '05138040', 'Rua Adalberto Kurt','Jardim Líbano', 125, 'São Paulo', 'SP', 'luis@email.com', '123123');
+CALL InserirFuncionarios('Bebeto', 119796012340, 'G', '05138040', 'Rua Adalberto Kurt','Jardim Líbano', 125, 'São Paulo', 'SP', 'rbpeixotojr@gmail.com', '123123');
 CALL InserirFuncionarios(
     'Mariana',              -- Nome
     119876543210,           -- Telefone
@@ -414,7 +396,7 @@ CALL InserirFuncionarios(
     'São Paulo',            -- Cidade
     'SP',                   -- Estado
     'mariana@email.com',    -- Email
-    'senha456'              -- Senha
+    'senha456')              -- Senha
 DELIMITER $$
 
 CREATE PROCEDURE InserirPF(
@@ -857,7 +839,11 @@ select * from vw_FuncEnd where Id_func = 2;
 
 -- drop procedure updFuncEnd;
 -- alterar funcionario avisar os erros que der
-
+ 
+    select * from vw_FuncEnd order by Id_func;
+    select * from tb_funcionario ;
+    select * from tb_login ;
+    select * from tb_endereco ;
 DELIMITER //
 
 CREATE PROCEDURE updFuncEnd(

@@ -1,68 +1,168 @@
 ﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+@inject ProjetoE_CommerceGameFesth.Libraries.Login.LoginFuncionario _funcionario
+
 
 @{
     ViewData["Title"] = "Cadastrar Produto";
 
 }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h1>Cadastrar Produto</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Funcionário</title>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    </head>
 
-<h4>Produto</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Cadastrar" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Codbarras" class="control-label"></label>
-                <input asp-for="Codbarras" class="form-control" />
-                <span asp-validation-for="Codbarras" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NomeProduto" class="control-label"></label>
-                <input asp-for="NomeProduto" class="form-control" />
-                <span asp-validation-for="NomeProduto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
-                <span asp-validation-for="Marca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImagemProduto" class="control-label"></label>
-                <input asp-for="ImagemProduto" class="form-control" type="file" name="file" id="file" />
-                <span asp-validation-for="ImagemProduto" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Valor" class="control-label"></label>
-                <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
-                @* @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { placeholder = "Informe o valor", @class = "form-control", @id = "PrecoUni" } })
-                @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" }) *@
-                <span asp-validation-for="Valor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuantidadeEstoque" class="control-label"></label>
-                <input asp-for="QuantidadeEstoque" class="form-control" />
-                <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Adicionar produto" class="btn btn-primary" />
-            </div>
-        </form>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h4 {
+            color: slategrey;
+            text-decoration: dashed;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid;
+            border-color: dodgerblue;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            box-sizing: border-box;
+            margin-top:20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            border-color: dodgerblue;
+        }
+
+        .control-label {
+            color: slategrey;
+        }
+
+        input {
+            border-color: blue;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            border-color: dodgerblue;
+        }
+
+            .form-control:focus {
+                border-color: black;
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            }
+
+        .botao {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .text-danger {
+            color: #dc3545;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+        <h4>CADASTRO DE PRODUTO</h4>
+
+            <hr />
+            <form asp-action="Cadastrar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Codbarras" class="control-label"></label>
+                    <input asp-for="Codbarras" class="form-control" />
+                    <span asp-validation-for="Codbarras" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NomeProduto" class="control-label"></label>
+                    <input asp-for="NomeProduto" class="form-control" />
+                    <span asp-validation-for="NomeProduto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Marca" class="control-label"></label>
+                    <input asp-for="Marca" class="form-control" />
+                    <span asp-validation-for="Marca" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea class="form-control" id="descricao" name="descricao" rows="4"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImagemProduto" class="control-label"></label>
+                    <input asp-for="ImagemProduto" class="form-control" type="file" name="file" id="file" />
+                    <span asp-validation-for="ImagemProduto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="QuantidadeEstoque" class="control-label"></label>
+                    <input asp-for="QuantidadeEstoque" class="form-control" />
+                    <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
+                </div>
+            </form>
+
+
+        <script>
+            $(document).ready(function () {
+                // Máscara para o campo Código de Barras
+                $('input[name="Codbarras"]').mask('0000000000000'); // Exemplo para um código de barras de 13 dígitos
+
+                // Máscara para o campo Valor (dinheiro)
+                $('input[name="Valor"]').mask('000.000.000.000.000,00', { reverse: true });
+
+                // Máscara para o campo Quantidade no Estoque (apenas números)
+                $('input[name="QuantidadeEstoque"]').mask('0000000000'); // Exemplo para até 10 dígitos
+
+                // Você pode adicionar mais máscaras conforme necessário para outros campos
+            });
+        </script>
+
+
+        <div class="botao">
+            <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
+
+            <a asp-action="Index" class="btn btn-outline-primary">Voltar</a>
+        </div>
+
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Voltar</a>
-</div>
+</body>
+</html>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

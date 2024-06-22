@@ -1,47 +1,142 @@
-﻿@model ProjetoE_CommerceGameFesth.Models.Funcionario
+﻿@model ProjetoE_CommerceGameFesth.Models.Produto
+
 @{
     ViewData["Title"] = "Atualizar";
 }
 
-<h1>Atualizar</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Funcionário</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<h4>Funcionario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="AtualizarP">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h4 {
+            color: slategrey;
+            text-decoration: dashed;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid;
+            border-color: dodgerblue;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            border-color: dodgerblue;
+        }
+
+        .control-label {
+            color: slategrey;
+        }
+
+        input {
+            border-color: blue;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+            border-color: dodgerblue;
+        }
+
+            .form-control:focus {
+                border-color: black;
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 188, 212, 0.5);
+            }
+
+        .botao {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .text-danger {
+            color: #dc3545;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h4>ATUALIZAÇÃO DE PRODUTO</h4>
+
+        <hr />
+        <form asp-action="Atualizar">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input type="hidden" asp-for="IdFuncionario" />
-                <input type="hidden" asp-for="Tipo" />
-                <label asp-for="NomeFuncionario" class="control-label"></label>
-                <input asp-for="NomeFuncionario" class="form-control" />
-                <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+                <label asp-for="Codbarras" class="control-label"></label>
+                <input asp-for="Codbarras" class="form-control" />
+                <span asp-validation-for="Codbarras" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefone" class="control-label"></label>
-                <input asp-for="Telefone" class="form-control" />
-                <span asp-validation-for="Telefone" class="text-danger"></span>
+                <label asp-for="NomeProduto" class="control-label"></label>
+                <input asp-for="NomeProduto" class="form-control" />
+                <span asp-validation-for="NomeProduto" class="text-danger"></span>
+
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <label asp-for="Marca" class="control-label"></label>
+                <input asp-for="Marca" class="form-control" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+
             </div>
             <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-                        <div class="form-group">
-            <label asp-for="ConfirmaSenha" class="control-label"></label>
-            <input asp-for="ConfirmaSenha" class="form-control" />
-            <span asp-validation-for="ConfirmaSenha" class="text-danger"></span>
+                <label for="descricao">Descrição:</label>
+                <textarea class="form-control" id="descricao" name="descricao" rows="4"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Atualizar" class="btn btn-primary" />
-                <a asp-action="DetalhesFunc" value="Voltar" class="btn btn-info">Voltar</a>
+                <label asp-for="ImagemProduto" class="control-label"></label>
+                <input asp-for="ImagemProduto" class="form-control" type="file" name="file" id="file" />
+                <span asp-validation-for="ImagemProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input id="dinheiro" asp-for="Valor" class="form-control dinheiro" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuantidadeEstoque" class="control-label"></label>
+                <input asp-for="QuantidadeEstoque" class="form-control" />
+                <span asp-validation-for="QuantidadeEstoque" class="text-danger"></span>
             </div>
         </form>
-    </div>
-</div>
+
+
+        <div class="botao">
+            <button type="submit" value="Cadastrar" class="btn btn-outline-info">Cadastrar</button>
+
+            <a asp-action="Index" class="btn btn-outline-primary">Voltar</a>
+        </div>
+
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -3,67 +3,107 @@
 @{
     ViewData["Title"] = "Perfil";
 }
-<h2>Meu perfil</h2>
-<br/>
-<div>
-    <h4>Você é um funcionario @ViewBag.Cargo</h4>
-    <hr />
-    <dl class="row">
 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.funcionario.NomeFuncionario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.funcionario.NomeFuncionario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.funcionario.Telefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.funcionario.Telefone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.funcionario.DataAdmissao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.funcionario.DataAdmissao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.funcionario.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.funcionario.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.CEP)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.CEP)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.Lougradouro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.Lougradouro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NomeUF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NomeUF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NomeCidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NomeCidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco.NumLougradouro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.endereco.NumLougradouro)
-        </dd>
-    </dl>
-</div>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h4 {
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin-top: 20px; /* Adicionando margin-top para afastar do topo */
+        }
+
+        table {
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid dodgerblue !important; /* Alteração aqui para a cor dodgerblue com !important */
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-container">
+            <h4 class="mb-4">Você é um funcionário @ViewBag.Cargo</h4>
+            <hr />
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.funcionario.NomeFuncionario)</td>
+                        <td>@Html.DisplayFor(model => model.funcionario.NomeFuncionario)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.funcionario.Telefone)</td>
+                        <td>@Html.DisplayFor(model => model.funcionario.Telefone)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.funcionario.DataAdmissao)</td>
+                        <td>@Html.DisplayFor(model => model.funcionario.DataAdmissao)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.funcionario.Email)</td>
+                        <td>@Html.DisplayFor(model => model.funcionario.Email)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.endereco.CEP)</td>
+                        <td>@Html.DisplayFor(model => model.endereco.CEP)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.endereco.Lougradouro)</td>
+                        <td>@Html.DisplayFor(model => model.endereco.Lougradouro)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.endereco.NomeUF)</td>
+                        <td>@Html.DisplayFor(model => model.endereco.NomeUF)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.endereco.NomeCidade)</td>
+                        <td>@Html.DisplayFor(model => model.endereco.NomeCidade)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.endereco.NumLougradouro)</td>
+                        <td>@Html.DisplayFor(model => model.endereco.NumLougradouro)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+
 

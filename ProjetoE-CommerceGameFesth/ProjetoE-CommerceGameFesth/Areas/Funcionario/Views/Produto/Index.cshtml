@@ -1,52 +1,122 @@
 ﻿@using ProjetoE_CommerceGameFesth.Models
 @model IEnumerable<ProjetoE_CommerceGameFesth.Models.Produto>
+
 @{
     ViewData["Title"] = "Produtos";
     int count = 0;
 
 }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa; /* Light gray background for the page */
+    }
 
-<h1>Produtos</h1>
-<a class="btn btn-primary" asp-action="Cadastrar">Cadastrar</a>
-<div>
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px
+    }
 
-
-    <div class="col-lg-3 col-md-6 mb-4" style="margin:2% 4%">
-
-        @using (Html.BeginForm("Index", "produto", FormMethod.Get, new { id = "pesquisar" }))
-        {
-            <div>
-                <input type="text" id="pesquisa" name="pesquisa" value="@ViewBag.Pesquisa"  ><span>Pesquisa</span>
-            </div>
-
-            <input class="form-check-label" type="radio" name="por" value="Por Maior" checked @(ViewBag.Por == "Por Maior" ? "checked" : "")>
-            <span class="form-check-label">Cres</span>
-            <input class="form-check-label" type="radio" name="por" value="Por Menor" @(ViewBag.Por == "Por Menor" ? "checked" : "")>
-            <span class="form-check-label">Descr</span>
-            <select name="campo">
-                <option value="Nome" >Nome</option>
-                <option value="Valor" >Valor</option>
-                <option value="CodBarras">Codigo de Barras</option>
-            </select>
-
-
-
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
-@*             <script>
-                // Utiliza jQuery para detectar mudanças no campo de pesquisa e submeter o formulário
-                $(document).ready(function () {
-                    $('#pesquisa').on('input', function () {
-                        $('#pesquisar').submit(); // Envio automático do formulário quando o texto muda
-                    });
-                });
-            </script> *@
+        .search-container label {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
         }
 
+        .search-container .form-check-label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
 
-    </div>
+        .search-container input[type="radio"] {
+            margin-right: 5px;
+        }
 
+        .search-container select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            flex-grow: 1; /* Faz o select crescer para preencher o espaço disponível */
+        }
+
+    h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    .button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .table-responsive {
+        margin-top: 20px;
+    }
+
+    .table {
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        border-color: dodgerblue;
+    }
+
+        .table thead {
+            background-color: dodgerblue;
+            color: #ffffff;
+            border-color: dodgerblue;
+        }
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+            border-color: dodgerblue;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    h2 {
+        text-align: center;
+        color: #6c757d;
+    }
+
+</style>
+
+
+<div class="button">
+    <a class="btn btn-outline-dark" asp-action="Cadastrar">Clique aqui para Cadastrar</a>
 </div>
+
+<div class="search-container">
+    @using (Html.BeginForm("Index", "Produto", FormMethod.Get))
+    {
+        <label>
+            <input class="form-check-label" type="radio" name="por" value="Por Maior" checked>
+            Cres
+        </label>
+        <label>
+            <input class="form-check-label" type="radio" name="por" value="Por Menor">
+            Descr
+        </label>
+        <select name="campo">
+            <option value="Id">Id</option>
+            <option value="Nome">Nome</option>
+            <option value="Nascimento">Data de aniversario</option>
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+    }
+</div>
+
 <div class="table-responsive">
     <table class="table table-bordered">
         @foreach (Produto produto in Model)
@@ -55,7 +125,7 @@
         }
         @if (count == 0)
         {
-            <br />
+
             <h2>Sem cadastros</h2>
         }
         else
@@ -66,7 +136,6 @@
                     <th scope="col">@Html.DisplayNameFor(model => model.First().NomeProduto)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().Valor)</th>
                     <th scope="col">@Html.DisplayNameFor(model => model.First().QuantidadeEstoque)</th>
-
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -78,21 +147,14 @@
                 <tr>
                     <th scope="row">@produto.Codbarras</th>
                     <td>@produto.NomeProduto</td>
-
                     <td>@produto.Valor</td>
                     <td>@produto.QuantidadeEstoque</td>
                     @* <td>@produto.Valor1</td> *@
-
-
-
                     <td>
-                        <a class="btn btn-primary" asp-route-id="@produto.Codbarras" asp-area="Funcionario" asp-controller="Produto" asp-action="DetalhesProd">Detalhes</a>
-
+                        <a class="btn btn-outline-primary" asp-route-id="@produto.Codbarras" asp-area="Funcionario" asp-controller="Produto" asp-action="DetalhesProd">Detalhes</a>
                     </td>
-
                 </tr>
             }
         </tbody>
     </table>
 </div>
-
